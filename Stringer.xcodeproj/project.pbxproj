@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		829C6EDDF7A544E998CF89DD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6669C0BA13F4EBD86840D3A /* libPods.a */; };
+		EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B40301786BA31002A785D /* WebKit.framework */; };
 		EA5645C017808697001EDBA4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645BF17808697001EDBA4 /* Cocoa.framework */; };
 		EA5645CA17808698001EDBA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5645C817808698001EDBA4 /* InfoPlist.strings */; };
 		EA5645CC17808698001EDBA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5645CB17808698001EDBA4 /* main.m */; };
@@ -18,6 +20,7 @@
 		EA5645E017808698001EDBA4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645BF17808697001EDBA4 /* Cocoa.framework */; };
 		EA5645E817808698001EDBA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5645E617808698001EDBA4 /* InfoPlist.strings */; };
 		EA5645EA17808698001EDBA4 /* StringerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5645E917808698001EDBA4 /* StringerTests.m */; };
+		EA5645F41781CF03001EDBA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6669C0BA13F4EBD86840D3A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6693F10DDD4581A2578B5C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		EA2B40301786BA31002A785D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EA5645BC17808697001EDBA4 /* Stringer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stringer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5645BF17808697001EDBA4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EA5645C217808697001EDBA4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,6 +56,7 @@
 		EA5645E517808698001EDBA4 /* StringerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StringerTests-Info.plist"; sourceTree = "<group>"; };
 		EA5645E717808698001EDBA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA5645E917808698001EDBA4 /* StringerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringerTests.m; sourceTree = "<group>"; };
+		EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */,
+				EA5645F41781CF03001EDBA4 /* SystemConfiguration.framework in Frameworks */,
 				EA5645C017808697001EDBA4 /* Cocoa.framework in Frameworks */,
+				829C6EDDF7A544E998CF89DD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +90,7 @@
 				EA5645E317808698001EDBA4 /* StringerTests */,
 				EA5645BE17808697001EDBA4 /* Frameworks */,
 				EA5645BD17808697001EDBA4 /* Products */,
+				CB6693F10DDD4581A2578B5C /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,9 +106,12 @@
 		EA5645BE17808697001EDBA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA2B40301786BA31002A785D /* WebKit.framework */,
+				EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */,
 				EA5645BF17808697001EDBA4 /* Cocoa.framework */,
 				EA5645DE17808698001EDBA4 /* XCTest.framework */,
 				EA5645C117808697001EDBA4 /* Other Frameworks */,
+				B6669C0BA13F4EBD86840D3A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA5645ED17808698001EDBA4 /* Build configuration list for PBXNativeTarget "Stringer" */;
 			buildPhases = (
+				F8DC89567ECA4C87845C958B /* Check Pods Manifest.lock */,
 				EA5645B817808697001EDBA4 /* Sources */,
 				EA5645B917808697001EDBA4 /* Frameworks */,
 				EA5645BA17808697001EDBA4 /* Resources */,
+				3D4E7C2E776841FFBF3AE172 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +262,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D4E7C2E776841FFBF3AE172 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		F8DC89567ECA4C87845C958B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA5645B817808697001EDBA4 /* Sources */ = {
@@ -383,6 +430,7 @@
 		};
 		EA5645EE17808698001EDBA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB6693F10DDD4581A2578B5C /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -396,6 +444,7 @@
 		};
 		EA5645EF17808698001EDBA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB6693F10DDD4581A2578B5C /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -466,6 +515,7 @@
 				EA5645EF17808698001EDBA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA5645F017808698001EDBA4 /* Build configuration list for PBXNativeTarget "StringerTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +524,7 @@
 				EA5645F217808698001EDBA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
