@@ -21,10 +21,21 @@
   [[self tableView] setAllowsTypeSelect:NO];
   items = [NSMutableDictionary dictionary];
   itemIds = [NSMutableArray array];
+  [[self webView] setHidden:YES];
   
   [self syncWithServer];
   [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
 }
+
+- (IBAction)onClose:(id)sender {
+  if (webViewOpen) {
+    [[self webView] setHidden:YES];
+  } else {
+    [[NSApplication sharedApplication] terminate:nil];
+  }
+}
+
+#pragma mark Network
 
 - (void)syncWithServer {
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://209.141.59.135:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&items"]];
@@ -75,6 +86,8 @@
   }
 }
 
+#pragma mark Table source and delegate
+
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
   return [[self items] count];
 }
@@ -91,20 +104,48 @@
     return;
   }
   [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:(current - 1)] byExtendingSelection:NO];
+  if (webViewOpen) {
+    [self loadWeb];
+  }
 }
+
+#pragma mark Item operations
 
 - (IBAction)nextItem:(id)sender {
   NSInteger current = [[self tableView] selectedRow];
   [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:(current + 1)] byExtendingSelection:NO];
+  if (webViewOpen) {
+    [self loadWeb];
+  }
 }
 
 - (IBAction)openItem:(id)sender {
+  if (webViewOpen) {
+    [[self webView] setHidden:YES];
+    webViewOpen = NO;
+  } else {
+    [self loadWeb];
+    webViewOpen = YES;
+  }
+}
 
+- (void)loadWeb {
+  if ([[self tableView] selectedRow] == -1) {
+    return;
+  }
+  NSString *html = [self items][[self itemIds][[[self tableView] selectedRow]]][@"html"];
+  [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
+  [[self webView] setHidden:NO];
 }
 
 - (IBAction)openExternal:(id)sender {
   NSInteger current = [[self tableView] selectedRow];
-  [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[self items][[self itemIds][current]][@"url"]]];
+  if (current == -1) {
+    return;
+  }
+  NSURL *url = [NSURL URLWithString:[self items][[self itemIds][current]][@"url"]];
+  LSLaunchURLSpec urlSpec = {nil, (__bridge CFArrayRef)@[url], nil, kLSLaunchDontSwitch, nil};
+  LSOpenFromURLSpec(&urlSpec, nil);
 }
 
 - (IBAction)markAllRead:(id)sender {

@@ -8,7 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate> {
+  BOOL webViewOpen;
+}
 
 @property NSMutableDictionary *items;
 @property NSMutableArray *itemIds;
@@ -20,5 +22,6 @@
 - (IBAction)openItem:(id)sender;
 - (IBAction)openExternal:(id)sender;
 - (IBAction)markAllRead:(id)sender;
+- (IBAction)onClose:(id)sender;
 
 @end

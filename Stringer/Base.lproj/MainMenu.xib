@@ -16,7 +16,6 @@
                 <action selector="arrangeInFront:" destination="5" id="39"/>
                 <action selector="hide:" destination="134" id="367"/>
                 <action selector="hideOtherApplications:" destination="145" id="368"/>
-                <action selector="performClose:" destination="73" id="193"/>
                 <action selector="performMiniaturize:" destination="23" id="37"/>
                 <action selector="performZoom:" destination="239" id="240"/>
                 <action selector="showHelp:" destination="492" id="493"/>
@@ -121,11 +120,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <webView fixedFrame="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9z-ON-K3E">
-                        <rect key="frame" x="0.0" y="307" width="254" height="200"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" loadsImagesAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO"/>
-                    </webView>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwv-KU-kgz">
                         <rect key="frame" x="20" y="20" width="622" height="467"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -193,12 +187,23 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <webView maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9z-ON-K3E">
+                        <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" loadsImagesAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO">
+                            <nil key="identifier"/>
+                        </webPreferences>
+                    </webView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" symbolic="YES" id="2Fw-fH-wwY"/>
                     <constraint firstAttribute="trailing" secondItem="Jwv-KU-kgz" secondAttribute="trailing" constant="20" symbolic="YES" id="4AK-oX-jqU"/>
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" symbolic="YES" id="7bB-Tc-7bT"/>
+                    <constraint firstAttribute="trailing" secondItem="N9z-ON-K3E" secondAttribute="trailing" id="EL1-yc-XFn"/>
+                    <constraint firstItem="N9z-ON-K3E" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="F19-Ed-KgM"/>
                     <constraint firstAttribute="bottom" secondItem="Jwv-KU-kgz" secondAttribute="bottom" constant="20" symbolic="YES" id="ZdF-3F-oW0"/>
+                    <constraint firstAttribute="bottom" secondItem="N9z-ON-K3E" secondAttribute="bottom" id="dfK-A3-eqS"/>
+                    <constraint firstItem="N9z-ON-K3E" firstAttribute="top" secondItem="372" secondAttribute="top" id="wNM-rX-VRP"/>
                 </constraints>
             </view>
         </window>
@@ -206,10 +211,12 @@
             <connections>
                 <action selector="markAllRead:" destination="kfI-U8-FMZ" id="TdV-Yb-TTv"/>
                 <action selector="nextItem:" destination="298" id="YkA-gd-LZ7"/>
+                <action selector="onClose:" destination="73" id="p4O-np-8kT"/>
                 <action selector="openExternal:" destination="qTe-Se-L79" id="vm0-nr-oJV"/>
                 <action selector="openItem:" destination="cvb-7S-0cU" id="5v8-ce-9dJ"/>
                 <action selector="prevItem:" destination="297" id="NOq-hq-8sD"/>
                 <outlet property="tableView" destination="0Zf-kC-4h6" id="JL4-c6-ryq"/>
+                <outlet property="webView" destination="N9z-ON-K3E" id="9Lo-9X-Anw"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
@@ -218,28 +225,4 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
     </resources>
-    <classes>
-        <class className="AppDelegate" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppDelegate.h"/>
-            <relationships>
-                <relationship kind="action" name="markAllRead:"/>
-                <relationship kind="action" name="nextItem:"/>
-                <relationship kind="action" name="openExternal:"/>
-                <relationship kind="action" name="openItem:"/>
-                <relationship kind="action" name="prevItem:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="NSTableView"/>
-                <relationship kind="outlet" name="webView" candidateClass="WebView"/>
-                <relationship kind="outlet" name="window" candidateClass="NSWindow"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WebView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebView.h"/>
-            <relationships>
-                <relationship kind="action" name="reloadFromOrigin:"/>
-            </relationships>
-        </class>
-    </classes>
 </document>
