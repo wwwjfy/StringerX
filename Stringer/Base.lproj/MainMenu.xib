@@ -113,9 +113,8 @@
         </menu>
         <window title="Stringer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="662" height="507"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="contentRect" x="322" y="229" width="662" height="507"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" wantsLayer="YES" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -159,7 +158,7 @@
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sxi-vt-5aw">
                                                             <rect key="frame" x="25" y="0.0" width="592" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="fwK-tu-rfo">
+                                                            <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" id="fwK-tu-rfo">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -187,8 +186,8 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <webView maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9z-ON-K3E">
-                        <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
+                    <webView hidden="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9z-ON-K3E">
+                        <rect key="frame" x="0.0" y="0.0" width="40" height="89"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" loadsImagesAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO">
                             <nil key="identifier"/>
@@ -199,11 +198,11 @@
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" symbolic="YES" id="2Fw-fH-wwY"/>
                     <constraint firstAttribute="trailing" secondItem="Jwv-KU-kgz" secondAttribute="trailing" constant="20" symbolic="YES" id="4AK-oX-jqU"/>
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" symbolic="YES" id="7bB-Tc-7bT"/>
-                    <constraint firstAttribute="trailing" secondItem="N9z-ON-K3E" secondAttribute="trailing" id="EL1-yc-XFn"/>
-                    <constraint firstItem="N9z-ON-K3E" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="F19-Ed-KgM"/>
+                    <constraint firstItem="N9z-ON-K3E" firstAttribute="top" secondItem="372" secondAttribute="top" id="JZg-Yo-y4D"/>
+                    <constraint firstItem="N9z-ON-K3E" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="LhE-oX-L3t"/>
+                    <constraint firstAttribute="bottom" secondItem="N9z-ON-K3E" secondAttribute="bottom" id="MaM-gP-LtC"/>
                     <constraint firstAttribute="bottom" secondItem="Jwv-KU-kgz" secondAttribute="bottom" constant="20" symbolic="YES" id="ZdF-3F-oW0"/>
-                    <constraint firstAttribute="bottom" secondItem="N9z-ON-K3E" secondAttribute="bottom" id="dfK-A3-eqS"/>
-                    <constraint firstItem="N9z-ON-K3E" firstAttribute="top" secondItem="372" secondAttribute="top" id="wNM-rX-VRP"/>
+                    <constraint firstAttribute="trailing" secondItem="N9z-ON-K3E" secondAttribute="trailing" id="cI3-HX-Pjf"/>
                 </constraints>
             </view>
         </window>
@@ -225,4 +224,29 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
     </resources>
+    <classes>
+        <class className="AppDelegate" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppDelegate.h"/>
+            <relationships>
+                <relationship kind="action" name="markAllRead:"/>
+                <relationship kind="action" name="nextItem:"/>
+                <relationship kind="action" name="onClose:"/>
+                <relationship kind="action" name="openExternal:"/>
+                <relationship kind="action" name="openItem:"/>
+                <relationship kind="action" name="prevItem:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="NSTableView"/>
+                <relationship kind="outlet" name="webView" candidateClass="WebView"/>
+                <relationship kind="outlet" name="window" candidateClass="NSWindow"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="WebView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebView.h"/>
+            <relationships>
+                <relationship kind="action" name="reloadFromOrigin:"/>
+            </relationships>
+        </class>
+    </classes>
 </document>

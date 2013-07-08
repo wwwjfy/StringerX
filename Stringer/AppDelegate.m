@@ -22,7 +22,7 @@
   items = [NSMutableDictionary dictionary];
   itemIds = [NSMutableArray array];
   [[self webView] setHidden:YES];
-  
+
   [self syncWithServer];
   [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
 }
@@ -30,6 +30,7 @@
 - (IBAction)onClose:(id)sender {
   if (webViewOpen) {
     [[self webView] setHidden:YES];
+    webViewOpen = NO;
   } else {
     [[NSApplication sharedApplication] terminate:nil];
   }
@@ -38,7 +39,7 @@
 #pragma mark Network
 
 - (void)syncWithServer {
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://209.141.59.135:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&items"]];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://209.141.59.135:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&items"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
   [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
     NSArray *newItems = JSON[@"items"];
     BOOL changed = NO;
@@ -133,9 +134,13 @@
   if ([[self tableView] selectedRow] == -1) {
     return;
   }
-  NSString *html = [self items][[self itemIds][[[self tableView] selectedRow]]][@"html"];
+  NSDictionary *item = [self items][[self itemIds][[[self tableView] selectedRow]]];
+  NSString *html = [NSString stringWithFormat:@"<h1>%@</h1><div style=\"max-width:800px; margin\">%@</div>",
+                    item[@"title"],
+                    item[@"html"]];
   [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
   [[self webView] setHidden:NO];
+  [[self window] makeFirstResponder:[self webView]];
 }
 
 - (IBAction)openExternal:(id)sender {
