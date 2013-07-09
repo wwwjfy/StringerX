@@ -9,6 +9,7 @@
 #import <WebKit/WebKit.h>
 #import <AFNetworking.h>
 #import "AppDelegate.h"
+#import "TheTableCellView.h"
 
 @implementation AppDelegate
 
@@ -22,7 +23,7 @@
   items = [NSMutableDictionary dictionary];
   itemIds = [NSMutableArray array];
   [[self webView] setHidden:YES];
-
+  
   [self syncWithServer];
   [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
 }
@@ -94,8 +95,27 @@
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  NSTableCellView *view = [tableView makeViewWithIdentifier:@"Items" owner:self];
+  TheTableCellView *view = [tableView makeViewWithIdentifier:@"Items" owner:self];
+  [view setAutoresizingMask:NSViewWidthSizable];
   [[view textField] setStringValue:[self items][[self itemIds][row]][@"title"]];
+  NSString *html = [self items][[self itemIds][row]][@"html"];
+  NSRange r;
+  while ((r = [html rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+    html = [html stringByReplacingCharactersInRange:r withString:@""];
+  NSString *text = [NSString string];
+  int count = 0;
+  for (NSString *paragraph in [html componentsSeparatedByString:@"\n"]) {
+    if ([paragraph isEqualToString:@""]) {
+      continue;
+    }
+    text = [text stringByAppendingString:paragraph];
+    text = [text stringByAppendingString:@"\n"];
+    count++;
+    if (count == 2) {
+      break;
+    }
+  };
+  [[view detailedText] setStringValue:text];
   return view;
 }
 
@@ -105,6 +125,7 @@
     return;
   }
   [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:(current - 1)] byExtendingSelection:NO];
+  [[self tableView] scrollRowToVisible:(current - 1)];
   if (webViewOpen) {
     [self loadWeb];
   }
@@ -114,7 +135,11 @@
 
 - (IBAction)nextItem:(id)sender {
   NSInteger current = [[self tableView] selectedRow];
+  if ((current + 1) >= (NSInteger)[[self itemIds] count]) {
+    return;
+  }
   [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:(current + 1)] byExtendingSelection:NO];
+  [[self tableView] scrollRowToVisible:(current + 1)];
   if (webViewOpen) {
     [self loadWeb];
   }
