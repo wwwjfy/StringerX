@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4457.9" systemVersion="13A497d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <development version="5000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4457.9"/>
         <plugIn identifier="com.apple.WebKitIBPlugin" version="3330"/>
     </dependencies>
@@ -119,14 +120,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwv-KU-kgz">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="74" horizontalPageScroll="10" verticalLineScroll="74" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwv-KU-kgz">
                         <rect key="frame" x="20" y="20" width="622" height="467"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="Yhc-Tf-kuh">
                             <rect key="frame" x="1" y="1" width="620" height="465"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="60" rowSizeStyle="automatic" viewBased="YES" id="0Zf-kC-4h6">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="72" rowSizeStyle="automatic" viewBased="YES" id="0Zf-kC-4h6">
                                     <rect key="frame" x="0.0" y="0.0" width="620" height="465"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -147,19 +148,19 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="6nL-r5-M4M" customClass="TheTableCellView">
-                                                    <rect key="frame" x="1" y="1" width="617" height="60"/>
+                                                    <rect key="frame" x="1" y="1" width="617" height="72"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rs7-fK-zy3">
-                                                            <rect key="frame" x="3" y="43" width="17" height="17"/>
+                                                            <rect key="frame" x="3" y="55" width="17" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="FXp-Xl-NZ0"/>
                                                         </imageView>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="sxi-vt-5aw">
-                                                            <rect key="frame" x="25" y="43" width="592" height="17"/>
+                                                            <rect key="frame" x="25" y="55" width="592" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="17" id="ddu-4v-IhI"/>
+                                                                <constraint firstAttribute="height" constant="17" id="g6L-Cd-Qox"/>
                                                             </constraints>
                                                             <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" id="fwK-tu-rfo">
                                                                 <font key="font" metaFont="system" size="14"/>
@@ -167,8 +168,17 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="zKr-3F-Vvx">
+                                                            <rect key="frame" x="25" y="37" width="592" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" id="8Sq-PA-Wpd">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-Gu-GJc">
-                                                            <rect key="frame" x="30" y="-5" width="540" height="34"/>
+                                                            <rect key="frame" x="25" y="2" width="545" height="34"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" id="8YH-nY-noq">
                                                                 <font key="font" metaFont="system"/>
@@ -178,16 +188,19 @@
                                                         </textField>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="GVg-Gu-GJc" firstAttribute="leading" secondItem="6nL-r5-M4M" secondAttribute="leading" constant="33" id="AKC-X7-ROV"/>
-                                                        <constraint firstItem="GVg-Gu-GJc" firstAttribute="top" secondItem="sxi-vt-5aw" secondAttribute="bottom" constant="7" id="H7B-6N-KY7"/>
                                                         <constraint firstItem="sxi-vt-5aw" firstAttribute="top" secondItem="6nL-r5-M4M" secondAttribute="top" id="c3q-Ku-mGb"/>
+                                                        <constraint firstItem="zKr-3F-Vvx" firstAttribute="top" secondItem="sxi-vt-5aw" secondAttribute="bottom" constant="1" id="fgE-gx-RoK"/>
+                                                        <constraint firstItem="zKr-3F-Vvx" firstAttribute="leading" secondItem="sxi-vt-5aw" secondAttribute="leading" id="hhU-U6-ojj"/>
                                                         <constraint firstAttribute="trailing" secondItem="GVg-Gu-GJc" secondAttribute="trailing" constant="50" id="klF-Ak-sAV"/>
                                                         <constraint firstAttribute="trailing" secondItem="sxi-vt-5aw" secondAttribute="trailing" constant="3" id="m18-u2-7Ry"/>
+                                                        <constraint firstItem="GVg-Gu-GJc" firstAttribute="leading" secondItem="sxi-vt-5aw" secondAttribute="leading" id="ogY-ec-Nnj"/>
+                                                        <constraint firstItem="GVg-Gu-GJc" firstAttribute="top" secondItem="zKr-3F-Vvx" secondAttribute="bottom" constant="1" id="seo-kd-hHJ"/>
                                                         <constraint firstItem="sxi-vt-5aw" firstAttribute="leading" secondItem="6nL-r5-M4M" secondAttribute="leading" constant="28" id="tP7-0A-Lpq"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="detailedText" destination="GVg-Gu-GJc" id="1lr-6n-iKT"/>
                                                         <outlet property="imageView" destination="Rs7-fK-zy3" id="e7H-29-jUi"/>
+                                                        <outlet property="sourceField" destination="zKr-3F-Vvx" id="ofb-PR-uAd"/>
                                                         <outlet property="textField" destination="sxi-vt-5aw" id="iyB-JO-VKx"/>
                                                     </connections>
                                                 </tableCellView>
@@ -245,4 +258,30 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
     </resources>
+    <classes>
+        <class className="AppDelegate" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppDelegate.h"/>
+            <relationships>
+                <relationship kind="action" name="markAllRead:"/>
+                <relationship kind="action" name="nextItem:"/>
+                <relationship kind="action" name="onClose:"/>
+                <relationship kind="action" name="openExternal:"/>
+                <relationship kind="action" name="openItem:"/>
+                <relationship kind="action" name="prevItem:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="NSTableView"/>
+                <relationship kind="outlet" name="webView" candidateClass="WebView"/>
+                <relationship kind="outlet" name="window" candidateClass="NSWindow"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TheTableCellView" superclassName="NSTableCellView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TheTableCellView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailedText" candidateClass="NSTextField"/>
+                <relationship kind="outlet" name="sourceField" candidateClass="NSTextField"/>
+            </relationships>
+        </class>
+    </classes>
 </document>

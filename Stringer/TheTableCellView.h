@@ -10,6 +10,7 @@
 
 @interface TheTableCellView : NSTableCellView
 
+@property (weak) IBOutlet NSTextField *sourceField;
 @property (weak) IBOutlet NSTextField *detailedText;
 
 @end

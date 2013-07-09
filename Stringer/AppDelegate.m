@@ -15,6 +15,7 @@
 
 @synthesize items;
 @synthesize itemIds;
+@synthesize feeds;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   [[self tableView] setDataSource:self];
@@ -22,10 +23,10 @@
   [[self tableView] setAllowsTypeSelect:NO];
   items = [NSMutableDictionary dictionary];
   itemIds = [NSMutableArray array];
+  feeds = [NSMutableDictionary dictionary];
   [[self webView] setHidden:YES];
   
-  [self syncWithServer];
-  [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
+  [self getFeeds];
 }
 
 - (IBAction)onClose:(id)sender {
@@ -38,6 +39,17 @@
 }
 
 #pragma mark Network
+
+- (void)getFeeds {
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://209.141.59.135:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&feeds"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
+  [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    for (NSDictionary *feed in JSON[@"feeds"]) {
+      [self feeds][feed[@"id"]] = feed[@"title"];
+    };
+    [self syncWithServer];
+    [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
+  } failure:nil] start];
+}
 
 - (void)syncWithServer {
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://209.141.59.135:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&items"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
@@ -97,7 +109,14 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
   TheTableCellView *view = [tableView makeViewWithIdentifier:@"Items" owner:self];
   [view setAutoresizingMask:NSViewWidthSizable];
+  
+  // title
   [[view textField] setStringValue:[self items][[self itemIds][row]][@"title"]];
+  
+  // source
+  [[view sourceField] setStringValue:[self feeds][[self items][[self itemIds][row]][@"feed_id"]]];
+  
+  // detailed text
   NSString *html = [self items][[self itemIds][row]][@"html"];
   NSRange r;
   while ((r = [html rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
@@ -116,6 +135,9 @@
     }
   };
   [[view detailedText] setStringValue:text];
+  
+  // published time
+  
   return view;
 }
 
