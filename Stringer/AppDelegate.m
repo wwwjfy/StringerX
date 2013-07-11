@@ -25,8 +25,30 @@
   itemIds = [NSMutableArray array];
   feeds = [NSMutableDictionary dictionary];
   [[self webView] setHidden:YES];
+  [[self webView] setPolicyDelegate:self];
   
   [self getFeeds];
+}
+
+- (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
+  if (webViewOpen) {
+    [self openInBrowserForURL:[request URL]];
+  } else {
+    [listener use];
+  }
+}
+
+- (void)webView:(WebView *)webView decidePolicyForNewWindowAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request newFrameName:(NSString *)frameName decisionListener:(id<WebPolicyDecisionListener>)listener {
+  if (webViewOpen) {
+    [self openInBrowserForURL:[request URL]];
+  } else {
+    [listener use];
+  }
+}
+
+- (void)openInBrowserForURL:(NSURL *)url {
+  LSLaunchURLSpec urlSpec = {nil, (__bridge CFArrayRef)@[url], nil, kLSLaunchDontSwitch, nil};
+  LSOpenFromURLSpec(&urlSpec, nil);
 }
 
 - (IBAction)onClose:(id)sender {
@@ -196,8 +218,7 @@
     return;
   }
   NSURL *url = [NSURL URLWithString:[self items][[self itemIds][current]][@"url"]];
-  LSLaunchURLSpec urlSpec = {nil, (__bridge CFArrayRef)@[url], nil, kLSLaunchDontSwitch, nil};
-  LSOpenFromURLSpec(&urlSpec, nil);
+  [self openInBrowserForURL:url];
 }
 
 - (IBAction)markAllRead:(id)sender {

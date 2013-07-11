@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4457.9" systemVersion="13A497d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4471.1" systemVersion="13A497d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4457.9"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="3330"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4471.1"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="3332"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -157,10 +157,10 @@
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="FXp-Xl-NZ0"/>
                                                         </imageView>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="sxi-vt-5aw">
-                                                            <rect key="frame" x="25" y="55" width="592" height="17"/>
+                                                            <rect key="frame" x="25" y="53" width="592" height="19"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="17" id="g6L-Cd-Qox"/>
+                                                                <constraint firstAttribute="height" constant="19" id="g6L-Cd-Qox"/>
                                                             </constraints>
                                                             <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" id="fwK-tu-rfo">
                                                                 <font key="font" metaFont="system" size="14"/>
@@ -169,11 +169,11 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="zKr-3F-Vvx">
-                                                            <rect key="frame" x="25" y="37" width="592" height="17"/>
+                                                            <rect key="frame" x="25" y="35" width="592" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" id="8Sq-PA-Wpd">
                                                                 <font key="font" metaFont="system"/>
-                                                                <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
@@ -258,30 +258,4 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
     </resources>
-    <classes>
-        <class className="AppDelegate" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppDelegate.h"/>
-            <relationships>
-                <relationship kind="action" name="markAllRead:"/>
-                <relationship kind="action" name="nextItem:"/>
-                <relationship kind="action" name="onClose:"/>
-                <relationship kind="action" name="openExternal:"/>
-                <relationship kind="action" name="openItem:"/>
-                <relationship kind="action" name="prevItem:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="NSTableView"/>
-                <relationship kind="outlet" name="webView" candidateClass="WebView"/>
-                <relationship kind="outlet" name="window" candidateClass="NSWindow"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TheTableCellView" superclassName="NSTableCellView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TheTableCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailedText" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="sourceField" candidateClass="NSTextField"/>
-            </relationships>
-        </class>
-    </classes>
 </document>
