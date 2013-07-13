@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  Stringer
+//  StringerX
 //
 //  Created by Tony Wang on 6/30/13.
 //  Copyright (c) 2013 Tony Wang. All rights reserved.

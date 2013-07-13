@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		829C6EDDF7A544E998CF89DD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6669C0BA13F4EBD86840D3A /* libPods.a */; };
+		EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2A4953178B0F5700220F35 /* TheTableCellView.m */; };
+		EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B40301786BA31002A785D /* WebKit.framework */; };
+		EA5645C017808697001EDBA4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645BF17808697001EDBA4 /* Cocoa.framework */; };
+		EA5645CA17808698001EDBA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5645C817808698001EDBA4 /* InfoPlist.strings */; };
+		EA5645CC17808698001EDBA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5645CB17808698001EDBA4 /* main.m */; };
+		EA5645D017808698001EDBA4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EA5645CE17808698001EDBA4 /* Credits.rtf */; };
+		EA5645D317808698001EDBA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5645D217808698001EDBA4 /* AppDelegate.m */; };
+		EA5645D617808698001EDBA4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5645D417808698001EDBA4 /* MainMenu.xib */; };
+		EA5645D817808698001EDBA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5645D717808698001EDBA4 /* Images.xcassets */; };
+		EA5645F41781CF03001EDBA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B6669C0BA13F4EBD86840D3A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6693F10DDD4581A2578B5C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		EA2A4952178B0F5700220F35 /* TheTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheTableCellView.h; sourceTree = "<group>"; };
+		EA2A4953178B0F5700220F35 /* TheTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheTableCellView.m; sourceTree = "<group>"; };
+		EA2B40301786BA31002A785D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		EA5645BC17808697001EDBA4 /* StringerX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StringerX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA5645BF17808697001EDBA4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EA5645C217808697001EDBA4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EA5645C317808697001EDBA4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EA5645C417808697001EDBA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA5645C717808698001EDBA4 /* StringerX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StringerX-Info.plist"; sourceTree = "<group>"; };
+		EA5645C917808698001EDBA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA5645CB17808698001EDBA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA5645CD17808698001EDBA4 /* StringerX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StringerX-Prefix.pch"; sourceTree = "<group>"; };
+		EA5645CF17808698001EDBA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EA5645D117808698001EDBA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EA5645D217808698001EDBA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EA5645D517808698001EDBA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EA5645D717808698001EDBA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EA5645DE17808698001EDBA4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA5645B917808697001EDBA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */,
+				EA5645F41781CF03001EDBA4 /* SystemConfiguration.framework in Frameworks */,
+				EA5645C017808697001EDBA4 /* Cocoa.framework in Frameworks */,
+				829C6EDDF7A544E998CF89DD /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA5645B317808697001EDBA4 = {
+			isa = PBXGroup;
+			children = (
+				EA5645C517808698001EDBA4 /* StringerX */,
+				EA5645BE17808697001EDBA4 /* Frameworks */,
+				EA5645BD17808697001EDBA4 /* Products */,
+				CB6693F10DDD4581A2578B5C /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		EA5645BD17808697001EDBA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA5645BC17808697001EDBA4 /* StringerX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA5645BE17808697001EDBA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA2B40301786BA31002A785D /* WebKit.framework */,
+				EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */,
+				EA5645BF17808697001EDBA4 /* Cocoa.framework */,
+				EA5645DE17808698001EDBA4 /* XCTest.framework */,
+				EA5645C117808697001EDBA4 /* Other Frameworks */,
+				B6669C0BA13F4EBD86840D3A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA5645C117808697001EDBA4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA5645C217808697001EDBA4 /* AppKit.framework */,
+				EA5645C317808697001EDBA4 /* CoreData.framework */,
+				EA5645C417808697001EDBA4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EA5645C517808698001EDBA4 /* StringerX */ = {
+			isa = PBXGroup;
+			children = (
+				EA5645D117808698001EDBA4 /* AppDelegate.h */,
+				EA5645D217808698001EDBA4 /* AppDelegate.m */,
+				EA5645D417808698001EDBA4 /* MainMenu.xib */,
+				EA5645D717808698001EDBA4 /* Images.xcassets */,
+				EA5645C617808698001EDBA4 /* Supporting Files */,
+				EA2A4952178B0F5700220F35 /* TheTableCellView.h */,
+				EA2A4953178B0F5700220F35 /* TheTableCellView.m */,
+			);
+			name = StringerX;
+			path = StringerX;
+			sourceTree = "<group>";
+		};
+		EA5645C617808698001EDBA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA5645C717808698001EDBA4 /* StringerX-Info.plist */,
+				EA5645C817808698001EDBA4 /* InfoPlist.strings */,
+				EA5645CB17808698001EDBA4 /* main.m */,
+				EA5645CD17808698001EDBA4 /* StringerX-Prefix.pch */,
+				EA5645CE17808698001EDBA4 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA5645BB17808697001EDBA4 /* StringerX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA5645ED17808698001EDBA4 /* Build configuration list for PBXNativeTarget "StringerX" */;
+			buildPhases = (
+				F8DC89567ECA4C87845C958B /* Check Pods Manifest.lock */,
+				EA5645B817808697001EDBA4 /* Sources */,
+				EA5645B917808697001EDBA4 /* Frameworks */,
+				EA5645BA17808697001EDBA4 /* Resources */,
+				3D4E7C2E776841FFBF3AE172 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StringerX;
+			productName = StringerX;
+			productReference = EA5645BC17808697001EDBA4 /* StringerX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA5645B417808697001EDBA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Tony Wang";
+			};
+			buildConfigurationList = EA5645B717808697001EDBA4 /* Build configuration list for PBXProject "StringerX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA5645B317808697001EDBA4;
+			productRefGroup = EA5645BD17808697001EDBA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA5645BB17808697001EDBA4 /* StringerX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA5645BA17808697001EDBA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA5645CA17808698001EDBA4 /* InfoPlist.strings in Resources */,
+				EA5645D817808698001EDBA4 /* Images.xcassets in Resources */,
+				EA5645D017808698001EDBA4 /* Credits.rtf in Resources */,
+				EA5645D617808698001EDBA4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D4E7C2E776841FFBF3AE172 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		F8DC89567ECA4C87845C958B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA5645B817808697001EDBA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA5645D317808698001EDBA4 /* AppDelegate.m in Sources */,
+				EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */,
+				EA5645CC17808698001EDBA4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EA5645C817808698001EDBA4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5645C917808698001EDBA4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA5645CE17808698001EDBA4 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5645CF17808698001EDBA4 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EA5645D417808698001EDBA4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5645D517808698001EDBA4 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA5645EB17808698001EDBA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EA5645EC17808698001EDBA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EA5645EE17808698001EDBA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB6693F10DDD4581A2578B5C /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StringerX/StringerX-Prefix.pch";
+				INFOPLIST_FILE = "StringerX/StringerX-Info.plist";
+				PRODUCT_NAME = StringerX;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA5645EF17808698001EDBA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB6693F10DDD4581A2578B5C /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StringerX/StringerX-Prefix.pch";
+				INFOPLIST_FILE = "StringerX/StringerX-Info.plist";
+				PRODUCT_NAME = StringerX;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA5645B717808697001EDBA4 /* Build configuration list for PBXProject "StringerX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA5645EB17808698001EDBA4 /* Debug */,
+				EA5645EC17808698001EDBA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA5645ED17808698001EDBA4 /* Build configuration list for PBXNativeTarget "StringerX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA5645EE17808698001EDBA4 /* Debug */,
+				EA5645EF17808698001EDBA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA5645B417808697001EDBA4 /* Project object */;
+}
