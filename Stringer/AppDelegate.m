@@ -31,7 +31,7 @@
 }
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
-  if (webViewOpen) {
+  if (webViewOpen && ![[[request URL] absoluteString] isEqualToString:@"about:blank"]) {
     [self openInBrowserForURL:[request URL]];
   } else {
     [listener use];
