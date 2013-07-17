@@ -10,6 +10,7 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate> {
   BOOL webViewOpen;
+  int last_refreshed;
 }
 
 @property NSMutableDictionary *items;

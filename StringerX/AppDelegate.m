@@ -110,6 +110,7 @@
         [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:[[self itemIds] indexOfObject:currentId]] byExtendingSelection:NO];
       }
     }
+    last_refreshed = [JSON[@"last_refreshed_on_time"] intValue];
   } failure:nil] start];
 }
 
@@ -224,7 +225,9 @@
 - (IBAction)markAllRead:(id)sender {
   NSDictionary *query = @{@"ids": [[self itemIds] componentsJoinedByString:@","]};
   AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://209.141.59.135:5000"]];
-  [client postPath:@"/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&mark=item&as=read" parameters:query success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  [client getPath:[NSString stringWithFormat:@"/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&mark=group&as=read&id=1&before=%d", last_refreshed]
+       parameters:query
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
     [[self itemIds] removeAllObjects];
     [[self items] removeAllObjects];
     [self refresh];
