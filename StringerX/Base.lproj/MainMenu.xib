@@ -68,6 +68,37 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Edit" id="8Yt-Bf-s67">
+                    <menu key="submenu" title="Edit" id="6mM-Yb-4sk">
+                        <items>
+                            <menuItem title="Cut" keyEquivalent="x" id="EA5-xY-Qnz">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="Q6G-sq-mNQ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="bNU-V7-VQs">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="lAT-D6-qRD"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="aqh-bX-9uU">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="jjc-Di-gYY"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" id="Zyi-fY-zOm">
+                                <connections>
+                                    <action selector="delete:" target="-1" id="52s-Qb-IBE"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="Y0Z-G3-R28">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="WJY-3f-KF0"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="Item" id="295">
                     <menu key="submenu" title="Item" id="296">
                         <items>
