@@ -71,6 +71,20 @@
                 <menuItem title="Edit" id="8Yt-Bf-s67">
                     <menu key="submenu" title="Edit" id="6mM-Yb-4sk">
                         <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="GVR-dP-yWv">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="Zbn-Zh-m2f"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="bgJ-QF-ExD">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="redo:" target="-1" id="abE-2K-juC"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="RDy-Ts-oMY">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
                             <menuItem title="Cut" keyEquivalent="x" id="EA5-xY-Qnz">
                                 <connections>
                                     <action selector="cut:" target="-1" id="Q6G-sq-mNQ"/>
