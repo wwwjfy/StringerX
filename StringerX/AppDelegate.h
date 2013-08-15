@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate> {
   BOOL webViewOpen;
@@ -25,5 +26,6 @@
 - (IBAction)openExternal:(id)sender;
 - (IBAction)markAllRead:(id)sender;
 - (IBAction)onClose:(id)sender;
+- (IBAction)onPreferences:(id)sender;
 
 @end

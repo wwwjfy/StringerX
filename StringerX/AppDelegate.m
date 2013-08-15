@@ -6,10 +6,20 @@
 //  Copyright (c) 2013 Tony Wang. All rights reserved.
 //
 
-#import <WebKit/WebKit.h>
-#import <AFNetworking.h>
 #import "AppDelegate.h"
+
+#import <AFNetworking.h>
+#import <MASPreferencesWindowController.h>
+
+#import "URLHelper.h"
 #import "TheTableCellView.h"
+#import "AccountPreferencesViewController.h"
+
+@interface AppDelegate () {
+  NSWindowController *_preferencesWindowController;
+}
+
+@end
 
 @implementation AppDelegate
 
@@ -27,7 +37,29 @@
   [[self webView] setHidden:YES];
   [[self webView] setPolicyDelegate:self];
   
-  [self getFeeds];
+  NSError *err;
+  NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
+                                                        inDomain:NSUserDomainMask
+                                               appropriateForURL:nil
+                                                          create:NO
+                                                           error:&err] URLByAppendingPathComponent:@"StringerX"];
+  if ([[NSFileManager defaultManager] fileExistsAtPath:[pDir path]]) {
+    NSURL *pFile = [pDir URLByAppendingPathComponent:@"account.plist"];
+    NSDictionary *accountDict = [[NSString stringWithContentsOfURL:pFile
+                                                          encoding:NSUTF8StringEncoding
+                                                             error:&err] propertyListFromStringsFileFormat];
+    if (!err) {
+      [[URLHelper sharedInstance] setBaseURL:[NSURL URLWithString:accountDict[@"URL"]]];
+      [[URLHelper sharedInstance] setToken:accountDict[@"token"]];
+      [self getFeeds];
+      return;
+    }
+  }
+  [self onPreferences:nil];
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+  return YES;
 }
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
@@ -52,7 +84,9 @@
 }
 
 - (IBAction)onClose:(id)sender {
-  if (webViewOpen) {
+  if ([[_preferencesWindowController window] isVisible] && [[_preferencesWindowController window] isMainWindow]) {
+    [_preferencesWindowController close];
+  } else if (webViewOpen) {
     [[self webView] setHidden:YES];
     webViewOpen = NO;
   } else {
@@ -60,10 +94,21 @@
   }
 }
 
+- (IBAction)onPreferences:(id)sender {
+  if (!_preferencesWindowController) {
+    NSViewController *accountViewController = [[AccountPreferencesViewController alloc] init];
+    NSArray *controllers = @[accountViewController];
+
+    NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
+    _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
+  }
+  [_preferencesWindowController showWindow:nil];
+}
+
 #pragma mark Network
 
 - (void)getFeeds {
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://209.141.59.135:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&feeds"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.241.221.223:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&feeds"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
   [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
     for (NSDictionary *feed in JSON[@"feeds"]) {
       [self feeds][feed[@"id"]] = feed[@"title"];
@@ -74,7 +119,7 @@
 }
 
 - (void)syncWithServer {
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://209.141.59.135:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&items"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.241.221.223:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&items"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
   [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
     NSArray *newItems = JSON[@"items"];
     BOOL changed = NO;
@@ -224,7 +269,7 @@
 
 - (IBAction)markAllRead:(id)sender {
   NSDictionary *query = @{@"ids": [[self itemIds] componentsJoinedByString:@","]};
-  AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://209.141.59.135:5000"]];
+  AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.241.221.223:5000"]];
   [client getPath:[NSString stringWithFormat:@"/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&mark=group&as=read&id=1&before=%d", last_refreshed]
        parameters:query
           success:^(AFHTTPRequestOperation *operation, id responseObject) {

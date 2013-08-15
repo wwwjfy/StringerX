@@ -18,6 +18,9 @@
 		EA5645D617808698001EDBA4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5645D417808698001EDBA4 /* MainMenu.xib */; };
 		EA5645D817808698001EDBA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5645D717808698001EDBA4 /* Images.xcassets */; };
 		EA5645F41781CF03001EDBA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */; };
+		EA63348D17BA167400963F9F /* AccountPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA63348B17BA167400963F9F /* AccountPreferencesViewController.m */; };
+		EA63348E17BA167400963F9F /* AccountPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA63348C17BA167400963F9F /* AccountPreferencesViewController.xib */; };
+		EA63356617BBD31400963F9F /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA63356517BBD31400963F9F /* URLHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,11 @@
 		EA5645D717808698001EDBA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EA5645DE17808698001EDBA4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EA63348A17BA167400963F9F /* AccountPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountPreferencesViewController.h; sourceTree = "<group>"; };
+		EA63348B17BA167400963F9F /* AccountPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountPreferencesViewController.m; sourceTree = "<group>"; };
+		EA63348C17BA167400963F9F /* AccountPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountPreferencesViewController.xib; sourceTree = "<group>"; };
+		EA63356417BBD31400963F9F /* URLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHelper.h; sourceTree = "<group>"; };
+		EA63356517BBD31400963F9F /* URLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +111,19 @@
 		EA5645C517808698001EDBA4 /* StringerX */ = {
 			isa = PBXGroup;
 			children = (
+				EA63348A17BA167400963F9F /* AccountPreferencesViewController.h */,
+				EA63348B17BA167400963F9F /* AccountPreferencesViewController.m */,
+				EA63348C17BA167400963F9F /* AccountPreferencesViewController.xib */,
 				EA5645D117808698001EDBA4 /* AppDelegate.h */,
 				EA5645D217808698001EDBA4 /* AppDelegate.m */,
-				EA5645D417808698001EDBA4 /* MainMenu.xib */,
 				EA5645D717808698001EDBA4 /* Images.xcassets */,
+				EA5645D417808698001EDBA4 /* MainMenu.xib */,
 				EA5645C617808698001EDBA4 /* Supporting Files */,
 				EA2A4952178B0F5700220F35 /* TheTableCellView.h */,
 				EA2A4953178B0F5700220F35 /* TheTableCellView.m */,
+				EA63356417BBD31400963F9F /* URLHelper.h */,
+				EA63356517BBD31400963F9F /* URLHelper.m */,
 			);
-			name = StringerX;
 			path = StringerX;
 			sourceTree = "<group>";
 		};
@@ -185,6 +197,7 @@
 				EA5645D817808698001EDBA4 /* Images.xcassets in Resources */,
 				EA5645D017808698001EDBA4 /* Credits.rtf in Resources */,
 				EA5645D617808698001EDBA4 /* MainMenu.xib in Resources */,
+				EA63348E17BA167400963F9F /* AccountPreferencesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,9 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA63356617BBD31400963F9F /* URLHelper.m in Sources */,
 				EA5645D317808698001EDBA4 /* AppDelegate.m in Sources */,
 				EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */,
 				EA5645CC17808698001EDBA4 /* main.m in Sources */,
+				EA63348D17BA167400963F9F /* AccountPreferencesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
