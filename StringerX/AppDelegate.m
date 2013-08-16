@@ -108,19 +108,17 @@
 #pragma mark Network
 
 - (void)getFeeds {
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.241.221.223:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&feeds"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
-  [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  [[URLHelper sharedInstance] requestWithPath:@"/fever/?feeds" success:^(AFHTTPRequestOperation *operation, id JSON) {
     for (NSDictionary *feed in JSON[@"feeds"]) {
       [self feeds][feed[@"id"]] = feed[@"title"];
     };
     [self syncWithServer];
     [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
-  } failure:nil] start];
+  } failure:nil];
 }
 
 - (void)syncWithServer {
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.241.221.223:5000/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&items"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
-  [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+  [[URLHelper sharedInstance] requestWithPath:@"/fever/?items" success:^(AFHTTPRequestOperation *operation, id JSON) {
     NSArray *newItems = JSON[@"items"];
     BOOL changed = NO;
     NSInteger currentRow = [[self tableView] selectedRow];
@@ -156,7 +154,7 @@
       }
     }
     last_refreshed = [JSON[@"last_refreshed_on_time"] intValue];
-  } failure:nil] start];
+  } failure:nil];
 }
 
 - (void)refresh {
@@ -268,17 +266,13 @@
 }
 
 - (IBAction)markAllRead:(id)sender {
-  NSDictionary *query = @{@"ids": [[self itemIds] componentsJoinedByString:@","]};
-  AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.241.221.223:5000"]];
-  [client getPath:[NSString stringWithFormat:@"/fever/?api_key=46eb2d35afa7e6c1855d68b68fd6a330&mark=group&as=read&id=1&before=%d", last_refreshed]
-       parameters:query
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    [[self itemIds] removeAllObjects];
-    [[self items] removeAllObjects];
-    [self refresh];
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    
-  }];
+  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"/fever/?mark=group&as=read&id=1&before=%d", last_refreshed]
+                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                        [[self itemIds] removeAllObjects];
+                                        [[self items] removeAllObjects];
+                                        [self refresh];
+                                      }
+                                      failure:nil];
 }
 
 @end
