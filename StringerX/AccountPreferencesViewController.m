@@ -11,6 +11,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "Notifications.h"
 #import "URLHelper.h"
+#import "ServiceHelper.h"
 
 typedef enum {
   LOGGED_IN,
@@ -28,17 +29,20 @@ typedef enum {
   return [self initWithNibName:@"AccountPreferencesViewController" bundle:nil];
 }
 
-- (void)loginStatusChange:(NSNotification *)notification {
-//  if ([notification userInfo][@"succeed"]) {
+- (void)loadView {
+  [super loadView];
+  if (loggedIn) {
     [[self URLField] setStringValue:[[[URLHelper sharedInstance] baseURL] absoluteString]];
     [self setLoginStatus:LOGGED_IN];
-//  } else {
-//    [self setLoginStatus:LOGGED_OUT];
-//  }
+  }
+}
+
+- (void)loginStatusChange:(NSNotification *)notification {
+  loggedIn = YES;
 }
 
 - (NSString *)identifier {
-  return @"GeneralPreferences";
+  return @"AccountPreferences";
 }
 
 - (NSImage *)toolbarItemImage {
@@ -50,6 +54,23 @@ typedef enum {
 }
 
 - (IBAction)onLogin:(id)sender {
+  if (loggedIn) {
+    NSError *err;
+    NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
+                                                          inDomain:NSUserDomainMask
+                                                 appropriateForURL:nil
+                                                            create:YES
+                                                             error:&err] URLByAppendingPathComponent:@"StringerX"];
+    [[NSFileManager defaultManager] createDirectoryAtURL:pDir withIntermediateDirectories:YES attributes:nil error:&err];
+    NSURL *pFile = [pDir URLByAppendingPathComponent:@"account.plist"];
+    [[NSFileManager defaultManager] removeItemAtURL:pFile error:&err];
+    if (err) {
+      NSLog(@"ERROR: %@", [err localizedDescription]);
+    }
+    [[URLHelper sharedInstance] setDisabled:YES];
+    [self setLoginStatus:LOGGED_OUT];
+    return;
+  }
   NSURL *baseURL = [NSURL URLWithString:[[self URLField] stringValue]];
   if (!(baseURL &&
         ([baseURL.scheme isEqualToString:@"http"] || [baseURL.scheme isEqualToString:@"https"]) &&
@@ -72,9 +93,9 @@ typedef enum {
            result[8], result[9], result[10], result[11],
            result[12], result[13], result[14], result[15]
            ];
-  [self setLoginStatus:LOGGING_IN];
   [[URLHelper sharedInstance] setToken:token];
   [[URLHelper sharedInstance] setBaseURL:baseURL];
+  [[URLHelper sharedInstance] setDisabled:NO];
   [[URLHelper sharedInstance] requestWithPath:@"/fever/" success:^(AFHTTPRequestOperation *operation, id JSON) {
     if (![JSON isKindOfClass:[NSDictionary class]] || !JSON[@"api_version"]) {
       [[NSAlert alertWithMessageText:@"Wrong URL"
@@ -86,6 +107,7 @@ typedef enum {
       return;
     }
     [self setLoginStatus:LOGGED_IN];
+    [[ServiceHelper sharedInstance] getFeeds];
     NSError *err;
     NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
                                                           inDomain:NSUserDomainMask
@@ -133,6 +155,8 @@ typedef enum {
       [[self passwordField] setEnabled:NO];
       [[self loginButton] setTitle:@"Log out"];
       [[self loginButton] setEnabled:YES];
+      [[URLHelper sharedInstance] setDisabled:YES];
+      loggedIn = YES;
       break;
 
     case LOGGING_IN:
@@ -147,8 +171,8 @@ typedef enum {
       [[self passwordField] setEnabled:YES];
       [[self loginButton] setTitle:@"Log in"];
       [[self loginButton] setEnabled:YES];
-      [[URLHelper sharedInstance] setBaseURL:nil];
-      [[URLHelper sharedInstance] setToken:nil];
+      [[URLHelper sharedInstance] setDisabled:YES];
+      loggedIn = NO;
       break;
   }
 }

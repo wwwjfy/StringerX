@@ -36,6 +36,12 @@
                                                name:REFRESH_NOTIFICATION
                                              object:nil];
   
+  NSViewController *accountViewController = [[AccountPreferencesViewController alloc] init];
+  NSArray *controllers = @[accountViewController];
+  
+  NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
+  _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
+  
   NSError *err;
   NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
                                                         inDomain:NSUserDomainMask
@@ -99,13 +105,6 @@
 }
 
 - (IBAction)onPreferences:(id)sender {
-  if (!_preferencesWindowController) {
-    NSViewController *accountViewController = [[AccountPreferencesViewController alloc] init];
-    NSArray *controllers = @[accountViewController];
-
-    NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
-    _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
-  }
   [_preferencesWindowController showWindow:nil];
 }
 

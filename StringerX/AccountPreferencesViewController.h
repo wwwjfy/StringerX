@@ -8,7 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AccountPreferencesViewController : NSViewController
+@interface AccountPreferencesViewController : NSViewController {
+  BOOL loggedIn;
+}
+
 @property (weak) IBOutlet NSTextField *URLField;
 @property (weak) IBOutlet NSSecureTextField *passwordField;
 @property (weak) IBOutlet NSButton *loginButton;

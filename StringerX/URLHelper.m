@@ -24,6 +24,8 @@
 
 @implementation URLHelper
 
+@synthesize disabled;
+
 + (instancetype)sharedInstance {
   static URLHelper *instance = nil;
   static dispatch_once_t onceToken;
@@ -49,6 +51,9 @@
 - (void)requestWithPath:(NSString *)path
                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+  if (disabled) {
+    return;
+  }
   if (!_token) {
     NSLog(@"ERROR: login token is not set");
     return;
