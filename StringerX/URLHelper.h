@@ -16,6 +16,7 @@
 
 + (instancetype)sharedInstance;
 - (void)setToken:(NSString *)token;
+- (NSURL *)baseURL;
 - (void)setBaseURL:(NSURL *)baseURL;
 - (void)requestWithPath:(NSString *)path
                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success

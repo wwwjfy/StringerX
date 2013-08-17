@@ -9,6 +9,7 @@
 #import "AccountPreferencesViewController.h"
 
 #import <CommonCrypto/CommonDigest.h>
+#import "Notifications.h"
 #import "URLHelper.h"
 
 typedef enum {
@@ -20,7 +21,20 @@ typedef enum {
 @implementation AccountPreferencesViewController
 
 - (id)init {
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(loginStatusChange:)
+                                               name:STRINGER_LOGIN_STATUS_NOTIFICATION
+                                             object:nil];
   return [self initWithNibName:@"AccountPreferencesViewController" bundle:nil];
+}
+
+- (void)loginStatusChange:(NSNotification *)notification {
+//  if ([notification userInfo][@"succeed"]) {
+    [[self URLField] setStringValue:[[[URLHelper sharedInstance] baseURL] absoluteString]];
+    [self setLoginStatus:LOGGED_IN];
+//  } else {
+//    [self setLoginStatus:LOGGED_OUT];
+//  }
 }
 
 - (NSString *)identifier {

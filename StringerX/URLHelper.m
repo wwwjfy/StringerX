@@ -37,6 +37,10 @@
   _token = token;
 }
 
+- (NSURL *)baseURL {
+  return [_client baseURL];
+}
+
 - (void)setBaseURL:(NSURL *)baseURL {
   _client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
   [_client registerHTTPOperationClass:[StringerJSONRequestOperation class]];

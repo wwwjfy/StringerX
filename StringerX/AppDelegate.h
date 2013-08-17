@@ -14,9 +14,6 @@
   int last_refreshed;
 }
 
-@property NSMutableDictionary *items;
-@property NSMutableArray *itemIds;
-@property NSMutableDictionary *feeds;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet WebView *webView;

@@ -11,6 +11,8 @@
 #import <AFNetworking.h>
 #import <MASPreferencesWindowController.h>
 
+#import <ServiceHelper.h>
+#import "Notifications.h"
 #import "URLHelper.h"
 #import "TheTableCellView.h"
 #import "AccountPreferencesViewController.h"
@@ -23,19 +25,16 @@
 
 @implementation AppDelegate
 
-@synthesize items;
-@synthesize itemIds;
-@synthesize feeds;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   [[self tableView] setDataSource:self];
   [[self tableView] setDelegate:self];
   [[self tableView] setAllowsTypeSelect:NO];
-  items = [NSMutableDictionary dictionary];
-  itemIds = [NSMutableArray array];
-  feeds = [NSMutableDictionary dictionary];
   [[self webView] setHidden:YES];
   [[self webView] setPolicyDelegate:self];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(refresh:)
+                                               name:REFRESH_NOTIFICATION
+                                             object:nil];
   
   NSError *err;
   NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
@@ -51,7 +50,12 @@
     if (!err) {
       [[URLHelper sharedInstance] setBaseURL:[NSURL URLWithString:accountDict[@"URL"]]];
       [[URLHelper sharedInstance] setToken:accountDict[@"token"]];
-      [self getFeeds];
+      [[URLHelper sharedInstance] requestWithPath:@"/fever/" success:^(AFHTTPRequestOperation *operation, id JSON) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:STRINGER_LOGIN_STATUS_NOTIFICATION object:nil];
+        [[ServiceHelper sharedInstance] getFeeds];
+      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self onPreferences:nil];
+      }];
       return;
     }
   }
@@ -105,62 +109,15 @@
   [_preferencesWindowController showWindow:nil];
 }
 
-#pragma mark Network
 
-- (void)getFeeds {
-  [[URLHelper sharedInstance] requestWithPath:@"/fever/?feeds" success:^(AFHTTPRequestOperation *operation, id JSON) {
-    for (NSDictionary *feed in JSON[@"feeds"]) {
-      [self feeds][feed[@"id"]] = feed[@"title"];
-    };
-    [self syncWithServer];
-    [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
-  } failure:nil];
-}
-
-- (void)syncWithServer {
-  [[URLHelper sharedInstance] requestWithPath:@"/fever/?items" success:^(AFHTTPRequestOperation *operation, id JSON) {
-    NSArray *newItems = JSON[@"items"];
-    BOOL changed = NO;
-    NSInteger currentRow = [[self tableView] selectedRow];
-    NSNumber *currentId;
-    if (currentRow != -1) {
-      currentId = [self itemIds][currentRow];
-    }
-    for (NSDictionary * item in newItems) {
-      if ([[self itemIds] containsObject:item[@"id"]]) {
-        continue;
-      }
-      if ([[self itemIds] count] == 0) {
-        [[self itemIds] addObject:item[@"id"]];
-      } else {
-        for (int i = 0; i < [[self itemIds] count]; i++) {
-          if ([self items][[self itemIds][i]][@"created_on_time"] < item[@"created_on_time"]) {
-            [[self itemIds] insertObject:item[@"id"] atIndex:i];
-            break;
-          }
-          if (i == ([[self itemIds] count] - 1)) {
-            [[self itemIds] addObject:item[@"id"]];
-            break;
-          }
-        }
-      }
-      [[self items] setObject:item forKey:item[@"id"]];
-      changed = YES;
-    }
-    if (changed) {
-      [self refresh];
-      if (currentRow != -1) {
-        [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:[[self itemIds] indexOfObject:currentId]] byExtendingSelection:NO];
-      }
-    }
-    last_refreshed = [JSON[@"last_refreshed_on_time"] intValue];
-  } failure:nil];
-}
-
-- (void)refresh {
+- (void)refresh:(NSNotification *)notification {
   [[self tableView] reloadData];
-  if ([[self items] count] > 0) {
-    [[[NSApplication sharedApplication] dockTile] setBadgeLabel:[NSString stringWithFormat:@"%lu", [[self items] count]]];
+  NSNumber *currentRow = [[notification userInfo] objectForKey:@"currentRow"];
+  if (currentRow) {
+    [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:[currentRow integerValue]] byExtendingSelection:NO];
+  }
+  if ([[[ServiceHelper sharedInstance] items] count] > 0) {
+    [[[NSApplication sharedApplication] dockTile] setBadgeLabel:[NSString stringWithFormat:@"%lu", [[[ServiceHelper sharedInstance] items] count]]];
   } else {
     [[[NSApplication sharedApplication] dockTile] setBadgeLabel:@""];
   }
@@ -169,7 +126,7 @@
 #pragma mark Table source and delegate
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-  return [[self items] count];
+  return [[[ServiceHelper sharedInstance] items] count];
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
@@ -177,13 +134,13 @@
   [view setAutoresizingMask:NSViewWidthSizable];
   
   // title
-  [[view textField] setStringValue:[self items][[self itemIds][row]][@"title"]];
+  [[view textField] setStringValue:[[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][row]][@"title"]];
   
   // source
-  [[view sourceField] setStringValue:[self feeds][[self items][[self itemIds][row]][@"feed_id"]]];
+  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] feeds][[[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][row]][@"feed_id"]]];
   
   // detailed text
-  NSString *html = [self items][[self itemIds][row]][@"html"];
+  NSString *html = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][row]][@"html"];
   NSRange r;
   while ((r = [html rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
     html = [html stringByReplacingCharactersInRange:r withString:@""];
@@ -219,11 +176,15 @@
   }
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+  [[ServiceHelper sharedInstance] setCurrentRow:[[self tableView] selectedRow]];
+}
+
 #pragma mark Item operations
 
 - (IBAction)nextItem:(id)sender {
   NSInteger current = [[self tableView] selectedRow];
-  if ((current + 1) >= (NSInteger)[[self itemIds] count]) {
+  if ((current + 1) >= (NSInteger)[[[ServiceHelper sharedInstance] itemIds] count]) {
     return;
   }
   [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:(current + 1)] byExtendingSelection:NO];
@@ -247,7 +208,7 @@
   if ([[self tableView] selectedRow] == -1) {
     return;
   }
-  NSDictionary *item = [self items][[self itemIds][[[self tableView] selectedRow]]];
+  NSDictionary *item = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][[[self tableView] selectedRow]]];
   NSString *html = [NSString stringWithFormat:@"<h1>%@</h1><div style=\"max-width:800px; margin\">%@</div>",
                     item[@"title"],
                     item[@"html"]];
@@ -261,18 +222,12 @@
   if (current == -1) {
     return;
   }
-  NSURL *url = [NSURL URLWithString:[self items][[self itemIds][current]][@"url"]];
+  NSURL *url = [NSURL URLWithString:[[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][current]][@"url"]];
   [self openInBrowserForURL:url];
 }
 
 - (IBAction)markAllRead:(id)sender {
-  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"/fever/?mark=group&as=read&id=1&before=%d", last_refreshed]
-                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                        [[self itemIds] removeAllObjects];
-                                        [[self items] removeAllObjects];
-                                        [self refresh];
-                                      }
-                                      failure:nil];
+  [[ServiceHelper sharedInstance] markAllRead];
 }
 
 @end
