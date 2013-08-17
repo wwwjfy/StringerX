@@ -11,9 +11,11 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "URLHelper.h"
 
-@interface AccountPreferencesViewController ()
-
-@end
+typedef enum {
+  LOGGED_IN,
+  LOGGING_IN,
+  LOGGED_OUT
+} LOGIN_STATUS;
 
 @implementation AccountPreferencesViewController
 
@@ -56,8 +58,7 @@
            result[8], result[9], result[10], result[11],
            result[12], result[13], result[14], result[15]
            ];
-  [[self loginButton] setTitle:@"Logging in..."];
-  [[self loginButton] setEnabled:NO];
+  [self setLoginStatus:LOGGING_IN];
   [[URLHelper sharedInstance] setToken:token];
   [[URLHelper sharedInstance] setBaseURL:baseURL];
   [[URLHelper sharedInstance] requestWithPath:@"/fever/" success:^(AFHTTPRequestOperation *operation, id JSON) {
@@ -67,13 +68,10 @@
                      alternateButton:nil
                          otherButton:nil
            informativeTextWithFormat:@""] runModal];
-      [self resetLoginStatus];
+      [self setLoginStatus:LOGGED_OUT];
       return;
     }
-    [[self URLField] setEnabled:NO];
-    [[self passwordField] setEnabled:NO];
-    [[self loginButton] setTitle:@"Log out"];
-    [[self loginButton] setEnabled:YES];
+    [self setLoginStatus:LOGGED_IN];
     NSError *err;
     NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
                                                           inDomain:NSUserDomainMask
@@ -110,13 +108,35 @@
                    alternateButton:nil
                        otherButton:nil
          informativeTextWithFormat:@"%@", errString] runModal];
-    [self resetLoginStatus];
+    [self setLoginStatus:LOGGED_OUT];
   }];
 }
 
-- (void)resetLoginStatus {
-  [[self loginButton] setTitle:@"Login"];
-  [[self loginButton] setEnabled:YES];
+- (void)setLoginStatus:(LOGIN_STATUS)status {
+  switch (status) {
+    case LOGGED_IN:
+      [[self URLField] setEnabled:NO];
+      [[self passwordField] setEnabled:NO];
+      [[self loginButton] setTitle:@"Log out"];
+      [[self loginButton] setEnabled:YES];
+      break;
+
+    case LOGGING_IN:
+      [[self URLField] setEnabled:NO];
+      [[self passwordField] setEnabled:NO];
+      [[self loginButton] setTitle:@"Logging in..."];
+      [[self loginButton] setEnabled:NO];
+      break;
+
+    case LOGGED_OUT:
+      [[self URLField] setEnabled:YES];
+      [[self passwordField] setEnabled:YES];
+      [[self loginButton] setTitle:@"Log in"];
+      [[self loginButton] setEnabled:YES];
+      [[URLHelper sharedInstance] setBaseURL:nil];
+      [[URLHelper sharedInstance] setToken:nil];
+      break;
+  }
 }
 
 @end
