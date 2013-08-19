@@ -207,14 +207,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="74" horizontalPageScroll="10" verticalLineScroll="74" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwv-KU-kgz">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwv-KU-kgz">
                         <rect key="frame" x="20" y="20" width="622" height="467"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="Yhc-Tf-kuh">
                             <rect key="frame" x="1" y="1" width="620" height="465"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="72" rowSizeStyle="automatic" viewBased="YES" id="0Zf-kC-4h6">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="0Zf-kC-4h6">
                                     <rect key="frame" x="0.0" y="0.0" width="620" height="465"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -256,7 +256,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="zKr-3F-Vvx">
-                                                            <rect key="frame" x="26" y="35" width="543" height="17"/>
+                                                            <rect key="frame" x="26" y="35" width="99" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Table View Cell" id="8Sq-PA-Wpd">
                                                                 <font key="font" metaFont="system"/>
@@ -275,7 +275,6 @@
                                                         </textField>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="zKr-3F-Vvx" secondAttribute="trailing" constant="50" id="IoY-PV-9e8"/>
                                                         <constraint firstItem="sxi-vt-5aw" firstAttribute="top" secondItem="6nL-r5-M4M" secondAttribute="top" id="c3q-Ku-mGb"/>
                                                         <constraint firstItem="zKr-3F-Vvx" firstAttribute="top" secondItem="sxi-vt-5aw" secondAttribute="bottom" constant="1" id="fgE-gx-RoK"/>
                                                         <constraint firstItem="zKr-3F-Vvx" firstAttribute="leading" secondItem="sxi-vt-5aw" secondAttribute="leading" id="hhU-U6-ojj"/>
@@ -308,12 +307,23 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <webView hidden="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9z-ON-K3E">
+                        <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" loadsImagesAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO">
+                            <nil key="identifier"/>
+                        </webPreferences>
+                    </webView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" symbolic="YES" id="2Fw-fH-wwY"/>
                     <constraint firstAttribute="trailing" secondItem="Jwv-KU-kgz" secondAttribute="trailing" constant="20" symbolic="YES" id="4AK-oX-jqU"/>
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" symbolic="YES" id="7bB-Tc-7bT"/>
+                    <constraint firstItem="N9z-ON-K3E" firstAttribute="top" secondItem="372" secondAttribute="top" id="JZg-Yo-y4D"/>
+                    <constraint firstItem="N9z-ON-K3E" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="LhE-oX-L3t"/>
+                    <constraint firstAttribute="bottom" secondItem="N9z-ON-K3E" secondAttribute="bottom" id="MaM-gP-LtC"/>
                     <constraint firstAttribute="bottom" secondItem="Jwv-KU-kgz" secondAttribute="bottom" constant="20" symbolic="YES" id="ZdF-3F-oW0"/>
+                    <constraint firstAttribute="trailing" secondItem="N9z-ON-K3E" secondAttribute="trailing" id="cI3-HX-Pjf"/>
                 </constraints>
             </view>
         </window>
@@ -325,13 +335,6 @@
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
-        <webView hidden="YES" maintainsBackForwardList="NO" id="N9z-ON-K3E">
-            <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" loadsImagesAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO">
-                <nil key="identifier"/>
-            </webPreferences>
-        </webView>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
