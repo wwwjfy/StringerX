@@ -41,8 +41,13 @@
       [self feeds][feed[@"id"]] = feed[@"title"];
     };
     [self syncWithServer];
-    [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
-  } failure:nil];
+    if (timer) {
+      [timer invalidate];
+    }
+    timer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"Failed to get feeds: %@", [error localizedDescription]);
+  }];
 }
 
 - (void)syncWithServer {
@@ -84,7 +89,9 @@
                                                         userInfo:userInfo];
     }
     last_refreshed = [JSON[@"last_refreshed_on_time"] intValue];
-  } failure:nil];
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"Failed to get items: %@", [error localizedDescription]);
+  }];
 }
 
 - (void)markAllRead {
@@ -93,8 +100,9 @@
                                         [[[ServiceHelper sharedInstance] itemIds] removeAllObjects];
                                         [[[ServiceHelper sharedInstance] items] removeAllObjects];
                                         [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION object:nil];
-                                      }
-                                      failure:nil];
+                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                        NSLog(@"Failed to mark all read: %@", [error localizedDescription]);
+                                      }];
   currentRow = -1;
 }
 

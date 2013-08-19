@@ -11,6 +11,7 @@
 @interface ServiceHelper : NSObject {
   int last_refreshed;
   NSInteger currentRow;
+  NSTimer *timer;
 }
 
 @property NSMutableDictionary *items;
