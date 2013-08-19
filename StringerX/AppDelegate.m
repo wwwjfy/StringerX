@@ -31,6 +31,7 @@
   [[self tableView] setAllowsTypeSelect:NO];
   [[self webView] setHidden:YES];
   [[self webView] setPolicyDelegate:self];
+  [[self webView] setUIDelegate:self];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(refresh:)
                                                name:REFRESH_NOTIFICATION
@@ -72,22 +73,6 @@
   return YES;
 }
 
-- (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
-  if (webViewOpen && ![[[request URL] absoluteString] isEqualToString:@"about:blank"]) {
-    [self openInBrowserForURL:[request URL]];
-  } else {
-    [listener use];
-  }
-}
-
-- (void)webView:(WebView *)webView decidePolicyForNewWindowAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request newFrameName:(NSString *)frameName decisionListener:(id<WebPolicyDecisionListener>)listener {
-  if (webViewOpen) {
-    [self openInBrowserForURL:[request URL]];
-  } else {
-    [listener use];
-  }
-}
-
 - (void)openInBrowserForURL:(NSURL *)url {
   LSLaunchURLSpec urlSpec = {nil, (__bridge CFArrayRef)@[url], nil, kLSLaunchDontSwitch, nil};
   LSOpenFromURLSpec(&urlSpec, nil);
@@ -108,7 +93,6 @@
   [_preferencesWindowController showWindow:nil];
 }
 
-
 - (void)refresh:(NSNotification *)notification {
   [[self tableView] reloadData];
   NSNumber *currentRow = [[notification userInfo] objectForKey:@"currentRow"];
@@ -119,6 +103,34 @@
     [[[NSApplication sharedApplication] dockTile] setBadgeLabel:[NSString stringWithFormat:@"%lu", [[[ServiceHelper sharedInstance] items] count]]];
   } else {
     [[[NSApplication sharedApplication] dockTile] setBadgeLabel:@""];
+  }
+}
+
+#pragma mark WebView
+
+- (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
+  if (webViewOpen && ![[[request URL] absoluteString] isEqualToString:@"about:blank"]) {
+    [self openInBrowserForURL:[request URL]];
+  } else {
+    [listener use];
+  }
+}
+
+- (void)webView:(WebView *)webView decidePolicyForNewWindowAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request newFrameName:(NSString *)frameName decisionListener:(id<WebPolicyDecisionListener>)listener {
+  if (webViewOpen) {
+    [self openInBrowserForURL:[request URL]];
+  } else {
+    [listener use];
+  }
+}
+
+- (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {
+  NSString *url = elementInformation[@"WebElementLinkURL"];
+  if (url) {
+    [[self urlText] setStringValue:url];
+    [[self urlText] setHidden:NO];
+  } else {
+    [[self urlText] setHidden:YES];
   }
 }
 
@@ -196,6 +208,7 @@
 - (IBAction)openItem:(id)sender {
   if (webViewOpen) {
     [[self webView] setHidden:YES];
+    [[self urlText] setHidden:YES];
     webViewOpen = NO;
   } else {
     [self loadWeb];
