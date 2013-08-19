@@ -226,6 +226,10 @@
 }
 
 - (IBAction)markAllRead:(id)sender {
+  if (webViewOpen) {
+    [[self webView] setHidden:YES];
+    webViewOpen = NO;
+  }
   [[ServiceHelper sharedInstance] markAllRead];
 }
 
