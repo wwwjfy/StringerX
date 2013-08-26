@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4488.2" systemVersion="13A538g" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4504" systemVersion="13A558" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4488.2"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="3334"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4504"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="3335"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -316,8 +316,11 @@
                         </webPreferences>
                     </webView>
                     <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vum-aR-8um">
-                        <rect key="frame" x="10" y="10" width="38" height="17"/>
+                        <rect key="frame" x="10" y="10" width="8" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="LjF-bH-eNR"/>
+                        </constraints>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" borderStyle="border" alignment="left" drawsBackground="YES" usesSingleLineMode="YES" id="3uf-QK-CRF">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -332,6 +335,7 @@
                     <constraint firstItem="N9z-ON-K3E" firstAttribute="top" secondItem="372" secondAttribute="top" id="JZg-Yo-y4D"/>
                     <constraint firstItem="N9z-ON-K3E" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="LhE-oX-L3t"/>
                     <constraint firstAttribute="bottom" secondItem="N9z-ON-K3E" secondAttribute="bottom" id="MaM-gP-LtC"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vum-aR-8um" secondAttribute="trailing" constant="500" id="NOI-j8-OVv"/>
                     <constraint firstItem="Vum-aR-8um" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="10" id="SEK-Gf-bX6"/>
                     <constraint firstAttribute="bottom" secondItem="Vum-aR-8um" secondAttribute="bottom" constant="10" id="Yq3-N9-P2M"/>
                     <constraint firstAttribute="bottom" secondItem="Jwv-KU-kgz" secondAttribute="bottom" constant="20" symbolic="YES" id="ZdF-3F-oW0"/>
