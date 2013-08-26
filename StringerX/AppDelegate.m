@@ -221,9 +221,12 @@
     return;
   }
   NSDictionary *item = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][[[self tableView] selectedRow]]];
-  NSString *html = [NSString stringWithFormat:@"<h1>%@</h1><div style=\"color: gray\">%@</div><div style=\"max-width:800px\">%@</div>",
+  NSString *html = [NSString stringWithFormat:@"<h1>%@</h1><div style=\"color: gray\">%@</div><div style=\"color: gray\">%@</div><div style=\"max-width:800px\">%@</div>",
                     item[@"title"],
-                    [[ServiceHelper sharedInstance] feeds][item[@"feed_id"]],
+                    item[@"author"],
+                    [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:[item[@"created_on_time"] intValue]]
+                                                   dateStyle:NSDateFormatterShortStyle
+                                                   timeStyle:NSDateFormatterMediumStyle],
                     item[@"html"]];
   [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
   [[self webView] setHidden:NO];
