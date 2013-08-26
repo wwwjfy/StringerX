@@ -29,6 +29,9 @@
   [[self tableView] setDataSource:self];
   [[self tableView] setDelegate:self];
   [[self tableView] setAllowsTypeSelect:NO];
+  NSSize spacing = [[self tableView] intercellSpacing];
+  spacing.height = 10;
+  [[self tableView] setIntercellSpacing:spacing];
   [[self webView] setHidden:YES];
   [[self webView] setPolicyDelegate:self];
   [[self webView] setUIDelegate:self];
