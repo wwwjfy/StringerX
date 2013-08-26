@@ -221,8 +221,9 @@
     return;
   }
   NSDictionary *item = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][[[self tableView] selectedRow]]];
-  NSString *html = [NSString stringWithFormat:@"<h1>%@</h1><div style=\"max-width:800px; margin\">%@</div>",
+  NSString *html = [NSString stringWithFormat:@"<h1>%@</h1><div style=\"color: gray\">%@</div><div style=\"max-width:800px\">%@</div>",
                     item[@"title"],
+                    [[ServiceHelper sharedInstance] feeds][item[@"feed_id"]],
                     item[@"html"]];
   [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
   [[self webView] setHidden:NO];
