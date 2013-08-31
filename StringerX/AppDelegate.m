@@ -225,6 +225,9 @@
 }
 
 - (IBAction)openItem:(id)sender {
+  if ([[self tableView] selectedRow] == -1) {
+    return;
+  }
   if (webViewOpen) {
     [self resizeWebView:NO];
     [[self urlText] setHidden:YES];
