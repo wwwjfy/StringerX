@@ -32,9 +32,10 @@
   NSSize spacing = [[self tableView] intercellSpacing];
   spacing.height = 10;
   [[self tableView] setIntercellSpacing:spacing];
-  [[self webView] setHidden:YES];
   [[self webView] setPolicyDelegate:self];
   [[self webView] setUIDelegate:self];
+  [self resizeWebView:NO];
+
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(refresh:)
                                                name:REFRESH_NOTIFICATION
@@ -85,7 +86,7 @@
   if ([[_preferencesWindowController window] isVisible] && [[_preferencesWindowController window] isMainWindow]) {
     [_preferencesWindowController close];
   } else if (webViewOpen) {
-    [[self webView] setHidden:YES];
+    [self resizeWebView:NO];
     webViewOpen = NO;
   } else {
     [[NSApplication sharedApplication] terminate:nil];
@@ -110,6 +111,21 @@
 }
 
 #pragma mark WebView
+
+- (void)resizeWebView:(BOOL)fullscreen {
+  [[self webView] setHidden:NO];
+  NSRect windowFrame = [[self window] frame];
+  NSRect centerFrame;
+  if (fullscreen) {
+    centerFrame = NSMakeRect(0, 0, windowFrame.size.width, windowFrame.size.height);
+  } else {
+    centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 0, 0);
+  }
+  [NSAnimationContext beginGrouping];
+  [[NSAnimationContext currentContext] setDuration:.3];
+  [[[self webView] animator] setFrame:centerFrame];
+  [NSAnimationContext endGrouping];
+}
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
   if (webViewOpen && ![[[request URL] absoluteString] isEqualToString:@"about:blank"]) {
@@ -210,11 +226,13 @@
 
 - (IBAction)openItem:(id)sender {
   if (webViewOpen) {
-    [[self webView] setHidden:YES];
+    [self resizeWebView:NO];
     [[self urlText] setHidden:YES];
     webViewOpen = NO;
+    [[self window] makeFirstResponder:[self tableView]];
   } else {
     [self loadWeb];
+    [self resizeWebView:YES];
     webViewOpen = YES;
   }
 }
@@ -232,7 +250,6 @@
                                                    timeStyle:NSDateFormatterMediumStyle],
                     item[@"html"]];
   [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
-  [[self webView] setHidden:NO];
   [[self window] makeFirstResponder:[self webView]];
 }
 
@@ -247,7 +264,7 @@
 
 - (IBAction)markAllRead:(id)sender {
   if (webViewOpen) {
-    [[self webView] setHidden:YES];
+    [self resizeWebView:NO];
     webViewOpen = NO;
   }
   [[ServiceHelper sharedInstance] markAllRead];
