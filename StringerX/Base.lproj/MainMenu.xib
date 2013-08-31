@@ -3,7 +3,6 @@
     <dependencies>
         <development version="5000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4504"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="3335"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -308,13 +307,6 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <webView hidden="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9z-ON-K3E">
-                        <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" loadsImagesAutomatically="NO" allowsAnimatedImages="NO" allowsAnimatedImageLooping="NO">
-                            <nil key="identifier"/>
-                        </webPreferences>
-                    </webView>
                     <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vum-aR-8um">
                         <rect key="frame" x="10" y="10" width="8" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -332,14 +324,10 @@
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" symbolic="YES" id="2Fw-fH-wwY"/>
                     <constraint firstAttribute="trailing" secondItem="Jwv-KU-kgz" secondAttribute="trailing" constant="20" symbolic="YES" id="4AK-oX-jqU"/>
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" symbolic="YES" id="7bB-Tc-7bT"/>
-                    <constraint firstItem="N9z-ON-K3E" firstAttribute="top" secondItem="372" secondAttribute="top" id="JZg-Yo-y4D"/>
-                    <constraint firstItem="N9z-ON-K3E" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="LhE-oX-L3t"/>
-                    <constraint firstAttribute="bottom" secondItem="N9z-ON-K3E" secondAttribute="bottom" id="MaM-gP-LtC"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vum-aR-8um" secondAttribute="trailing" constant="500" id="NOI-j8-OVv"/>
                     <constraint firstItem="Vum-aR-8um" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="10" id="SEK-Gf-bX6"/>
                     <constraint firstAttribute="bottom" secondItem="Vum-aR-8um" secondAttribute="bottom" constant="10" id="Yq3-N9-P2M"/>
                     <constraint firstAttribute="bottom" secondItem="Jwv-KU-kgz" secondAttribute="bottom" constant="20" symbolic="YES" id="ZdF-3F-oW0"/>
-                    <constraint firstAttribute="trailing" secondItem="N9z-ON-K3E" secondAttribute="trailing" id="cI3-HX-Pjf"/>
                 </constraints>
             </view>
         </window>
@@ -347,7 +335,6 @@
             <connections>
                 <outlet property="tableView" destination="0Zf-kC-4h6" id="JL4-c6-ryq"/>
                 <outlet property="urlText" destination="Vum-aR-8um" id="33F-e0-NnA"/>
-                <outlet property="webView" destination="N9z-ON-K3E" id="9Lo-9X-Anw"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>

@@ -17,8 +17,11 @@
 #import "TheTableCellView.h"
 #import "AccountPreferencesViewController.h"
 
+#define RESIZE_ANIMATION_DURATION .3
+
 @interface AppDelegate () {
   NSWindowController *_preferencesWindowController;
+  BOOL isResizing;
 }
 
 @end
@@ -32,6 +35,8 @@
   NSSize spacing = [[self tableView] intercellSpacing];
   spacing.height = 10;
   [[self tableView] setIntercellSpacing:spacing];
+  self.webView = [[WebView alloc] init];
+  [[[self window] contentView] addSubview:[self webView]];
   [[self webView] setPolicyDelegate:self];
   [[self webView] setUIDelegate:self];
   [self resizeWebView:NO];
@@ -86,8 +91,7 @@
   if ([[_preferencesWindowController window] isVisible] && [[_preferencesWindowController window] isMainWindow]) {
     [_preferencesWindowController close];
   } else if (webViewOpen) {
-    [self resizeWebView:NO];
-    webViewOpen = NO;
+    [self openItem:nil];
   } else {
     [[NSApplication sharedApplication] terminate:nil];
   }
@@ -113,8 +117,12 @@
 #pragma mark WebView
 
 - (void)resizeWebView:(BOOL)fullscreen {
+  if (isResizing) {
+    return;
+  }
+  isResizing = YES;
   [[self webView] setHidden:NO];
-  NSRect windowFrame = [[self window] frame];
+  NSRect windowFrame = [[[self window] contentView] frame];
   NSRect centerFrame;
   if (fullscreen) {
     centerFrame = NSMakeRect(0, 0, windowFrame.size.width, windowFrame.size.height);
@@ -122,9 +130,14 @@
     centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 0, 0);
   }
   [NSAnimationContext beginGrouping];
-  [[NSAnimationContext currentContext] setDuration:.3];
+  [[NSAnimationContext currentContext] setDuration:RESIZE_ANIMATION_DURATION];
   [[[self webView] animator] setFrame:centerFrame];
   [NSAnimationContext endGrouping];
+  [self performSelector:@selector(animationDidEnd) withObject:nil afterDelay:RESIZE_ANIMATION_DURATION];
+}
+
+- (void)animationDidEnd {
+  isResizing = NO;
 }
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
@@ -225,7 +238,7 @@
 }
 
 - (IBAction)openItem:(id)sender {
-  if ([[self tableView] selectedRow] == -1) {
+  if ([[self tableView] selectedRow] == -1 || isResizing) {
     return;
   }
   if (webViewOpen) {
@@ -234,8 +247,8 @@
     webViewOpen = NO;
     [[self window] makeFirstResponder:[self tableView]];
   } else {
-    [self loadWeb];
     [self resizeWebView:YES];
+    [self loadWeb];
     webViewOpen = YES;
   }
 }
@@ -267,8 +280,7 @@
 
 - (IBAction)markAllRead:(id)sender {
   if (webViewOpen) {
-    [self resizeWebView:NO];
-    webViewOpen = NO;
+    [self openItem:nil];
   }
   [[ServiceHelper sharedInstance] markAllRead];
 }
