@@ -121,13 +121,12 @@
     return;
   }
   isResizing = YES;
-  [[self webView] setHidden:NO];
   NSRect windowFrame = [[[self window] contentView] frame];
   NSRect centerFrame;
   if (fullscreen) {
     centerFrame = NSMakeRect(0, 0, windowFrame.size.width, windowFrame.size.height);
   } else {
-    centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 0, 0);
+    centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 1, 1);
   }
   [NSAnimationContext beginGrouping];
   [[NSAnimationContext currentContext] setDuration:RESIZE_ANIMATION_DURATION];
