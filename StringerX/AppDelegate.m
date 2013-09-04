@@ -188,7 +188,7 @@
     html = [html stringByReplacingCharactersInRange:r withString:@""];
   NSString *text = [NSString string];
   int count = 0;
-  for (NSString *paragraph in [html componentsSeparatedByString:@"\n"]) {
+  for (NSString *paragraph in [[html stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString:@"\n"]) {
     if ([paragraph isEqualToString:@""]) {
       continue;
     }
