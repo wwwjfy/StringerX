@@ -14,8 +14,6 @@
   AFHTTPClient *_client;
 }
 
-@property BOOL disabled;
-
 + (instancetype)sharedInstance;
 - (void)setToken:(NSString *)token;
 - (NSURL *)baseURL;

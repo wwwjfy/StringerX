@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
 
 @interface ServiceHelper : NSObject {
   int last_refreshed;
@@ -19,6 +20,11 @@
 @property NSMutableDictionary *feeds;
 
 + (instancetype)sharedInstance;
+- (void)loginWithBaseURL:(NSURL *)url
+               withToken:(NSString *)token
+                   retry:(BOOL)retry
+                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 - (void)getFeeds;
 - (void)markAllRead;
 - (void)setCurrentRow:(NSInteger)row;

@@ -10,6 +10,18 @@
 #import "Notifications.h"
 #import "URLHelper.h"
 
+typedef enum {
+  NONE,
+  LOGIN,
+  SYNC
+} ACTION;
+
+@interface ServiceHelper () {
+  ACTION nextAction;
+}
+
+@end
+
 @implementation ServiceHelper
 
 @synthesize items;
@@ -35,16 +47,63 @@
   return self;
 }
 
+- (void)nextCall {
+  switch (nextAction) {
+    case NONE:
+      break;
+
+    case LOGIN:
+      {
+        [self loginWithBaseURL:nil withToken:nil retry:NO success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          [self getFeeds];
+        } failure:nil];
+      }
+      break;
+
+    case SYNC:
+      {
+        [self syncWithServer];
+      }
+      break;
+  }
+}
+
+- (void)loginWithBaseURL:(NSURL *)url
+               withToken:(NSString *)token
+                   retry:(BOOL)retry
+                 success:(void (^)(AFHTTPRequestOperation *, id))success
+                 failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+  if (!retry && nextAction != LOGIN && timer) {
+    [timer invalidate];
+    timer = nil;
+  }
+  if (retry) {
+    if (!timer) {
+      timer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(nextCall) userInfo:nil repeats:YES];
+    }
+    if (nextAction != LOGIN) {
+      nextAction = LOGIN;
+    }
+  }
+  if (url && token) {
+    [[URLHelper sharedInstance] setBaseURL:url];
+    [[URLHelper sharedInstance] setToken:token];
+  }
+  [[URLHelper sharedInstance] requestWithPath:@"/fever/" success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    success(operation, responseObject);
+    [self getFeeds];
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    failure(operation, error);
+  }];
+}
+
 - (void)getFeeds {
   [[URLHelper sharedInstance] requestWithPath:@"/fever/?feeds" success:^(AFHTTPRequestOperation *operation, id JSON) {
     for (NSDictionary *feed in JSON[@"feeds"]) {
       [self feeds][feed[@"id"]] = feed[@"title"];
     };
     [self syncWithServer];
-    if (timer) {
-      [timer invalidate];
-    }
-    timer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(syncWithServer) userInfo:nil repeats:YES];
+    nextAction = SYNC;
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"Failed to get feeds: %@", [error localizedDescription]);
   }];

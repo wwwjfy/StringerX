@@ -13,7 +13,6 @@
 
 #import <ServiceHelper.h>
 #import "Notifications.h"
-#import "URLHelper.h"
 #import "TheTableCellView.h"
 #import "AccountPreferencesViewController.h"
 
@@ -64,14 +63,12 @@
                                                           encoding:NSUTF8StringEncoding
                                                              error:&err] propertyListFromStringsFileFormat];
     if (!err) {
-      [[URLHelper sharedInstance] setBaseURL:[NSURL URLWithString:accountDict[@"URL"]]];
-      [[URLHelper sharedInstance] setToken:accountDict[@"token"]];
-      [[URLHelper sharedInstance] requestWithPath:@"/fever/" success:^(AFHTTPRequestOperation *operation, id JSON) {
+      [[ServiceHelper sharedInstance] loginWithBaseURL:[NSURL URLWithString:accountDict[@"URL"]]
+                                             withToken:accountDict[@"token"]
+                                                 retry:YES
+                                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [[NSNotificationCenter defaultCenter] postNotificationName:STRINGER_LOGIN_STATUS_NOTIFICATION object:nil];
-        [[ServiceHelper sharedInstance] getFeeds];
-      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self onPreferences:nil];
-      }];
+      } failure:nil];
       return;
     }
   }

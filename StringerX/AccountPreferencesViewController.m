@@ -67,7 +67,6 @@ typedef enum {
     if (err) {
       NSLog(@"ERROR: %@", [err localizedDescription]);
     }
-    [[URLHelper sharedInstance] setDisabled:YES];
     [self setLoginStatus:LOGGED_OUT];
     return;
   }
@@ -93,10 +92,10 @@ typedef enum {
            result[8], result[9], result[10], result[11],
            result[12], result[13], result[14], result[15]
            ];
-  [[URLHelper sharedInstance] setToken:token];
-  [[URLHelper sharedInstance] setBaseURL:baseURL];
-  [[URLHelper sharedInstance] setDisabled:NO];
-  [[URLHelper sharedInstance] requestWithPath:@"/fever/" success:^(AFHTTPRequestOperation *operation, id JSON) {
+  [[ServiceHelper sharedInstance] loginWithBaseURL:baseURL
+                                         withToken:token
+                                             retry:NO
+                                           success:^(AFHTTPRequestOperation *operation, id JSON) {
     if (![JSON isKindOfClass:[NSDictionary class]] || !JSON[@"api_version"]) {
       [[NSAlert alertWithMessageText:@"Wrong URL"
                        defaultButton:nil
@@ -107,7 +106,6 @@ typedef enum {
       return;
     }
     [self setLoginStatus:LOGGED_IN];
-    [[ServiceHelper sharedInstance] getFeeds];
     NSError *err;
     NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
                                                           inDomain:NSUserDomainMask
@@ -132,7 +130,8 @@ typedef enum {
                          otherButton:nil
            informativeTextWithFormat:@"%@", [err localizedDescription]] runModal];
     }
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+  }
+                                           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSString *errString;
     if ([[operation response] statusCode] == 403) {
       errString = @"Authentication failed! Please verify the password.";
@@ -155,7 +154,6 @@ typedef enum {
       [[self passwordField] setEnabled:NO];
       [[self loginButton] setTitle:@"Log out"];
       [[self loginButton] setEnabled:YES];
-      [[URLHelper sharedInstance] setDisabled:YES];
       loggedIn = YES;
       break;
 
@@ -171,7 +169,6 @@ typedef enum {
       [[self passwordField] setEnabled:YES];
       [[self loginButton] setTitle:@"Log in"];
       [[self loginButton] setEnabled:YES];
-      [[URLHelper sharedInstance] setDisabled:YES];
       loggedIn = NO;
       break;
   }
