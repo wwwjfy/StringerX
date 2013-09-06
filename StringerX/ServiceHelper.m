@@ -141,7 +141,10 @@ typedef enum {
     if (changed) {
       NSDictionary *userInfo = nil;
       if (currentRow != -1) {
-        userInfo = @{@"currentRow": [NSNumber numberWithInteger:[[self itemIds] indexOfObject:currentId]]};
+        NSUInteger row = [[self itemIds] indexOfObject:currentId];
+        if (row != NSNotFound) {
+          userInfo = @{@"currentRow": [NSNumber numberWithUnsignedInteger:row]};
+        }
       }
       [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION
                                                           object:nil
