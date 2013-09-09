@@ -90,10 +90,14 @@ typedef enum {
     [[URLHelper sharedInstance] setToken:token];
   }
   [[URLHelper sharedInstance] requestWithPath:@"/fever/" success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    success(operation, responseObject);
+    if (success) {
+      success(operation, responseObject);
+    }
     [self getFeeds];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    failure(operation, error);
+    if (failure) {
+      failure(operation, error);
+    }
   }];
 }
 
