@@ -35,7 +35,7 @@
   spacing.height = 10;
   [[self tableView] setIntercellSpacing:spacing];
   self.webView = [[WebView alloc] init];
-  [[[self window] contentView] addSubview:[self webView]];
+  [[[self window] contentView] addSubview:[self webView] positioned:NSWindowBelow relativeTo:[self urlText]];
   [[self webView] setPolicyDelegate:self];
   [[self webView] setUIDelegate:self];
   [self resizeWebView:NO];

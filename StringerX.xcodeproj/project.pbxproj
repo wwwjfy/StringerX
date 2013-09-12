@@ -364,6 +364,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StringerX/StringerX-Prefix.pch";
 				INFOPLIST_FILE = "StringerX/StringerX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = StringerX;
 				WRAPPER_EXTENSION = app;
 			};
@@ -378,6 +379,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StringerX/StringerX-Prefix.pch";
 				INFOPLIST_FILE = "StringerX/StringerX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = StringerX;
 				WRAPPER_EXTENSION = app;
 			};
