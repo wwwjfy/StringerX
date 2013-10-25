@@ -203,23 +203,29 @@
   return view;
 }
 
-- (IBAction)prevItem:(id)sender {
-  NSInteger current = [[self tableView] selectedRow];
-  if (current == -1) {
-    return;
-  }
-  [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:(current - 1)] byExtendingSelection:NO];
-  [[self tableView] scrollRowToVisible:(current - 1)];
-  if (webViewOpen) {
-    [self loadWeb];
-  }
-}
-
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
   [[ServiceHelper sharedInstance] setCurrentRow:[[self tableView] selectedRow]];
 }
 
 #pragma mark Item operations
+
+- (IBAction)prevItem:(id)sender {
+  NSInteger current = [[self tableView] selectedRow];
+  if (current == 0) {
+    return;
+  }
+  NSUInteger index;
+  if (current == -1) {
+    index = [[[ServiceHelper sharedInstance] itemIds] count] - 1;
+  } else {
+    index = current - 1;
+  }
+  [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
+  [[self tableView] scrollRowToVisible:index];
+  if (webViewOpen) {
+    [self loadWeb];
+  }
+}
 
 - (IBAction)nextItem:(id)sender {
   NSInteger current = [[self tableView] selectedRow];
