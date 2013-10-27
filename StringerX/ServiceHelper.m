@@ -121,24 +121,10 @@ typedef enum {
     if (currentRow != -1 && [[self itemIds] count] >= (currentRow + 1)) {
       currentId = [self itemIds][currentRow];
     }
+    [[self itemIds] removeAllObjects];
+    [[self items] removeAllObjects];
     for (NSDictionary * item in newItems) {
-      if ([[self itemIds] containsObject:item[@"id"]]) {
-        continue;
-      }
-      if ([[self itemIds] count] == 0) {
-        [[self itemIds] addObject:item[@"id"]];
-      } else {
-        for (int i = 0; i < [[self itemIds] count]; i++) {
-          if ([self items][[self itemIds][i]][@"created_on_time"] < item[@"created_on_time"]) {
-            [[self itemIds] insertObject:item[@"id"] atIndex:i];
-            break;
-          }
-          if (i == ([[self itemIds] count] - 1)) {
-            [[self itemIds] addObject:item[@"id"]];
-            break;
-          }
-        }
-      }
+      [[self itemIds] addObject:item[@"id"]];
       [[self items] setObject:item forKey:item[@"id"]];
       changed = YES;
     }
@@ -163,8 +149,8 @@ typedef enum {
 - (void)markAllRead {
   [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"/fever/?mark=group&as=read&id=1&before=%d", last_refreshed]
                                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                        [[[ServiceHelper sharedInstance] itemIds] removeAllObjects];
-                                        [[[ServiceHelper sharedInstance] items] removeAllObjects];
+                                        [[self itemIds] removeAllObjects];
+                                        [[self items] removeAllObjects];
                                         [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION object:nil];
                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                         NSLog(@"Failed to mark all read: %@", [error localizedDescription]);
