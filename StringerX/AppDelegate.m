@@ -240,7 +240,7 @@
 }
 
 - (IBAction)openItem:(id)sender {
-  if ([[self tableView] selectedRow] == -1 || isResizing) {
+  if (isResizing) {
     return;
   }
   if (webViewOpen) {
