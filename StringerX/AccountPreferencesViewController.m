@@ -81,7 +81,7 @@ typedef enum {
          informativeTextWithFormat:@""] runModal];
     return;
   }
-  NSString *token = [NSString stringWithFormat:@"stringer:%@", [[self passwordField] stringValue]];
+  NSString *token = [NSString stringWithFormat:@"admin:%@", [[self passwordField] stringValue]];
   const char *cstr = [token UTF8String];
   unsigned char result[16];
   CC_MD5(cstr, (CC_LONG)strlen(cstr), result);
@@ -96,15 +96,6 @@ typedef enum {
                                          withToken:token
                                              retry:NO
                                            success:^(AFHTTPRequestOperation *operation, id JSON) {
-    if (![JSON isKindOfClass:[NSDictionary class]] || !JSON[@"api_version"]) {
-      [[NSAlert alertWithMessageText:@"Wrong URL"
-                       defaultButton:nil
-                     alternateButton:nil
-                         otherButton:nil
-           informativeTextWithFormat:@""] runModal];
-      [self setLoginStatus:LOGGED_OUT];
-      return;
-    }
     [self setLoginStatus:LOGGED_IN];
     NSError *err;
     NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory

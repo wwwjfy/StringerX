@@ -89,7 +89,15 @@ typedef enum {
     [[URLHelper sharedInstance] setBaseURL:url];
     [[URLHelper sharedInstance] setToken:token];
   }
-  [[URLHelper sharedInstance] requestWithPath:@"/fever/" success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/" success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    if (![responseObject isKindOfClass:[NSDictionary class]] || !responseObject[@"api_version"]) {
+      failure(operation, [NSError errorWithDomain:@"StringerX" code:0 userInfo:@{NSLocalizedDescriptionKey: @"API mismatch"}]);
+      return;
+    }
+    if (![responseObject[@"auth"] intValue]) {
+      failure(operation, [NSError errorWithDomain:@"StringerX" code:0 userInfo:@{NSLocalizedDescriptionKey: @"Authentication failed"}]);
+      return;
+    }
     if (success) {
       success(operation, responseObject);
     }
@@ -102,7 +110,7 @@ typedef enum {
 }
 
 - (void)getFeeds {
-  [[URLHelper sharedInstance] requestWithPath:@"/fever/?feeds" success:^(AFHTTPRequestOperation *operation, id JSON) {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/?feeds" success:^(AFHTTPRequestOperation *operation, id JSON) {
     for (NSDictionary *feed in JSON[@"feeds"]) {
       [self feeds][feed[@"id"]] = feed[@"title"];
     };
@@ -114,7 +122,7 @@ typedef enum {
 }
 
 - (void)syncWithServer {
-  [[URLHelper sharedInstance] requestWithPath:@"/fever/?items" success:^(AFHTTPRequestOperation *operation, id JSON) {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/?items" success:^(AFHTTPRequestOperation *operation, id JSON) {
     NSArray *newItems = JSON[@"items"];
     BOOL changed = NO;
     NSNumber *currentId;
@@ -147,7 +155,7 @@ typedef enum {
 }
 
 - (void)markAllRead {
-  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"/fever/?mark=group&as=read&id=1&before=%d", last_refreshed]
+  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=group&as=read&id=0&before=%d", last_refreshed]
                                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                         [[self itemIds] removeAllObjects];
                                         [[self items] removeAllObjects];
