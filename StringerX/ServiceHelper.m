@@ -62,7 +62,7 @@ typedef enum {
 
     case SYNC:
       {
-        [self syncWithServer];
+        [self syncUnreadItemIds];
       }
       break;
   }
@@ -114,15 +114,23 @@ typedef enum {
     for (NSDictionary *feed in JSON[@"feeds"]) {
       [self feeds][feed[@"id"]] = feed[@"title"];
     };
-    [self syncWithServer];
+    [self syncUnreadItemIds];
     nextAction = SYNC;
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"Failed to get feeds: %@", [error localizedDescription]);
   }];
 }
 
-- (void)syncWithServer {
-  [[URLHelper sharedInstance] requestWithPath:@"fever/?items" success:^(AFHTTPRequestOperation *operation, id JSON) {
+- (void)syncUnreadItemIds {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/?unread_item_ids" success:^(AFHTTPRequestOperation *operation, id JSON) {
+    NSString *unreadItemIds = JSON[@"unread_item_ids"];
+    [self syncItemsWithIds:unreadItemIds];
+  } failure:nil];
+}
+
+- (void)syncItemsWithIds:(NSString *)unreadItemIds {
+  NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&with_ids=%@", unreadItemIds];
+  [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(AFHTTPRequestOperation *operation, id JSON) {
     NSArray *newItems = JSON[@"items"];
     BOOL changed = NO;
     NSNumber *currentId;
