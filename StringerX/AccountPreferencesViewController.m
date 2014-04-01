@@ -81,7 +81,7 @@ typedef enum {
          informativeTextWithFormat:@""] runModal];
     return;
   }
-  NSString *token = [NSString stringWithFormat:@"admin:%@", [[self passwordField] stringValue]];
+  NSString *token = [NSString stringWithFormat:@"stringer:%@", [[self passwordField] stringValue]];
   const char *cstr = [token UTF8String];
   unsigned char result[16];
   CC_MD5(cstr, (CC_LONG)strlen(cstr), result);

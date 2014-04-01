@@ -137,7 +137,7 @@ typedef enum {
       min = [item intValue];
     }
   }
-  NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&since_id=%ld", min];
+  NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&since_id=%ld", min-1];
   [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(AFHTTPRequestOperation *operation, id JSON) {
     NSArray *newItems = [JSON[@"items"] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
       if (obj1[@"created_on_time"] > obj2[@"created_on_time"]) {
