@@ -10,7 +10,7 @@
 #import <AFNetworking.h>
 
 @interface ServiceHelper : NSObject {
-  int last_refreshed;
+  int last_item_created_on;
   NSInteger currentRow;
   NSTimer *timer;
 }

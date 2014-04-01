@@ -131,9 +131,22 @@ typedef enum {
 }
 
 - (void)syncItemsWithIds:(NSString *)unreadItemIds {
-  NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&with_ids=%@", unreadItemIds];
+  long min = NSIntegerMax;
+  for (NSString *item in [unreadItemIds componentsSeparatedByString:@","]) {
+    if ([item intValue] < min) {
+      min = [item intValue];
+    }
+  }
+  NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&since_id=%ld", min];
   [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(AFHTTPRequestOperation *operation, id JSON) {
-    NSArray *newItems = JSON[@"items"];
+    NSArray *newItems = [JSON[@"items"] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+      if (obj1[@"created_on_time"] > obj2[@"created_on_time"]) {
+        // reversed because the sort function itself return ascending results
+        return NSOrderedAscending;
+      }
+      return NSOrderedDescending;
+    }];
+
     BOOL changed = NO;
     NSNumber *currentId;
     if (currentRow != -1 && [[self itemIds] count] >= (currentRow + 1)) {
@@ -147,6 +160,7 @@ typedef enum {
       changed = YES;
     }
     if (changed) {
+      last_item_created_on = [newItems[0][@"created_on_time"] intValue];
       NSDictionary *userInfo = nil;
       if (currentRow != -1) {
         NSUInteger row = [[self itemIds] indexOfObject:currentId];
@@ -158,14 +172,13 @@ typedef enum {
                                                           object:nil
                                                         userInfo:userInfo];
     }
-    last_refreshed = [JSON[@"last_refreshed_on_time"] intValue];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"Failed to get items: %@", [error localizedDescription]);
   }];
 }
 
 - (void)markAllRead {
-  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=group&as=read&id=0&before=%d", last_refreshed]
+  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=group&as=read&id=0&before=%d", last_item_created_on]
                                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                         [[self itemIds] removeAllObjects];
                                         [[self items] removeAllObjects];
