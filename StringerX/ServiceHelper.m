@@ -124,7 +124,7 @@ typedef enum {
 - (void)syncUnreadItemIds {
   [[URLHelper sharedInstance] requestWithPath:@"fever/?unread_item_ids" success:^(AFHTTPRequestOperation *operation, id JSON) {
     NSString *unreadItemIds = JSON[@"unread_item_ids"];
-    if (unreadItemIds) {
+    if (![unreadItemIds isEqualToString:@""]) {
       [self syncItemsWithIds:unreadItemIds];
     }
   } failure:nil];
