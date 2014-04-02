@@ -178,7 +178,7 @@ typedef enum {
 }
 
 - (void)markAllRead {
-  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=group&as=read&id=0&before=%d", last_item_created_on]
+  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=group&as=read&id=0&before=%d", last_item_created_on + 1]
                                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                         [[self itemIds] removeAllObjects];
                                         [[self items] removeAllObjects];
