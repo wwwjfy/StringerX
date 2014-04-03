@@ -34,11 +34,48 @@
   NSSize spacing = [[self tableView] intercellSpacing];
   spacing.height = 10;
   [[self tableView] setIntercellSpacing:spacing];
+
   self.webView = [[WebView alloc] init];
-  [[[self window] contentView] addSubview:[self webView] positioned:NSWindowBelow relativeTo:[self urlText]];
+  [[[self window] contentView] addSubview:[self webView] positioned:NSWindowAbove relativeTo:[self tableView]];
   [[self webView] setPolicyDelegate:self];
   [[self webView] setUIDelegate:self];
   [self resizeWebView:NO];
+
+  [self setUrlText:[[NSTextField alloc] init]];
+  [[self urlText] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [[self urlText] setEditable:NO];
+  [[self urlText] setTextColor:[NSColor controlTextColor]];
+  [[self urlText] setBackgroundColor:[NSColor controlBackgroundColor]];
+  [[self urlText] setHidden:YES];
+  [[[self window] contentView] addSubview:[self urlText] positioned:NSWindowAbove relativeTo:self.webView];
+  [[self urlText] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
+                                                             attribute:NSLayoutAttributeHeight
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeNotAnAttribute
+                                                            multiplier:1
+                                                              constant:21]];
+  [[self urlText] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
+                                                             attribute:NSLayoutAttributeWidth
+                                                             relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeNotAnAttribute
+                                                            multiplier:1
+                                                              constant:500]];
+  [[[self window] contentView] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
+                                                             attribute:NSLayoutAttributeLeading
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:[[self window] contentView]
+                                                             attribute:NSLayoutAttributeLeading
+                                                            multiplier:1
+                                                              constant:10]];
+  [[[self window] contentView] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:[[self window] contentView]
+                                                             attribute:NSLayoutAttributeBottom
+                                                            multiplier:1
+                                                              constant:-10]];
 
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(refresh:)
@@ -47,7 +84,7 @@
   
   NSViewController *accountViewController = [[AccountPreferencesViewController alloc] init];
   NSArray *controllers = @[accountViewController];
-  
+
   NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
   _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
   

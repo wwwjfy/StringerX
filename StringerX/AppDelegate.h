@@ -17,7 +17,7 @@
 @property (weak) IBOutlet NSTableView *tableView;
 @property (assign) IBOutlet NSWindow *window;
 @property WebView *webView;
-@property (weak) IBOutlet NSTextField *urlText;
+@property NSTextField *urlText;
 - (IBAction)prevItem:(id)sender;
 - (IBAction)nextItem:(id)sender;
 - (IBAction)openItem:(id)sender;
