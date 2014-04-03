@@ -155,6 +155,9 @@ typedef enum {
     [[self itemIds] removeAllObjects];
     [[self items] removeAllObjects];
     for (NSDictionary * item in newItems) {
+      if ([item[@"is_read"] intValue] == 1) {
+        continue;
+      }
       [[self itemIds] addObject:item[@"id"]];
       [[self items] setObject:item forKey:item[@"id"]];
       changed = YES;
