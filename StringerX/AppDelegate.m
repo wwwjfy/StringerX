@@ -162,11 +162,11 @@
   } else {
     centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 1, 1);
   }
-  [NSAnimationContext beginGrouping];
-  [[NSAnimationContext currentContext] setDuration:RESIZE_ANIMATION_DURATION];
-  [[[self webView] animator] setFrame:centerFrame];
-  [NSAnimationContext endGrouping];
-  [self performSelector:@selector(animationDidEnd) withObject:nil afterDelay:RESIZE_ANIMATION_DURATION];
+  [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+    [[[self webView] animator] setFrame:centerFrame];
+  } completionHandler:^{
+    [self animationDidEnd];
+  }];
 }
 
 - (void)animationDidEnd {
