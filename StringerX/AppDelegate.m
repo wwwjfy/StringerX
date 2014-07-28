@@ -181,8 +181,9 @@
   }
 }
 
+// handle clicking links
 - (void)webView:(WebView *)webView decidePolicyForNewWindowAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request newFrameName:(NSString *)frameName decisionListener:(id<WebPolicyDecisionListener>)listener {
-  if (webViewOpen) {
+  if (webViewOpen && [actionInformation[WebActionNavigationTypeKey] intValue] == WebNavigationTypeLinkClicked) {
     [self openInBrowserForURL:[request URL]];
   } else {
     [listener use];
