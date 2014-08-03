@@ -173,8 +173,9 @@
   isResizing = NO;
 }
 
+// handle showing external content
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
-  if (webViewOpen && ![[[request URL] absoluteString] isEqualToString:@"about:blank"]) {
+  if (webViewOpen && ![[[request URL] absoluteString] isEqualToString:@"about:blank"] && [actionInformation[WebActionNavigationTypeKey] intValue] == WebNavigationTypeLinkClicked) {
     [self openInBrowserForURL:[request URL]];
   } else {
     [listener use];
