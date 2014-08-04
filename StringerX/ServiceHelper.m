@@ -80,6 +80,7 @@ typedef enum {
   if (retry) {
     if (!timer) {
       timer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(nextCall) userInfo:nil repeats:YES];
+      [timer setTolerance:30];
     }
     if (nextAction != LOGIN) {
       nextAction = LOGIN;
