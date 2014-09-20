@@ -46,8 +46,7 @@
   [[self urlText] setEditable:NO];
   [[self urlText] setTextColor:[NSColor controlTextColor]];
   [[self urlText] setBackgroundColor:[NSColor controlBackgroundColor]];
-  [[self urlText] setHidden:YES];
-  [[[self window] contentView] addSubview:[self urlText] positioned:NSWindowAbove relativeTo:self.webView];
+  [self.webView addSubview:[self urlText]];
   [[self urlText] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
                                                              attribute:NSLayoutAttributeHeight
                                                              relatedBy:NSLayoutRelationEqual
@@ -197,7 +196,10 @@
     [[self urlText] setStringValue:url];
     [[self urlText] setHidden:NO];
   } else {
-    [[self urlText] setHidden:YES];
+    if (![[self urlText] isHidden]) {
+      [[self urlText] setHidden:YES];
+      [[self webView] setNeedsDisplay:YES];
+    }
   }
 }
 
