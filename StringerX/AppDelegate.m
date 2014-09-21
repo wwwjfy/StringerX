@@ -42,25 +42,12 @@
   [self resizeWebView:NO];
 
   [self setUrlText:[[NSTextField alloc] init]];
+  self.urlText = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 500, 21)];
   [[self urlText] setTranslatesAutoresizingMaskIntoConstraints:NO];
   [[self urlText] setEditable:NO];
   [[self urlText] setTextColor:[NSColor controlTextColor]];
   [[self urlText] setBackgroundColor:[NSColor controlBackgroundColor]];
   [self.webView addSubview:[self urlText]];
-  [[self urlText] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
-                                                             attribute:NSLayoutAttributeHeight
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:nil
-                                                             attribute:NSLayoutAttributeNotAnAttribute
-                                                            multiplier:1
-                                                              constant:21]];
-  [[self urlText] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
-                                                             attribute:NSLayoutAttributeWidth
-                                                             relatedBy:NSLayoutRelationGreaterThanOrEqual
-                                                                toItem:nil
-                                                             attribute:NSLayoutAttributeNotAnAttribute
-                                                            multiplier:1
-                                                              constant:500]];
   [[[self window] contentView] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
                                                              attribute:NSLayoutAttributeLeading
                                                              relatedBy:NSLayoutRelationEqual
@@ -153,23 +140,31 @@
   if (isResizing) {
     return;
   }
-  isResizing = YES;
   NSRect windowFrame = [[[self window] contentView] frame];
-  NSRect centerFrame;
   if (fullscreen) {
-    centerFrame = NSMakeRect(0, 0, windowFrame.size.width, windowFrame.size.height);
+    [self.webView setHidden:NO];
+    [[self webView] setFrame:NSMakeRect(0, 0, windowFrame.size.width, windowFrame.size.height)];
   } else {
-    centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 1, 1);
-  }
-  [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-    [[[self webView] animator] setFrame:centerFrame];
-  } completionHandler:^{
-    [self animationDidEnd];
-  }];
-}
+    isResizing = YES;
+    [self.webView lockFocus];
+    NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:[self.webView bounds]];
+    [self.webView unlockFocus];
+    NSImage *pdfImage = [[NSImage alloc] initWithSize:[[self webView] bounds].size];
+    [pdfImage addRepresentation:rep];
+    NSImageView *imageView = [[NSImageView alloc] initWithFrame:[self.webView frame]];
+    [imageView setImage:pdfImage];
 
-- (void)animationDidEnd {
-  isResizing = NO;
+    [[[self window] contentView] addSubview:imageView positioned:NSWindowAbove relativeTo:[self tableView]];
+    [self.webView setHidden:YES];
+
+    NSRect centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 1, 1);
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+      [[imageView animator] setFrame:centerFrame];
+    } completionHandler:^{
+      [imageView removeFromSuperview];
+      isResizing = NO;
+    }];
+  }
 }
 
 // handle showing external content
