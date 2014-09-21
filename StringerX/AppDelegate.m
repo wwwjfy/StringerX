@@ -39,7 +39,17 @@
   [[[self window] contentView] addSubview:[self webView] positioned:NSWindowAbove relativeTo:[self tableView]];
   [[self webView] setPolicyDelegate:self];
   [[self webView] setUIDelegate:self];
-  [self resizeWebView:NO];
+  [[self webView] setHidden:YES];
+  [[self webView] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[webView]-|"
+                                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                                      metrics:nil
+                                                                                        views:@{@"webView": self.webView}]];
+  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[webView]-|"
+                                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                                      metrics:nil
+                                                                                        views:@{@"webView": self.webView}]];
+
 
   [self setUrlText:[[NSTextField alloc] init]];
   self.urlText = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 500, 21)];
@@ -143,7 +153,6 @@
   NSRect windowFrame = [[[self window] contentView] frame];
   if (fullscreen) {
     [self.webView setHidden:NO];
-    [[self webView] setFrame:NSMakeRect(0, 0, windowFrame.size.width, windowFrame.size.height)];
   } else {
     isResizing = YES;
     [self.webView lockFocus];
