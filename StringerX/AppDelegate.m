@@ -16,8 +16,6 @@
 #import "TheTableCellView.h"
 #import "AccountPreferencesViewController.h"
 
-#define RESIZE_ANIMATION_DURATION .3
-
 @interface AppDelegate () {
   NSWindowController *_preferencesWindowController;
   BOOL isResizing;
@@ -36,7 +34,7 @@
   [[self tableView] setIntercellSpacing:spacing];
 
   self.webView = [[WebView alloc] init];
-  [[[self window] contentView] addSubview:[self webView] positioned:NSWindowAbove relativeTo:[self tableView]];
+  [[[self window] contentView] addSubview:[self webView] positioned:NSWindowAbove relativeTo:nil];
   [[self webView] setPolicyDelegate:self];
   [[self webView] setUIDelegate:self];
   [[self webView] setHidden:YES];
@@ -165,6 +163,7 @@
 
     [[[self window] contentView] addSubview:imageView positioned:NSWindowAbove relativeTo:[self tableView]];
     [self.webView setHidden:YES];
+    [[[self webView] mainFrame] loadHTMLString:@"" baseURL:nil];
 
     NSRect centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 1, 1);
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
@@ -294,8 +293,8 @@
     webViewOpen = NO;
     [[self window] makeFirstResponder:[self tableView]];
   } else {
-    [self resizeWebView:YES];
     [self loadWeb];
+    [self resizeWebView:YES];
     webViewOpen = YES;
   }
 }
