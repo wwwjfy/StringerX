@@ -39,11 +39,11 @@
   [[self webView] setUIDelegate:self];
   [[self webView] setHidden:YES];
   [[self webView] setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[webView]-|"
+  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[webView]|"
                                                                                       options:NSLayoutFormatAlignAllBaseline
                                                                                       metrics:nil
                                                                                         views:@{@"webView": self.webView}]];
-  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[webView]-|"
+  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|"
                                                                                       options:NSLayoutFormatAlignAllBaseline
                                                                                       metrics:nil
                                                                                         views:@{@"webView": self.webView}]];
