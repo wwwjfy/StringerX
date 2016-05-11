@@ -7,7 +7,9 @@ DEPENDENCIES:
   - MASPreferences
 
 SPEC CHECKSUMS:
-  AFNetworking: 9ec8aafb9269236a7630bd8d9838ce2ba30fa2a0
-  MASPreferences: b8c112b4b6e6cbd32b8f49d249eb152d1eeb38f8
+  AFNetworking: f0d89caedb504adcb43e7d90e57f42e703adf415
+  MASPreferences: 4aeff0267c6ebd3663c65dfc94094156201240f8
 
-COCOAPODS: 0.20.2
+PODFILE CHECKSUM: 74a3670651f400d857ceacc1b08b78d19a2d0cc5
+
+COCOAPODS: 1.0.0.beta.8
