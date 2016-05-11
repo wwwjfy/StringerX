@@ -11,7 +11,7 @@
 #import <AFNetworking.h>
 #import <MASPreferencesWindowController.h>
 
-#import <ServiceHelper.h>
+#import "ServiceHelper.h"
 #import "Notifications.h"
 #import "TheTableCellView.h"
 #import "AccountPreferencesViewController.h"
@@ -320,7 +320,8 @@
   if (current == -1) {
     return;
   }
-  NSURL *url = [NSURL URLWithString:[[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][current]][@"url"]];
+  NSString *urlString = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][current]][@"url"];
+  NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
   [self openInBrowserForURL:url];
 }
 
