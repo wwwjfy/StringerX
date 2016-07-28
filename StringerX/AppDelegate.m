@@ -291,11 +291,13 @@
     [self resizeWebView:NO];
     [[self urlText] setHidden:YES];
     webViewOpen = NO;
+    [[self tableView] setHidden:NO];
     [[self window] makeFirstResponder:[self tableView]];
   } else {
     [self loadWeb];
     [self resizeWebView:YES];
     webViewOpen = YES;
+    [[self tableView] setHidden:YES];
   }
 }
 
