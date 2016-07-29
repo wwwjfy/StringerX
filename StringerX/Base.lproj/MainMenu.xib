@@ -4,6 +4,7 @@
         <deployment identifier="macosx"/>
         <development version="5000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -303,18 +304,29 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <webView maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVO-rs-eMT">
+                        <rect key="frame" x="0.0" y="0.0" width="662" height="507"/>
+                        <webPreferences key="preferences" defaultFontSize="17" defaultFixedFontSize="17" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
+                            <nil key="identifier"/>
+                        </webPreferences>
+                    </webView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" symbolic="YES" id="2Fw-fH-wwY"/>
+                    <constraint firstItem="aVO-rs-eMT" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="2Kl-vm-UQQ"/>
                     <constraint firstAttribute="trailing" secondItem="Jwv-KU-kgz" secondAttribute="trailing" constant="20" symbolic="YES" id="4AK-oX-jqU"/>
                     <constraint firstItem="Jwv-KU-kgz" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" symbolic="YES" id="7bB-Tc-7bT"/>
+                    <constraint firstAttribute="bottom" secondItem="aVO-rs-eMT" secondAttribute="bottom" id="CqN-88-8yT"/>
                     <constraint firstAttribute="bottom" secondItem="Jwv-KU-kgz" secondAttribute="bottom" constant="20" symbolic="YES" id="ZdF-3F-oW0"/>
+                    <constraint firstAttribute="trailing" secondItem="aVO-rs-eMT" secondAttribute="trailing" id="fyh-7l-CeW"/>
+                    <constraint firstItem="aVO-rs-eMT" firstAttribute="top" secondItem="372" secondAttribute="top" id="irU-rl-8ke"/>
                 </constraints>
             </view>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
                 <outlet property="tableView" destination="0Zf-kC-4h6" id="JL4-c6-ryq"/>
+                <outlet property="webView" destination="aVO-rs-eMT" id="nTm-dN-yXa"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>

@@ -14,9 +14,9 @@
   int last_refreshed;
 }
 
+@property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (assign) IBOutlet NSWindow *window;
-@property WebView *webView;
 @property NSTextField *urlText;
 - (IBAction)prevItem:(id)sender;
 - (IBAction)nextItem:(id)sender;

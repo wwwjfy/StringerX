@@ -18,7 +18,6 @@
 
 @interface AppDelegate () {
   NSWindowController *_preferencesWindowController;
-  BOOL isResizing;
 }
 
 @end
@@ -33,21 +32,9 @@
   spacing.height = 10;
   [[self tableView] setIntercellSpacing:spacing];
 
-  self.webView = [[WebView alloc] init];
-  [[[self window] contentView] addSubview:[self webView] positioned:NSWindowAbove relativeTo:nil];
   [[self webView] setPolicyDelegate:self];
   [[self webView] setUIDelegate:self];
   [[self webView] setHidden:YES];
-  [[self webView] setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[webView]|"
-                                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                                      metrics:nil
-                                                                                        views:@{@"webView": self.webView}]];
-  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|"
-                                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                                      metrics:nil
-                                                                                        views:@{@"webView": self.webView}]];
-
 
   [self setUrlText:[[NSTextField alloc] init]];
   self.urlText = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 500, 21)];
@@ -143,37 +130,6 @@
 }
 
 #pragma mark WebView
-
-- (void)resizeWebView:(BOOL)fullscreen {
-  if (isResizing) {
-    return;
-  }
-  NSRect windowFrame = [[[self window] contentView] frame];
-  if (fullscreen) {
-    [self.webView setHidden:NO];
-  } else {
-    isResizing = YES;
-    [self.webView lockFocus];
-    NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:[self.webView bounds]];
-    [self.webView unlockFocus];
-    NSImage *pdfImage = [[NSImage alloc] initWithSize:[[self webView] bounds].size];
-    [pdfImage addRepresentation:rep];
-    NSImageView *imageView = [[NSImageView alloc] initWithFrame:[self.webView frame]];
-    [imageView setImage:pdfImage];
-
-    [[[self window] contentView] addSubview:imageView positioned:NSWindowAbove relativeTo:[self tableView]];
-    [self.webView setHidden:YES];
-    [[[self webView] mainFrame] loadHTMLString:@"" baseURL:nil];
-
-    NSRect centerFrame = NSMakeRect(windowFrame.size.width/2, windowFrame.size.height/2, 1, 1);
-    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-      [[imageView animator] setFrame:centerFrame];
-    } completionHandler:^{
-      [imageView removeFromSuperview];
-      isResizing = NO;
-    }];
-  }
-}
 
 // handle showing external content
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
@@ -284,20 +240,18 @@
 }
 
 - (IBAction)openItem:(id)sender {
-  if ([[self tableView] selectedRow] == -1 || isResizing) {
+  if ([[self tableView] selectedRow] == -1) {
     return;
   }
   if (webViewOpen) {
-    [self resizeWebView:NO];
-    [[self urlText] setHidden:YES];
+    [[self webView] setHidden:YES];
+//    [[self urlText] setHidden:YES];
     webViewOpen = NO;
-    [[self tableView] setHidden:NO];
     [[self window] makeFirstResponder:[self tableView]];
   } else {
     [self loadWeb];
-    [self resizeWebView:YES];
+    [[self webView] setHidden:NO];
     webViewOpen = YES;
-    [[self tableView] setHidden:YES];
   }
 }
 
