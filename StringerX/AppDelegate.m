@@ -16,9 +16,26 @@
 #import "TheTableCellView.h"
 #import "AccountPreferencesViewController.h"
 
+@interface WebViewMouseOverHandler: NSObject <WKScriptMessageHandler>
+@property (copy) void (^onURLHover)(id url);
+@end
+
+@implementation WebViewMouseOverHandler
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+  if (self.onURLHover) {
+    self.onURLHover(message.body);
+  }
+  return;
+}
+
+@end
+
 @interface AppDelegate () {
   NSWindowController *_preferencesWindowController;
 }
+
+@property WKWebView *webView;
 
 @end
 
@@ -32,9 +49,42 @@
   spacing.height = 10;
   [[self tableView] setIntercellSpacing:spacing];
 
-  [[self webView] setPolicyDelegate:self];
+  NSString *script = @"document.onmouseover = function (event) {window.webkit.messageHandlers.mouseover.postMessage(event.target.href)}";
+  WKUserScript *mouseoverScript = [[WKUserScript alloc] initWithSource:script
+                                                         injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+                                                      forMainFrameOnly:YES];
+  WKUserContentController *contentController = [[WKUserContentController alloc] init];
+  [contentController addUserScript:mouseoverScript];
+  WebViewMouseOverHandler *messageHandler = [[WebViewMouseOverHandler alloc] init];
+  [messageHandler setOnURLHover:^(id url) {
+    NSString *urlString = (NSString *)url;
+    if (urlString) {
+      [[self urlText] setStringValue:urlString];
+      [[self urlText] setHidden:NO];
+    } else {
+      if (![[self urlText] isHidden]) {
+        [[self urlText] setHidden:YES];
+        [[self webView] setNeedsDisplay:YES];
+      }
+    }
+  }];
+  [contentController addScriptMessageHandler:messageHandler name:@"mouseover"];
+  WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+  configuration.userContentController = contentController;
+  self.webView = [[WKWebView alloc] initWithFrame:[[[self window] contentView] bounds] configuration:configuration];
+  [[[self window] contentView] addSubview:self.webView];
+  [[self webView] setNavigationDelegate:self];
   [[self webView] setUIDelegate:self];
   [[self webView] setHidden:YES];
+  [[self webView] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[webView]|"
+                                                                                      options:NSLayoutFormatAlignAllTop
+                                                                                      metrics:nil
+                                                                                        views:@{@"webView": self.webView}]];
+  [[[self window] contentView] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|"
+                                                                                      options:NSLayoutFormatAlignAllTop
+                                                                                      metrics:nil
+                                                                                        views:@{@"webView": self.webView}]];
 
   [self setUrlText:[[NSTextField alloc] init]];
   self.urlText = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 500, 21)];
@@ -44,19 +94,19 @@
   [[self urlText] setBackgroundColor:[NSColor controlBackgroundColor]];
   [self.webView addSubview:[self urlText]];
   [[[self window] contentView] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
-                                                             attribute:NSLayoutAttributeLeading
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:[[self window] contentView]
-                                                             attribute:NSLayoutAttributeLeading
-                                                            multiplier:1
-                                                              constant:10]];
+                                                                          attribute:NSLayoutAttributeLeading
+                                                                          relatedBy:NSLayoutRelationEqual
+                                                                             toItem:[[self window] contentView]
+                                                                          attribute:NSLayoutAttributeLeading
+                                                                         multiplier:1
+                                                                           constant:10]];
   [[[self window] contentView] addConstraint:[NSLayoutConstraint constraintWithItem:[self urlText]
-                                                             attribute:NSLayoutAttributeBottom
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:[[self window] contentView]
-                                                             attribute:NSLayoutAttributeBottom
-                                                            multiplier:1
-                                                              constant:-10]];
+                                                                          attribute:NSLayoutAttributeBottom
+                                                                          relatedBy:NSLayoutRelationEqual
+                                                                             toItem:[[self window] contentView]
+                                                                          attribute:NSLayoutAttributeBottom
+                                                                         multiplier:1
+                                                                           constant:-10]];
 
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(refresh:)
@@ -131,35 +181,17 @@
 
 #pragma mark WebView
 
-// handle showing external content
-- (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
-  if (webViewOpen && ![[[request URL] absoluteString] isEqualToString:@"about:blank"] && [actionInformation[WebActionNavigationTypeKey] intValue] == WebNavigationTypeLinkClicked) {
-    [self openInBrowserForURL:[request URL]];
-  } else {
-    [listener use];
-  }
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+  decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
-// handle clicking links
-- (void)webView:(WebView *)webView decidePolicyForNewWindowAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request newFrameName:(NSString *)frameName decisionListener:(id<WebPolicyDecisionListener>)listener {
-  if (webViewOpen && [actionInformation[WebActionNavigationTypeKey] intValue] == WebNavigationTypeLinkClicked) {
-    [self openInBrowserForURL:[request URL]];
-  } else {
-    [listener use];
-  }
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+  decisionHandler(WKNavigationActionPolicyAllow);
 }
 
-- (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {
-  NSString *url = elementInformation[@"WebElementLinkURL"];
-  if (url) {
-    [[self urlText] setStringValue:url];
-    [[self urlText] setHidden:NO];
-  } else {
-    if (![[self urlText] isHidden]) {
-      [[self urlText] setHidden:YES];
-      [[self webView] setNeedsDisplay:YES];
-    }
-  }
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+  [self openInBrowserForURL:navigationAction.request.URL];
+  return nil;
 }
 
 #pragma mark Table source and delegate
@@ -260,14 +292,14 @@
     return;
   }
   NSDictionary *item = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][[[self tableView] selectedRow]]];
-  NSString *html = [NSString stringWithFormat:@"<style>img {max-width: 100%%}</style><h1>%@</h1><div style=\"color: gray\">%@</div><div style=\"color: gray\">%@</div><div style=\"max-width:800px; margin: 0 auto;\">%@</div>",
+  NSString *html = [NSString stringWithFormat:@"<style type=\"text/css\">img {max-width: 100%%}</style><h1>%@</h1><div style=\"color: gray\">%@</div><div style=\"color: gray\">%@</div><div style=\"max-width:800px; margin: 0 auto;\">%@</div>",
                     item[@"title"],
                     item[@"author"],
                     [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:[item[@"created_on_time"] intValue]]
                                                    dateStyle:NSDateFormatterShortStyle
                                                    timeStyle:NSDateFormatterMediumStyle],
                     item[@"html"]];
-  [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
+  [[self webView] loadHTMLString:html baseURL:nil];
   [[self window] makeFirstResponder:[self webView]];
 }
 

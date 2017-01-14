@@ -9,12 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate, WebPolicyDelegate, WebUIDelegate> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate, WKNavigationDelegate, WKUIDelegate> {
   BOOL webViewOpen;
   int last_refreshed;
 }
 
-@property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (assign) IBOutlet NSWindow *window;
 @property NSTextField *urlText;
