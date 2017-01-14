@@ -10,6 +10,7 @@
 
 #import <AFNetworking.h>
 #import <MASPreferencesWindowController.h>
+#import <HTMLKit.h>
 
 #import "ServiceHelper.h"
 #import "Notifications.h"
@@ -287,25 +288,32 @@
   }
 }
 
+- (NSString *)preprocessHTML: (NSDictionary *)item {
+    HTMLDocument *document = [HTMLDocument documentWithString:item[@"html"]];
+    HTMLElement *css = [[HTMLElement alloc] initWithTagName:@"style" attributes:@{@"type": @"text/css"}];
+    [css setTextContent:@"img {max-width: 100%; height: auto}</style>"];
+    HTMLElement *title = [[HTMLElement alloc] initWithTagName:@"div" attributes:@{@"style": @"text-align: center"}];
+    [title setInnerHTML:[NSString stringWithFormat:@"<h1>%@</h1>"
+                            "<div style=\"color: gray\">%@</div>"
+                            "<div style=\"color: gray\">%@</div>",
+                         item[@"title"],
+                         item[@"author"],
+                         [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:[item[@"created_on_time"] intValue]]
+                                                        dateStyle:NSDateFormatterShortStyle
+                                                        timeStyle:NSDateFormatterMediumStyle]]];
+    HTMLElement *body = [[HTMLElement alloc] initWithTagName:@"div" attributes:@{@"style": @"max-width:1000px; margin: 0 auto;"}];
+    [body setInnerHTML:[document.body innerHTML]];
+    [document.body removeAllChildNodes];
+    [document.body appendNodes:@[css, title, body]];
+    return [document innerHTML];
+}
+
 - (void)loadWeb {
   if ([[self tableView] selectedRow] == -1) {
     return;
   }
   NSDictionary *item = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][[[self tableView] selectedRow]]];
-  NSString *html = [NSString stringWithFormat:@"<style type=\"text/css\">img {max-width: 100%%; height: auto}</style>"
-                    "<div style=\"text-align: center\">"
-                    "  <h1>%@</h1>"
-                    "  <div style=\"color: gray\">%@</div>"
-                    "  <div style=\"color: gray\">%@</div>"
-                    "  </div>"
-                    "<div style=\"max-width:1000px; margin: 0 auto;\">%@</div>",
-                    item[@"title"],
-                    item[@"author"],
-                    [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:[item[@"created_on_time"] intValue]]
-                                                   dateStyle:NSDateFormatterShortStyle
-                                                   timeStyle:NSDateFormatterMediumStyle],
-                    item[@"html"]];
-  [[self webView] loadHTMLString:html baseURL:nil];
+  [[self webView] loadHTMLString:[self preprocessHTML:item] baseURL:nil];
   [[self window] makeFirstResponder:[self webView]];
 }
 
