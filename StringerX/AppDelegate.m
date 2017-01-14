@@ -292,7 +292,7 @@
     return;
   }
   NSDictionary *item = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][[[self tableView] selectedRow]]];
-  NSString *html = [NSString stringWithFormat:@"<style type=\"text/css\">img {max-width: 100%%}</style><h1>%@</h1><div style=\"color: gray\">%@</div><div style=\"color: gray\">%@</div><div style=\"max-width:800px; margin: 0 auto;\">%@</div>",
+  NSString *html = [NSString stringWithFormat:@"<style type=\"text/css\">img {max-width: 100%%; height: auto}</style><h1>%@</h1><div style=\"color: gray\">%@</div><div style=\"color: gray\">%@</div><div style=\"max-width:800px; margin: 0 auto;\">%@</div>",
                     item[@"title"],
                     item[@"author"],
                     [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:[item[@"created_on_time"] intValue]]
