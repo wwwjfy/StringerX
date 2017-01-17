@@ -291,7 +291,7 @@
 - (NSString *)preprocessHTML: (NSDictionary *)item {
     HTMLDocument *document = [HTMLDocument documentWithString:item[@"html"]];
     HTMLElement *css = [[HTMLElement alloc] initWithTagName:@"style" attributes:@{@"type": @"text/css"}];
-    [css setTextContent:@"img {max-width: 100%; height: auto}</style>"];
+    [css setTextContent:@"img {max-width: 100%; height: auto; display: block; margin: 0 auto;}</style>"];
     HTMLElement *title = [[HTMLElement alloc] initWithTagName:@"div" attributes:@{@"style": @"text-align: center"}];
     [title setInnerHTML:[NSString stringWithFormat:@"<h1>%@</h1>"
                             "<div style=\"color: gray\">%@</div>"
