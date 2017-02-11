@@ -27,6 +27,7 @@ typedef enum {
 @synthesize items;
 @synthesize itemIds;
 @synthesize feeds;
+@synthesize favicons;
 
 + (instancetype)sharedInstance {
   static ServiceHelper *instance = nil;
@@ -42,6 +43,7 @@ typedef enum {
     items = [NSMutableDictionary dictionary];
     itemIds = [NSMutableArray array];
     feeds = [NSMutableDictionary dictionary];
+    favicons = [NSMutableDictionary dictionary];
     currentRow = -1;
   }
   return self;
@@ -54,9 +56,7 @@ typedef enum {
 
     case LOGIN:
       {
-        [self loginWithBaseURL:nil withToken:nil retry:NO success:^(AFHTTPRequestOperation *operation, id responseObject) {
-          [self getFeeds];
-        } failure:nil];
+        [self loginWithBaseURL:nil withToken:nil retry:NO success:nil failure:nil];
       }
       break;
 
@@ -102,7 +102,12 @@ typedef enum {
     if (success) {
       success(operation, responseObject);
     }
-    [self getFeeds];
+    [self getFeeds:^{
+      [self getFavicons:^{
+        [self syncUnreadItemIds];
+        nextAction = SYNC;
+      }];
+    }];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     if (failure) {
       failure(operation, error);
@@ -110,15 +115,32 @@ typedef enum {
   }];
 }
 
-- (void)getFeeds {
+- (void)getFeeds:(void (^)())success {
   [[URLHelper sharedInstance] requestWithPath:@"fever/?feeds" success:^(AFHTTPRequestOperation *operation, id JSON) {
     for (NSDictionary *feed in JSON[@"feeds"]) {
       [self feeds][feed[@"id"]] = feed[@"title"];
     };
-    [self syncUnreadItemIds];
-    nextAction = SYNC;
+    if (success) {
+      success();
+    }
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"Failed to get feeds: %@", [error localizedDescription]);
+  }];
+}
+
+- (void)getFavicons:(void (^)())success {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/?favicons" success:^(AFHTTPRequestOperation *operation, id JSON) {
+    for (NSDictionary *favicon in JSON[@"favicons"]) {
+      NSURL *a = [NSURL URLWithString:[@"data:" stringByAppendingString:favicon[@"data"]]];
+      NSData *b = [NSData dataWithContentsOfURL:a];
+      NSImage *c = [[NSImage alloc] initWithData:b];
+      [self favicons][favicon[@"id"]] = c;
+    };
+    if (success) {
+      success();
+    }
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"Failed to get favicons: %@", [error localizedDescription]);
   }];
 }
 
@@ -199,6 +221,14 @@ typedef enum {
 
 - (NSMutableDictionary *)getItemAt:(NSInteger)index {
     return self.items[[self itemIds][index]];
+}
+
+- (NSString *)getFeedOfItemAt:(NSInteger)index {
+  return self.feeds[[self getItemAt:index][@"feed_id"]];
+}
+
+- (NSImage *)getFaviconOfItemAt:(NSInteger)index {
+  return self.favicons[[self getItemAt:index][@"feed_id"]];
 }
 
 @end

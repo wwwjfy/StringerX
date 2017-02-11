@@ -18,6 +18,7 @@
 @property NSMutableDictionary *items;
 @property NSMutableArray *itemIds;
 @property NSMutableDictionary *feeds;
+@property NSMutableDictionary *favicons;
 
 + (instancetype)sharedInstance;
 - (void)loginWithBaseURL:(NSURL *)url
@@ -25,9 +26,10 @@
                    retry:(BOOL)retry
                  success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
-- (void)getFeeds;
 - (void)markAllRead;
 - (void)setCurrentRow:(NSInteger)row;
 - (NSMutableDictionary *)getItemAt:(NSInteger)index;
+- (NSString *)getFeedOfItemAt:(NSInteger)index;
+- (NSImage *)getFaviconOfItemAt:(NSInteger)index;
 
 @end

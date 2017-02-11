@@ -209,7 +209,10 @@
   [[view textField] setStringValue:[[ServiceHelper sharedInstance] getItemAt:row][@"title"]];
 
   // source
-  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] feeds][[[ServiceHelper sharedInstance] getItemAt:row][@"feed_id"]]];
+  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] getFeedOfItemAt:row]];
+
+  // favicon
+  [[view imageView] setImage:[[ServiceHelper sharedInstance] getFaviconOfItemAt:row]];
   
   // detailed text
   NSString *html = [[ServiceHelper sharedInstance] getItemAt:row][@"html"];
