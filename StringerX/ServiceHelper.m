@@ -197,4 +197,8 @@ typedef enum {
   currentRow = row;
 }
 
+- (NSMutableDictionary *)getItemAt:(NSInteger)index {
+    return self.items[[self itemIds][index]];
+}
+
 @end

@@ -28,5 +28,6 @@
 - (void)getFeeds;
 - (void)markAllRead;
 - (void)setCurrentRow:(NSInteger)row;
+- (NSMutableDictionary *)getItemAt:(NSInteger)index;
 
 @end

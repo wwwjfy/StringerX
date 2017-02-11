@@ -206,13 +206,13 @@
   [view setAutoresizingMask:NSViewWidthSizable];
   
   // title
-  [[view textField] setStringValue:[[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][row]][@"title"]];
-  
+  [[view textField] setStringValue:[[ServiceHelper sharedInstance] getItemAt:row][@"title"]];
+
   // source
-  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] feeds][[[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][row]][@"feed_id"]]];
+  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] feeds][[[ServiceHelper sharedInstance] getItemAt:row][@"feed_id"]]];
   
   // detailed text
-  NSString *html = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][row]][@"html"];
+  NSString *html = [[ServiceHelper sharedInstance] getItemAt:row][@"html"];
   NSRange r;
   while ((r = [html rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
     html = [html stringByReplacingCharactersInRange:r withString:@""];
@@ -312,7 +312,7 @@
   if ([[self tableView] selectedRow] == -1) {
     return;
   }
-  NSDictionary *item = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][[[self tableView] selectedRow]]];
+  NSDictionary *item = [[ServiceHelper sharedInstance] getItemAt:[[self tableView] selectedRow]];
   [[self webView] loadHTMLString:[self preprocessHTML:item] baseURL:nil];
   [[self window] makeFirstResponder:[self webView]];
 }
@@ -322,7 +322,7 @@
   if (current == -1) {
     return;
   }
-  NSString *urlString = [[ServiceHelper sharedInstance] items][[[ServiceHelper sharedInstance] itemIds][current]][@"url"];
+  NSString *urlString = [[ServiceHelper sharedInstance] getItemAt:current][@"url"];
   NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
   [self openInBrowserForURL:url];
 }
