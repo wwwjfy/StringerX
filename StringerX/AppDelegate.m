@@ -326,7 +326,7 @@
     return;
   }
   NSString *urlString = [[ServiceHelper sharedInstance] getItemAt:current][@"url"];
-  NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+  NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
   [self openInBrowserForURL:url];
 }
 

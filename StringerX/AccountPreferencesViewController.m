@@ -74,11 +74,9 @@ typedef enum {
   if (!(baseURL &&
         ([baseURL.scheme isEqualToString:@"http"] || [baseURL.scheme isEqualToString:@"https"]) &&
         baseURL.host)) {
-    [[NSAlert alertWithMessageText:@"Invalid URL"
-                     defaultButton:nil
-                   alternateButton:nil
-                       otherButton:nil
-         informativeTextWithFormat:@""] runModal];
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Invalid URL"];
+    [alert runModal];
     return;
   }
   NSString *token = [NSString stringWithFormat:@"stringer:%@", [[self passwordField] stringValue]];
@@ -115,11 +113,9 @@ typedef enum {
       }
     }
     if (err) {
-      [[NSAlert alertWithMessageText:@"Failed to record account info."
-                       defaultButton:nil
-                     alternateButton:nil
-                         otherButton:nil
-           informativeTextWithFormat:@"%@", [err localizedDescription]] runModal];
+      NSAlert *alert = [[NSAlert alloc] init];
+      [alert setMessageText:@"Failed to record account info."];
+      [alert runModal];
     }
   }
                                            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -129,11 +125,9 @@ typedef enum {
     } else {
       errString = [error localizedDescription];
     }
-    [[NSAlert alertWithMessageText:@"Failed to login"
-                     defaultButton:nil
-                   alternateButton:nil
-                       otherButton:nil
-         informativeTextWithFormat:@"%@", errString] runModal];
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Failed to login"];
+    [alert runModal];
     [self setLoginStatus:LOGGED_OUT];
   }];
 }
