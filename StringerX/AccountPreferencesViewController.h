@@ -8,13 +8,21 @@
 
 #import <Cocoa/Cocoa.h>
 
+typedef enum {
+  LOGGED_IN,
+  LOGGING_IN,
+  LOGGED_OUT
+} LOGIN_STATUS;
+
 @interface AccountPreferencesViewController : NSViewController {
-  BOOL loggedIn;
+  LOGIN_STATUS status;
 }
 
 @property (weak) IBOutlet NSTextField *URLField;
 @property (weak) IBOutlet NSSecureTextField *passwordField;
 @property (weak) IBOutlet NSButton *loginButton;
 - (IBAction)onLogin:(id)sender;
+- (void)setLoginStatus:(LOGIN_STATUS)status;
+@property NSString *baseURL;
 
 @end

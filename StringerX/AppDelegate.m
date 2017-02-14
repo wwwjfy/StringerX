@@ -113,13 +113,13 @@
                                            selector:@selector(refresh:)
                                                name:REFRESH_NOTIFICATION
                                              object:nil];
-  
-  NSViewController *accountViewController = [[AccountPreferencesViewController alloc] init];
-  NSArray *controllers = @[accountViewController];
+
+  AccountPreferencesViewController *accountViewController = [[AccountPreferencesViewController alloc] initWithNibName:@"AccountPreferencesViewController"
+                                                                                                               bundle:nil];
 
   NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
-  _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
-  
+  _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:@[accountViewController] title:title];
+
   NSError *err;
   NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
                                                         inDomain:NSUserDomainMask
@@ -132,12 +132,14 @@
                                                           encoding:NSUTF8StringEncoding
                                                              error:&err] propertyListFromStringsFileFormat];
     if (!err) {
+      [accountViewController setLoginStatus:LOGGING_IN];
+      [accountViewController setBaseURL:accountDict[@"URL"]];
       [[ServiceHelper sharedInstance] loginWithBaseURL:[NSURL URLWithString:accountDict[@"URL"]]
                                              withToken:accountDict[@"token"]
                                                  retry:YES
                                                success:^(NSURLResponse *response, id responseObject) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:STRINGER_LOGIN_STATUS_NOTIFICATION object:nil];
-      } failure:nil];
+                                                 [accountViewController setLoginStatus:LOGGED_IN];
+                                               } failure:nil];
       return;
     }
   }

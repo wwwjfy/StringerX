@@ -13,32 +13,14 @@
 #import "URLHelper.h"
 #import "ServiceHelper.h"
 
-typedef enum {
-  LOGGED_IN,
-  LOGGING_IN,
-  LOGGED_OUT
-} LOGIN_STATUS;
-
 @implementation AccountPreferencesViewController
-
-- (id)init {
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(loginStatusChange:)
-                                               name:STRINGER_LOGIN_STATUS_NOTIFICATION
-                                             object:nil];
-  return [self initWithNibName:@"AccountPreferencesViewController" bundle:nil];
-}
 
 - (void)loadView {
   [super loadView];
-  if (loggedIn) {
-    [[self URLField] setStringValue:[[[URLHelper sharedInstance] baseURL] absoluteString]];
-    [self setLoginStatus:LOGGED_IN];
+  if ([self baseURL]) {
+    [[self URLField] setStringValue:[self baseURL]];
   }
-}
-
-- (void)loginStatusChange:(NSNotification *)notification {
-  loggedIn = YES;
+  [self setLoginStatus:status];
 }
 
 - (NSString *)identifier {
@@ -54,7 +36,7 @@ typedef enum {
 }
 
 - (IBAction)onLogin:(id)sender {
-  if (loggedIn) {
+  if (status == LOGGED_IN) {
     NSError *err;
     NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
                                                           inDomain:NSUserDomainMask
@@ -90,10 +72,7 @@ typedef enum {
            result[8], result[9], result[10], result[11],
            result[12], result[13], result[14], result[15]
            ];
-  [[ServiceHelper sharedInstance] loginWithBaseURL:baseURL
-                                         withToken:token
-                                             retry:NO
-                                           success:^(NSHTTPURLResponse *response, id JSON) {
+  void (^success)(NSHTTPURLResponse *, id) = ^void(NSHTTPURLResponse *response, id JSON) {
     [self setLoginStatus:LOGGED_IN];
     NSError *err;
     NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
@@ -117,8 +96,8 @@ typedef enum {
       [alert setMessageText:@"Failed to record account info."];
       [alert runModal];
     }
-  }
-                                           failure:^(NSHTTPURLResponse *response, NSError *error) {
+  };
+  void (^failure)(NSHTTPURLResponse *, NSError *) = ^void(NSHTTPURLResponse *response, NSError *error) {
     NSString *errString;
     if ([response statusCode] == 403) {
       errString = @"Authentication failed! Please verify the password.";
@@ -129,17 +108,22 @@ typedef enum {
     [alert setMessageText:@"Failed to login"];
     [alert runModal];
     [self setLoginStatus:LOGGED_OUT];
-  }];
+  };
+  [[ServiceHelper sharedInstance] loginWithBaseURL:baseURL
+                                         withToken:token
+                                             retry:NO
+                                           success:success
+                                           failure:failure];
 }
 
-- (void)setLoginStatus:(LOGIN_STATUS)status {
+- (void)setLoginStatus:(LOGIN_STATUS)newStatus {
+  status = newStatus;
   switch (status) {
     case LOGGED_IN:
       [[self URLField] setEnabled:NO];
       [[self passwordField] setEnabled:NO];
       [[self loginButton] setTitle:@"Log out"];
       [[self loginButton] setEnabled:YES];
-      loggedIn = YES;
       break;
 
     case LOGGING_IN:
@@ -154,7 +138,6 @@ typedef enum {
       [[self passwordField] setEnabled:YES];
       [[self loginButton] setTitle:@"Log in"];
       [[self loginButton] setEnabled:YES];
-      loggedIn = NO;
       break;
   }
 }
