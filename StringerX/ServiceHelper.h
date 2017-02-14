@@ -24,8 +24,8 @@
 - (void)loginWithBaseURL:(NSURL *)url
                withToken:(NSString *)token
                    retry:(BOOL)retry
-                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+                 success:(void (^)(NSHTTPURLResponse *response, id responseObject))success
+                 failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failure;
 - (void)markAllRead;
 - (void)setCurrentRow:(NSInteger)row;
 - (NSMutableDictionary *)getItemAt:(NSInteger)index;

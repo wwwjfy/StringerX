@@ -93,7 +93,7 @@ typedef enum {
   [[ServiceHelper sharedInstance] loginWithBaseURL:baseURL
                                          withToken:token
                                              retry:NO
-                                           success:^(AFHTTPRequestOperation *operation, id JSON) {
+                                           success:^(NSHTTPURLResponse *response, id JSON) {
     [self setLoginStatus:LOGGED_IN];
     NSError *err;
     NSURL *pDir = [[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
@@ -118,9 +118,9 @@ typedef enum {
       [alert runModal];
     }
   }
-                                           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                           failure:^(NSHTTPURLResponse *response, NSError *error) {
     NSString *errString;
-    if ([[operation response] statusCode] == 403) {
+    if ([response statusCode] == 403) {
       errString = @"Authentication failed! Please verify the password.";
     } else {
       errString = [error localizedDescription];

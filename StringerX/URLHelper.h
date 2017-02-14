@@ -9,17 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 
-@interface URLHelper : NSObject {
-  NSString *_token;
-  AFHTTPClient *_client;
-}
+@interface URLHelper : NSObject
 
 + (instancetype)sharedInstance;
 - (void)setToken:(NSString *)token;
 - (NSURL *)baseURL;
 - (void)setBaseURL:(NSURL *)baseURL;
 - (void)requestWithPath:(NSString *)path
-                success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+                success:(void (^)(NSHTTPURLResponse *response, id responseObject))success
+                failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failure;
 
 @end

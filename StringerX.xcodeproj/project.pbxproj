@@ -89,7 +89,9 @@
 				EA5645BD17808697001EDBA4 /* Products */,
 				8A31BEC2A5F351AF0EC1559A /* Pods */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		EA5645BD17808697001EDBA4 /* Products */ = {
 			isa = PBXGroup;

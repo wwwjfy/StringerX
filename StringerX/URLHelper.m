@@ -7,17 +7,11 @@
 //
 
 #import "URLHelper.h"
+#import <AFNetworking.h>
 
-#import <AFJSONRequestOperation.h>
-
-@interface StringerJSONRequestOperation : AFJSONRequestOperation
-
-@end
-
-@implementation StringerJSONRequestOperation
-
-+ (BOOL)canProcessRequest:(NSURLRequest *)request {
-  return YES;
+@interface URLHelper () {
+  NSString *token;
+  AFHTTPSessionManager *sessionManager;
 }
 
 @end
@@ -33,32 +27,39 @@
   return instance;
 }
 
-- (void)setToken:(NSString *)token {
-  _token = token;
+- (void)setToken:(NSString *)newToken {
+  token = newToken;
 }
 
 - (NSURL *)baseURL {
-  return [_client baseURL];
+  return [sessionManager baseURL];
 }
 
 - (void)setBaseURL:(NSURL *)baseURL {
-  _client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-  [_client registerHTTPOperationClass:[StringerJSONRequestOperation class]];
+  NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+  sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL sessionConfiguration:configuration];
+//  [sessionManager setRequestSerializer:[[AFJSONRequestSerializer alloc] init]];
+  [sessionManager setResponseSerializer:[[AFJSONResponseSerializer alloc] init]];
 }
 
 - (void)requestWithPath:(NSString *)path
-                success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-  if (!_token) {
+                success:(void (^)(NSHTTPURLResponse *response, id responseObject))success
+                failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failure {
+  if (!token) {
     NSLog(@"ERROR: login token is not set");
     return;
   }
-  if (!_client) {
-    NSLog(@"ERROR: url is not set");
+  if (!sessionManager) {
+    NSLog(@"ERROR: base url is not set");
     return;
   }
-  [_client postPath:path parameters:@{@"api_key": _token} success:success failure:failure];
+  [sessionManager GET:path parameters:@{@"api_key": token} progress:^(NSProgress * _Nonnull downloadProgress) {
 
+  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    success((NSHTTPURLResponse *)[task response], responseObject);
+  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    failure((NSHTTPURLResponse *)[task response], error);
+  }];
 }
 
 @end

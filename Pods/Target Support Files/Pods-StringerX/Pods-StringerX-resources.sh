@@ -18,6 +18,9 @@ case "${TARGETED_DEVICE_FAMILY}" in
   2)
     TARGET_DEVICE_ARGS="--target-device ipad"
     ;;
+  3)
+    TARGET_DEVICE_ARGS="--target-device tv"
+    ;;
   *)
     TARGET_DEVICE_ARGS="--target-device mac"
     ;;
@@ -74,10 +77,10 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "MASPreferences/MASPreferencesWindow.xib"
+  install_resource "MASPreferences/Framework/en.lproj/MASPreferencesWindow.xib"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "MASPreferences/MASPreferencesWindow.xib"
+  install_resource "MASPreferences/Framework/en.lproj/MASPreferencesWindow.xib"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

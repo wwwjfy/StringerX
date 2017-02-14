@@ -135,7 +135,7 @@
       [[ServiceHelper sharedInstance] loginWithBaseURL:[NSURL URLWithString:accountDict[@"URL"]]
                                              withToken:accountDict[@"token"]
                                                  retry:YES
-                                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                               success:^(NSURLResponse *response, id responseObject) {
         [[NSNotificationCenter defaultCenter] postNotificationName:STRINGER_LOGIN_STATUS_NOTIFICATION object:nil];
       } failure:nil];
       return;

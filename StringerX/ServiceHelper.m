@@ -71,8 +71,8 @@ typedef enum {
 - (void)loginWithBaseURL:(NSURL *)url
                withToken:(NSString *)token
                    retry:(BOOL)retry
-                 success:(void (^)(AFHTTPRequestOperation *, id))success
-                 failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+                 success:(void (^)(NSHTTPURLResponse *response, id responseObject))success
+                 failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failure {
   if (!retry && nextAction != LOGIN && timer) {
     [timer invalidate];
     timer = nil;
@@ -90,17 +90,17 @@ typedef enum {
     [[URLHelper sharedInstance] setBaseURL:url];
     [[URLHelper sharedInstance] setToken:token];
   }
-  [[URLHelper sharedInstance] requestWithPath:@"fever/" success:^(AFHTTPRequestOperation *operation, id responseObject) {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/" success:^(NSHTTPURLResponse *response, id responseObject) {
     if (![responseObject isKindOfClass:[NSDictionary class]] || !responseObject[@"api_version"]) {
-      failure(operation, [NSError errorWithDomain:@"StringerX" code:0 userInfo:@{NSLocalizedDescriptionKey: @"API mismatch"}]);
+      failure(response, [NSError errorWithDomain:@"StringerX" code:0 userInfo:@{NSLocalizedDescriptionKey: @"API mismatch"}]);
       return;
     }
     if (![responseObject[@"auth"] intValue]) {
-      failure(operation, [NSError errorWithDomain:@"StringerX" code:0 userInfo:@{NSLocalizedDescriptionKey: @"Authentication failed"}]);
+      failure(response, [NSError errorWithDomain:@"StringerX" code:0 userInfo:@{NSLocalizedDescriptionKey: @"Authentication failed"}]);
       return;
     }
     if (success) {
-      success(operation, responseObject);
+      success(response, responseObject);
     }
     [self getFeeds:^{
       [self getFavicons:^{
@@ -108,44 +108,42 @@ typedef enum {
         nextAction = SYNC;
       }];
     }];
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+  } failure:^(NSHTTPURLResponse *response, NSError *error) {
     if (failure) {
-      failure(operation, error);
+      failure(response, error);
     }
   }];
 }
 
 - (void)getFeeds:(void (^)())success {
-  [[URLHelper sharedInstance] requestWithPath:@"fever/?feeds" success:^(AFHTTPRequestOperation *operation, id JSON) {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/?feeds" success:^(NSHTTPURLResponse *response, id JSON) {
     for (NSDictionary *feed in JSON[@"feeds"]) {
       [self feeds][feed[@"id"]] = feed[@"title"];
     };
     if (success) {
       success();
     }
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+  } failure:^(NSHTTPURLResponse *response, NSError *error) {
     NSLog(@"Failed to get feeds: %@", [error localizedDescription]);
   }];
 }
 
 - (void)getFavicons:(void (^)())success {
-  [[URLHelper sharedInstance] requestWithPath:@"fever/?favicons" success:^(AFHTTPRequestOperation *operation, id JSON) {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/?favicons" success:^(NSHTTPURLResponse *response, id JSON) {
     for (NSDictionary *favicon in JSON[@"favicons"]) {
-      NSURL *a = [NSURL URLWithString:[@"data:" stringByAppendingString:favicon[@"data"]]];
-      NSData *b = [NSData dataWithContentsOfURL:a];
-      NSImage *c = [[NSImage alloc] initWithData:b];
-      [self favicons][favicon[@"id"]] = c;
+      NSData *faviconData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[@"data:" stringByAppendingString:favicon[@"data"]]]];
+      [self favicons][favicon[@"id"]] = [[NSImage alloc] initWithData:faviconData];
     };
     if (success) {
       success();
     }
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+  } failure:^(NSHTTPURLResponse *response, NSError *error) {
     NSLog(@"Failed to get favicons: %@", [error localizedDescription]);
   }];
 }
 
 - (void)syncUnreadItemIds {
-  [[URLHelper sharedInstance] requestWithPath:@"fever/?unread_item_ids" success:^(AFHTTPRequestOperation *operation, id JSON) {
+  [[URLHelper sharedInstance] requestWithPath:@"fever/?unread_item_ids" success:^(NSHTTPURLResponse *response, id JSON) {
     NSString *unreadItemIds = JSON[@"unread_item_ids"];
     if (![unreadItemIds isEqualToString:@""]) {
       [self syncItemsWithIds:unreadItemIds];
@@ -161,7 +159,7 @@ typedef enum {
     }
   }
   NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&since_id=%ld", min-1];
-  [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(AFHTTPRequestOperation *operation, id JSON) {
+  [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(NSHTTPURLResponse *response, id JSON) {
     NSArray *newItems = [JSON[@"items"] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
       if (obj1[@"created_on_time"] > obj2[@"created_on_time"]) {
         // reversed because the sort function itself return ascending results
@@ -198,18 +196,18 @@ typedef enum {
                                                           object:nil
                                                         userInfo:userInfo];
     }
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+  } failure:^(NSHTTPURLResponse *response, NSError *error) {
     NSLog(@"Failed to get items: %@", [error localizedDescription]);
   }];
 }
 
 - (void)markAllRead {
   [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=group&as=read&id=0&before=%d", last_item_created_on + 1]
-                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                      success:^(NSHTTPURLResponse *response, id responseObject) {
                                         [[self itemIds] removeAllObjects];
                                         [[self items] removeAllObjects];
                                         [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION object:nil];
-                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      } failure:^(NSHTTPURLResponse *response, NSError *error) {
                                         NSLog(@"Failed to mark all read: %@", [error localizedDescription]);
                                       }];
   currentRow = -1;
