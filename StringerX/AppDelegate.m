@@ -204,18 +204,19 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
   TheTableCellView *view = [tableView makeViewWithIdentifier:@"Items" owner:self];
   [view setAutoresizingMask:NSViewWidthSizable];
-  
+
+  Item *item = [[ServiceHelper sharedInstance] getItemAt:row];
   // title
-  [[view textField] setStringValue:[[ServiceHelper sharedInstance] getItemAt:row][@"title"]];
+  [[view textField] setStringValue:[item title]];
 
   // source
-  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] getFeedOfItemAt:row]];
+  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] getFeedNameOfItemAt:row]];
 
   // favicon
   [[view imageView] setImage:[[ServiceHelper sharedInstance] getFaviconOfItemAt:row]];
   
   // detailed text
-  NSString *html = [[ServiceHelper sharedInstance] getItemAt:row][@"html"];
+  NSString *html = [item html];
   NSRange r;
   while ((r = [html rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
     html = [html stringByReplacingCharactersInRange:r withString:@""];
@@ -291,17 +292,17 @@
   }
 }
 
-- (NSString *)preprocessHTML: (NSDictionary *)item {
-    HTMLDocument *document = [HTMLDocument documentWithString:item[@"html"]];
+- (NSString *)preprocessHTML: (Item *)item {
+    HTMLDocument *document = [HTMLDocument documentWithString:[item html]];
     HTMLElement *css = [[HTMLElement alloc] initWithTagName:@"style" attributes:@{@"type": @"text/css"}];
     [css setTextContent:@"img {max-width: 100%; height: auto; display: block; margin: 0 auto;}</style>"];
     HTMLElement *title = [[HTMLElement alloc] initWithTagName:@"div" attributes:@{@"style": @"text-align: center"}];
     [title setInnerHTML:[NSString stringWithFormat:@"<h1>%@</h1>"
                             "<div style=\"color: gray\">%@</div>"
                             "<div style=\"color: gray\">%@</div>",
-                         item[@"title"],
-                         item[@"author"],
-                         [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:[item[@"created_on_time"] intValue]]
+                         [item title],
+                         [item author],
+                         [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:[[item created_on_time] intValue]]
                                                         dateStyle:NSDateFormatterShortStyle
                                                         timeStyle:NSDateFormatterMediumStyle]]];
     HTMLElement *body = [[HTMLElement alloc] initWithTagName:@"div" attributes:@{@"style": @"max-width:1000px; margin: 0 auto;"}];
@@ -315,7 +316,7 @@
   if ([[self tableView] selectedRow] == -1) {
     return;
   }
-  NSDictionary *item = [[ServiceHelper sharedInstance] getItemAt:[[self tableView] selectedRow]];
+  Item *item = [[ServiceHelper sharedInstance] getItemAt:[[self tableView] selectedRow]];
   [[self webView] loadHTMLString:[self preprocessHTML:item] baseURL:nil];
   [[self window] makeFirstResponder:[self webView]];
 }
@@ -325,7 +326,7 @@
   if (current == -1) {
     return;
   }
-  NSString *urlString = [[ServiceHelper sharedInstance] getItemAt:current][@"url"];
+  NSString *urlString = [[[ServiceHelper sharedInstance] getItemAt:current] url];
   NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
   [self openInBrowserForURL:url];
 }

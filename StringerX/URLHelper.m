@@ -53,13 +53,13 @@
     NSLog(@"ERROR: base url is not set");
     return;
   }
-  [sessionManager GET:path parameters:@{@"api_key": token} progress:^(NSProgress * _Nonnull downloadProgress) {
-
-  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-    success((NSHTTPURLResponse *)[task response], responseObject);
-  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-    failure((NSHTTPURLResponse *)[task response], error);
-  }];
+  [sessionManager GET:path parameters:@{@"api_key": token} progress:nil
+              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                success((NSHTTPURLResponse *)[task response], responseObject);
+              }
+              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                failure((NSHTTPURLResponse *)[task response], error);
+              }];
 }
 
 @end

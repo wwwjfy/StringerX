@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
+#import "Models.h"
 
 @interface ServiceHelper : NSObject {
   int last_item_created_on;
@@ -18,7 +19,6 @@
 @property NSMutableDictionary *items;
 @property NSMutableArray *itemIds;
 @property NSMutableDictionary *feeds;
-@property NSMutableDictionary *favicons;
 
 + (instancetype)sharedInstance;
 - (void)loginWithBaseURL:(NSURL *)url
@@ -28,8 +28,8 @@
                  failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failure;
 - (void)markAllRead;
 - (void)setCurrentRow:(NSInteger)row;
-- (NSMutableDictionary *)getItemAt:(NSInteger)index;
-- (NSString *)getFeedOfItemAt:(NSInteger)index;
+- (Item *)getItemAt:(NSInteger)index;
+- (NSString *)getFeedNameOfItemAt:(NSInteger)index;
 - (NSImage *)getFaviconOfItemAt:(NSInteger)index;
 
 @end

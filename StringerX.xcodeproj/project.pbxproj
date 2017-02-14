@@ -22,6 +22,7 @@
 		EA63348E17BA167400963F9F /* AccountPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA63348C17BA167400963F9F /* AccountPreferencesViewController.xib */; };
 		EA63356617BBD31400963F9F /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA63356517BBD31400963F9F /* URLHelper.m */; };
 		EA6335E917BF478D00963F9F /* ServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6335E817BF478D00963F9F /* ServiceHelper.m */; };
+		EA8292421E53519A0095555F /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8292411E53519A0095555F /* Models.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		EA6335E717BF478D00963F9F /* ServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceHelper.h; sourceTree = "<group>"; };
 		EA6335E817BF478D00963F9F /* ServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceHelper.m; sourceTree = "<group>"; };
 		EA6335EA17BF503200963F9F /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		EA82923E1E533F670095555F /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		EA8292411E53519A0095555F /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
 		EE24B738E8CD57F21ED75082 /* Pods-StringerX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.release.xcconfig"; path = "Pods/Target Support Files/Pods-StringerX/Pods-StringerX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +145,8 @@
 				EA2A4953178B0F5700220F35 /* TheTableCellView.m */,
 				EA63356417BBD31400963F9F /* URLHelper.h */,
 				EA63356517BBD31400963F9F /* URLHelper.m */,
+				EA82923E1E533F670095555F /* Models.h */,
+				EA8292411E53519A0095555F /* Models.m */,
 			);
 			path = StringerX;
 			sourceTree = "<group>";
@@ -189,6 +194,11 @@
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Tony Wang";
+				TargetAttributes = {
+					EA5645BB17808697001EDBA4 = {
+						LastSwiftMigration = 0820;
+					};
+				};
 			};
 			buildConfigurationList = EA5645B717808697001EDBA4 /* Build configuration list for PBXProject "StringerX" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -278,6 +288,7 @@
 			files = (
 				EA63356617BBD31400963F9F /* URLHelper.m in Sources */,
 				EA6335E917BF478D00963F9F /* ServiceHelper.m in Sources */,
+				EA8292421E53519A0095555F /* Models.m in Sources */,
 				EA5645D317808698001EDBA4 /* AppDelegate.m in Sources */,
 				EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */,
 				EA5645CC17808698001EDBA4 /* main.m in Sources */,
@@ -401,13 +412,17 @@
 			baseConfigurationReference = 0CC9728633C295175461B600 /* Pods-StringerX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StringerX/StringerX-Prefix.pch";
 				INFOPLIST_FILE = "StringerX/StringerX-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = StringerX;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -417,13 +432,16 @@
 			baseConfigurationReference = EE24B738E8CD57F21ED75082 /* Pods-StringerX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StringerX/StringerX-Prefix.pch";
 				INFOPLIST_FILE = "StringerX/StringerX-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = StringerX;
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
