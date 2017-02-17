@@ -185,6 +185,9 @@ typedef enum {
       [stickedItemIds addObject:item.id];
     }
   }
+  if ([[self itemIds] count] > 0) {
+    changed = YES;
+  }
   [[self itemIds] removeAllObjects];
   [[self items] removeAllObjects];
   for (Item *item in newItems) {
@@ -199,7 +202,9 @@ typedef enum {
     changed = YES;
   }
   if (changed) {
-    last_item_created_on = [[newItems[0] created_on_time] intValue];
+    if ([newItems count] > 0) {
+      last_item_created_on = [[newItems[0] created_on_time] intValue];
+    }
     NSDictionary *userInfo = nil;
     if (currentRow != -1) {
       NSUInteger row = [[self itemIds] indexOfObject:currentId];
@@ -240,8 +245,6 @@ typedef enum {
     NSString *ids = [toReadItemIds componentsJoinedByString:@","];
     [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=item&as=read&id=%@", ids]
                                         success:^(NSHTTPURLResponse *response, id responseObject) {
-                                          [[self itemIds] removeAllObjects];
-                                          [[self items] removeAllObjects];
                                           [self updateItems:newItems];
                                         } failure:nil];
   }
