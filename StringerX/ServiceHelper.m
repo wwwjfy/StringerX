@@ -167,38 +167,42 @@ typedef enum {
       }
       return NSOrderedDescending;
     }];
-
-    BOOL changed = NO;
-    NSNumber *currentId;
-    if (currentRow != -1 && [[self itemIds] count] >= (currentRow + 1)) {
-      currentId = [self itemIds][currentRow];
-    }
-    [[self itemIds] removeAllObjects];
-    [[self items] removeAllObjects];
-    for (Item *item in newItems) {
-      if ([item is_read]) {
-        continue;
-      }
-      [[self itemIds] addObject:[item id]];
-      [self items][[item id]] = item;
-      changed = YES;
-    }
-    if (changed) {
-      last_item_created_on = [[newItems[0] created_on_time] intValue];
-      NSDictionary *userInfo = nil;
-      if (currentRow != -1) {
-        NSUInteger row = [[self itemIds] indexOfObject:currentId];
-        if (row != NSNotFound) {
-          userInfo = @{@"currentRow": [NSNumber numberWithUnsignedInteger:row]};
-        }
-      }
-      [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION
-                                                          object:nil
-                                                        userInfo:userInfo];
-    }
+    [self updateItems:newItems];
   } failure:^(NSHTTPURLResponse *response, NSError *error) {
     NSLog(@"Failed to get items: %@", [error localizedDescription]);
   }];
+}
+
+- (void)updateItems:(NSArray *)newItems {
+  BOOL changed = NO;
+  NSNumber *currentId;
+  if (currentRow != -1 && [[self itemIds] count] >= (currentRow + 1)) {
+    currentId = [self itemIds][currentRow];
+  }
+  [[self itemIds] removeAllObjects];
+  [[self items] removeAllObjects];
+  for (Item *item in newItems) {
+    if ([item is_read]) {
+      continue;
+    }
+    [[self itemIds] addObject:[item id]];
+    [self items][[item id]] = item;
+    changed = YES;
+  }
+  if (changed) {
+    last_item_created_on = [[newItems[0] created_on_time] intValue];
+    NSDictionary *userInfo = nil;
+    if (currentRow != -1) {
+      NSUInteger row = [[self itemIds] indexOfObject:currentId];
+      if (row != NSNotFound) {
+        userInfo = @{@"currentRow": [NSNumber numberWithUnsignedInteger:row]};
+      }
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION
+                                                        object:nil
+                                                      userInfo:userInfo];
+  }
+
 }
 
 - (void)markAllRead {
@@ -213,8 +217,34 @@ typedef enum {
   currentRow = -1;
 }
 
+- (void)markAllReadExceptSticked {
+  NSMutableArray *toReadItemIds = [NSMutableArray array];
+  NSMutableArray *newItems = [NSMutableArray array];
+  for (Item *item in [items allValues]) {
+    if ([item sticked]) {
+      [newItems addObject:item];
+      continue;
+    }
+    [toReadItemIds addObject:item.id];
+  }
+  if ([toReadItemIds count] > 0) {
+    NSString *ids = [toReadItemIds componentsJoinedByString:@","];
+    [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=item&as=read&id=%@", ids]
+                                        success:^(NSHTTPURLResponse *response, id responseObject) {
+                                          [[self itemIds] removeAllObjects];
+                                          [[self items] removeAllObjects];
+                                          [self updateItems:newItems];
+                                        } failure:nil];
+  }
+}
+
 - (void)setCurrentRow:(NSInteger)row {
   currentRow = row;
+}
+
+- (void)toggleSticked:(NSInteger)row {
+  Item *item = [self getItemAt:row];
+  [item setSticked:![item sticked]];
 }
 
 - (Item *)getItemAt:(NSInteger)index {

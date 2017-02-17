@@ -56,6 +56,7 @@
 @property NSString *html;
 @property NSString *author;
 @property NSString *url;
+@property BOOL sticked;
 
 @end
 

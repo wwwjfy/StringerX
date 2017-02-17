@@ -27,9 +27,11 @@
                  success:(void (^)(NSHTTPURLResponse *response, id responseObject))success
                  failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failure;
 - (void)markAllRead;
+- (void)markAllReadExceptSticked;
 - (void)setCurrentRow:(NSInteger)row;
 - (Item *)getItemAt:(NSInteger)index;
 - (NSString *)getFeedNameOfItemAt:(NSInteger)index;
 - (NSImage *)getFaviconOfItemAt:(NSInteger)index;
+- (void)toggleSticked:(NSInteger)row;
 
 @end

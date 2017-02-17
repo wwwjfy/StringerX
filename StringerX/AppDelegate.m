@@ -216,7 +216,9 @@
 
   // favicon
   [[view imageView] setImage:[[ServiceHelper sharedInstance] getFaviconOfItemAt:row]];
-  
+
+  [view setSticked:[item sticked]];
+
   // detailed text
   NSString *html = [item html];
   NSRange r;
@@ -333,11 +335,18 @@
   [self openInBrowserForURL:url];
 }
 
+- (IBAction)stick:(id)sender {
+  NSUInteger row = [[self tableView] selectedRow];
+  [[ServiceHelper sharedInstance] toggleSticked:row];
+  [[self tableView] reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+}
+
 - (IBAction)markAllRead:(id)sender {
   if (webViewOpen) {
     [self openItem:nil];
   }
-  [[ServiceHelper sharedInstance] markAllRead];
+//  [[ServiceHelper sharedInstance] markAllRead];
+  [[ServiceHelper sharedInstance] markAllReadExceptSticked];
 }
 
 @end

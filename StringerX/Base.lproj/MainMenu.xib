@@ -151,6 +151,12 @@
                                     <action selector="openExternal:" target="494" id="vm0-nr-oJV"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Stick" keyEquivalent="s" id="a2i-o5-LyI">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="stick:" target="494" id="gdF-h6-PDp"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="aA3-av-50B"/>
                             <menuItem title="Mark All as Read" keyEquivalent="A" id="kfI-U8-FMZ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -272,13 +278,22 @@
                                                             </constraints>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSActionTemplate" id="FXp-Xl-NZ0"/>
                                                         </imageView>
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="TM0-4K-iL3">
+                                                            <rect key="frame" x="8" y="31" width="10" height="10"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="10" id="4w5-hI-L4P"/>
+                                                                <constraint firstAttribute="height" constant="10" id="EIu-6q-dub"/>
+                                                            </constraints>
+                                                        </customView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="zKr-3F-Vvx" secondAttribute="trailing" constant="50" id="1lr-4a-IcE"/>
                                                         <constraint firstItem="Rs7-fK-zy3" firstAttribute="top" secondItem="sxi-vt-5aw" secondAttribute="top" id="FnT-bE-Rqa"/>
                                                         <constraint firstItem="Rs7-fK-zy3" firstAttribute="leading" secondItem="6nL-r5-M4M" secondAttribute="leading" constant="3" id="Xi9-bF-Jvw"/>
                                                         <constraint firstItem="sxi-vt-5aw" firstAttribute="top" secondItem="6nL-r5-M4M" secondAttribute="top" id="c3q-Ku-mGb"/>
+                                                        <constraint firstItem="TM0-4K-iL3" firstAttribute="centerX" secondItem="Rs7-fK-zy3" secondAttribute="centerX" id="f42-8F-ehL"/>
                                                         <constraint firstItem="zKr-3F-Vvx" firstAttribute="top" secondItem="sxi-vt-5aw" secondAttribute="bottom" constant="1" id="fgE-gx-RoK"/>
+                                                        <constraint firstItem="TM0-4K-iL3" firstAttribute="centerY" secondItem="6nL-r5-M4M" secondAttribute="centerY" id="hT9-9G-4AD"/>
                                                         <constraint firstItem="zKr-3F-Vvx" firstAttribute="leading" secondItem="sxi-vt-5aw" secondAttribute="leading" id="hhU-U6-ojj"/>
                                                         <constraint firstAttribute="trailing" secondItem="GVg-Gu-GJc" secondAttribute="trailing" constant="50" id="klF-Ak-sAV"/>
                                                         <constraint firstAttribute="trailing" secondItem="sxi-vt-5aw" secondAttribute="trailing" constant="3" id="m18-u2-7Ry"/>
@@ -290,6 +305,7 @@
                                                         <outlet property="detailedText" destination="GVg-Gu-GJc" id="1lr-6n-iKT"/>
                                                         <outlet property="imageView" destination="Rs7-fK-zy3" id="e7H-29-jUi"/>
                                                         <outlet property="sourceField" destination="zKr-3F-Vvx" id="ofb-PR-uAd"/>
+                                                        <outlet property="stickIndicator" destination="TM0-4K-iL3" id="6TU-99-b5H"/>
                                                         <outlet property="textField" destination="sxi-vt-5aw" id="iyB-JO-VKx"/>
                                                     </connections>
                                                 </tableCellView>

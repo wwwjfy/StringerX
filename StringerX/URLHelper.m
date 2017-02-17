@@ -38,7 +38,6 @@
 - (void)setBaseURL:(NSURL *)baseURL {
   NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
   sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL sessionConfiguration:configuration];
-//  [sessionManager setRequestSerializer:[[AFJSONRequestSerializer alloc] init]];
   [sessionManager setResponseSerializer:[[AFJSONResponseSerializer alloc] init]];
 }
 
