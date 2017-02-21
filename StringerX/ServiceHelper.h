@@ -16,9 +16,9 @@
   NSTimer *timer;
 }
 
-@property NSMutableDictionary *items;
-@property NSMutableArray *itemIds;
-@property NSMutableDictionary *feeds;
+@property NSMutableDictionary<NSNumber *, Item *> *items;
+@property NSMutableArray<NSNumber *> *itemIds;
+@property NSMutableDictionary<NSNumber *, Feed *> *feeds;
 
 + (instancetype)sharedInstance;
 - (void)loginWithBaseURL:(NSURL *)url
@@ -29,9 +29,9 @@
 - (void)markAllRead;
 - (void)markAllReadExceptSticked;
 - (void)setCurrentRow:(NSInteger)row;
-- (Item *)getItemAt:(NSInteger)index;
-- (NSString *)getFeedNameOfItemAt:(NSInteger)index;
-- (NSImage *)getFaviconOfItemAt:(NSInteger)index;
-- (void)toggleSticked:(NSInteger)row;
+- (Item *)getItemAt:(NSUInteger)index;
+- (NSString *)getFeedNameOfItemAt:(NSUInteger)index;
+- (NSImage *)getFaviconOfItemAt:(NSUInteger)index;
+- (void)toggleSticked:(NSUInteger)row;
 
 @end

@@ -172,8 +172,8 @@
 - (void)refresh:(NSNotification *)notification {
   [[self tableView] reloadData];
   NSNumber *currentRow = [[notification userInfo] objectForKey:@"currentRow"];
-  if (currentRow) {
-    [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:[currentRow integerValue]] byExtendingSelection:NO];
+  if (currentRow && [currentRow integerValue] >= 0) {
+    [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:[currentRow unsignedIntegerValue]] byExtendingSelection:NO];
   }
   if ([[[ServiceHelper sharedInstance] items] count] > 0) {
     [[[NSApplication sharedApplication] dockTile] setBadgeLabel:[NSString stringWithFormat:@"%lu", [[[ServiceHelper sharedInstance] items] count]]];
@@ -200,22 +200,26 @@
 #pragma mark Table source and delegate
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-  return [[[ServiceHelper sharedInstance] items] count];
+  return (NSInteger)[[[ServiceHelper sharedInstance] items] count];
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
   TheTableCellView *view = [tableView makeViewWithIdentifier:@"Items" owner:self];
   [view setAutoresizingMask:NSViewWidthSizable];
+  if (row < 0) {
+    return view;
+  }
+  NSUInteger urow = (NSUInteger)row;
 
-  Item *item = [[ServiceHelper sharedInstance] getItemAt:row];
+  Item *item = [[ServiceHelper sharedInstance] getItemAt:urow];
   // title
   [[view textField] setStringValue:[item title]];
 
   // source
-  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] getFeedNameOfItemAt:row]];
+  [[view sourceField] setStringValue:[[ServiceHelper sharedInstance] getFeedNameOfItemAt:urow]];
 
   // favicon
-  [[view imageView] setImage:[[ServiceHelper sharedInstance] getFaviconOfItemAt:row]];
+  [[view imageView] setImage:[[ServiceHelper sharedInstance] getFaviconOfItemAt:urow]];
 
   [view setSticked:[item sticked]];
 
@@ -255,14 +259,17 @@
   if (current == 0) {
     return;
   }
+  if (current < -1) {
+    return;
+  }
   NSUInteger index;
   if (current == -1) {
     index = [[[ServiceHelper sharedInstance] itemIds] count] - 1;
   } else {
-    index = current - 1;
+    index = (NSUInteger)(current - 1);
   }
   [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
-  [[self tableView] scrollRowToVisible:index];
+  [[self tableView] scrollRowToVisible:(NSInteger)index];
   if (webViewOpen) {
     [self loadWeb];
   }
@@ -273,7 +280,7 @@
   if ((current + 1) >= (NSInteger)[[[ServiceHelper sharedInstance] itemIds] count]) {
     return;
   }
-  [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:(current + 1)] byExtendingSelection:NO];
+  [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:(NSUInteger)(current + 1)] byExtendingSelection:NO];
   [[self tableView] scrollRowToVisible:(current + 1)];
   if (webViewOpen) {
     [self loadWeb];
@@ -317,10 +324,11 @@
 }
 
 - (void)loadWeb {
+  NSInteger current = [[self tableView] selectedRow];
   if ([[self tableView] selectedRow] == -1) {
     return;
   }
-  Item *item = [[ServiceHelper sharedInstance] getItemAt:[[self tableView] selectedRow]];
+  Item *item = [[ServiceHelper sharedInstance] getItemAt:(NSUInteger)current];
   [[self webView] loadHTMLString:[self preprocessHTML:item] baseURL:nil];
   [[self window] makeFirstResponder:[self webView]];
 }
@@ -330,15 +338,18 @@
   if (current == -1) {
     return;
   }
-  NSString *urlString = [[[ServiceHelper sharedInstance] getItemAt:current] url];
+  NSString *urlString = [[[ServiceHelper sharedInstance] getItemAt:(NSUInteger)current] url];
   NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
   [self openInBrowserForURL:url];
 }
 
 - (IBAction)stick:(id)sender {
-  NSUInteger row = [[self tableView] selectedRow];
-  [[ServiceHelper sharedInstance] toggleSticked:row];
-  [[self tableView] reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+  NSInteger row = [[self tableView] selectedRow];
+  if (row >= 0) {
+    NSUInteger urow = (NSUInteger)row;
+    [[ServiceHelper sharedInstance] toggleSticked:urow];
+    [[self tableView] reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:(NSUInteger)row] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+  }
 }
 
 - (IBAction)markAllRead:(id)sender {

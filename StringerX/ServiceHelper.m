@@ -177,7 +177,7 @@ typedef enum {
   BOOL changed = NO;
   NSNumber *currentId;
   if (currentRow != -1 && [[self itemIds] count] >= (currentRow + 1)) {
-    currentId = [self itemIds][currentRow];
+    currentId = [self itemIds][(NSUInteger)currentRow];
   }
   NSMutableSet *stickedItemIds = [NSMutableSet set];
   for (Item *item in [[self items] allValues]) {
@@ -211,6 +211,8 @@ typedef enum {
       if (row != NSNotFound) {
         userInfo = @{@"currentRow": [NSNumber numberWithUnsignedInteger:row]};
       }
+    } else {
+      currentRow = -1;
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION
                                                         object:nil
@@ -254,20 +256,20 @@ typedef enum {
   currentRow = row;
 }
 
-- (void)toggleSticked:(NSInteger)row {
+- (void)toggleSticked:(NSUInteger)row {
   Item *item = [self getItemAt:row];
   [item setSticked:![item sticked]];
 }
 
-- (Item *)getItemAt:(NSInteger)index {
+- (Item *)getItemAt:(NSUInteger)index {
     return self.items[[self itemIds][index]];
 }
 
-- (NSString *)getFeedNameOfItemAt:(NSInteger)index {
+- (NSString *)getFeedNameOfItemAt:(NSUInteger)index {
   return [self.feeds[[[self getItemAt:index] feed_id]] title];
 }
 
-- (NSImage *)getFaviconOfItemAt:(NSInteger)index {
+- (NSImage *)getFaviconOfItemAt:(NSUInteger)index {
   return [[(Feed *)self.feeds[[[self getItemAt:index] feed_id]] favicon] image];
 }
 
