@@ -189,7 +189,13 @@
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-  decisionHandler(WKNavigationActionPolicyAllow);
+  NSURL *url = [[navigationAction request] URL];
+  if ([[url absoluteString] isEqualToString:@"about:blank"]) {
+    decisionHandler(WKNavigationActionPolicyAllow);
+  } else {
+    decisionHandler(WKNavigationActionPolicyCancel);
+    [self openInBrowserForURL:url];
+  }
 }
 
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
