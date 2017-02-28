@@ -149,7 +149,9 @@
                                                  retry:YES
                                                success:^(NSURLResponse *response, id responseObject) {
                                                  [accountViewController setLoginStatus:LOGGED_IN];
-                                               } failure:nil];
+                                               } failure:^(NSHTTPURLResponse *response, NSError *error) {
+                                                 [accountViewController setLoginStatus:LOGGED_OUT];
+                                               }];
       return;
     }
   }
