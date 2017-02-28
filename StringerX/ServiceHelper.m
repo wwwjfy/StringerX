@@ -129,10 +129,17 @@ typedef enum {
 
 - (void)getFavicons:(void (^)())success {
   [[URLHelper sharedInstance] requestWithPath:@"fever/?favicons" success:^(NSHTTPURLResponse *response, id JSON) {
+    NSMutableDictionary *favicons = [NSMutableDictionary dictionary];
     for (Favicon *favicon in [[Favicons yy_modelWithJSON:JSON] favicons]) {
+      if (![favicon data]) {
+        continue;
+      }
       NSData *faviconData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[@"data:" stringByAppendingString:[favicon data]]]];
       [favicon setImage:[[NSImage alloc] initWithData:faviconData]];
-      [(Feed *)[self feeds][favicon.id] setFavicon:favicon];
+      favicons[favicon.id] = favicon;
+    }
+    for (Feed *feed in [[self feeds] allValues]) {
+      [feed setFavicon:favicons[feed.favicon_id]];
     }
     if (success) {
       success();

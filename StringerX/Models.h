@@ -32,6 +32,7 @@
 
 @property NSNumber *id;
 @property NSString *title;
+@property NSNumber *favicon_id;
 @property Favicon *favicon;
 
 @end
