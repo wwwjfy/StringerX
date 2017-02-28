@@ -50,7 +50,17 @@
   spacing.height = 10;
   [[self tableView] setIntercellSpacing:spacing];
 
-  NSString *script = @"document.onmouseover = function (event) {window.webkit.messageHandlers.mouseover.postMessage(event.target.href)}";
+  NSString *script = @"document.onmouseover = function (event) {"
+    "var target = event.target; "
+    "while (target) {"
+      "if (target.href) {"
+        "window.webkit.messageHandlers.mouseover.postMessage(target.href);"
+        "return;"
+      "}"
+      "target = target.parentNode;"
+    "}"
+    "window.webkit.messageHandlers.mouseover.postMessage(null);"
+  "}";
   WKUserScript *mouseoverScript = [[WKUserScript alloc] initWithSource:script
                                                          injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
                                                       forMainFrameOnly:YES];
@@ -59,7 +69,7 @@
   WebViewMouseOverHandler *messageHandler = [[WebViewMouseOverHandler alloc] init];
   [messageHandler setOnURLHover:^(id url) {
     NSString *urlString = (NSString *)url;
-    if (urlString) {
+    if (urlString && url != [NSNull null]) {
       [[self urlText] setStringValue:urlString];
       [[self urlText] setHidden:NO];
     } else {
