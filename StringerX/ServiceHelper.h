@@ -13,7 +13,6 @@
 @interface ServiceHelper : NSObject {
   int last_item_created_on;
   NSInteger currentRow;
-  NSTimer *timer;
 }
 
 @property NSMutableDictionary<NSNumber *, Item *> *items;

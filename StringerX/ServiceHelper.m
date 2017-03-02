@@ -19,6 +19,8 @@ typedef enum {
 
 @interface ServiceHelper () {
   ACTION nextAction;
+  NSTimer *timer;
+  NSUInteger counter; // sync feed every 10 timer-triggers
 }
 
 @end
@@ -52,17 +54,11 @@ typedef enum {
   switch (nextAction) {
     case NONE:
       break;
-
     case LOGIN:
-      {
-        [self loginWithBaseURL:nil withToken:nil retry:NO success:nil failure:nil];
-      }
+      [self loginWithBaseURL:nil withToken:nil retry:NO success:nil failure:nil];
       break;
-
     case SYNC:
-      {
-        [self syncUnreadItemIds];
-      }
+      [self syncUnreadItemIds];
       break;
   }
 }
@@ -79,6 +75,7 @@ typedef enum {
   if (retry) {
     if (!timer) {
       timer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(nextCall) userInfo:nil repeats:YES];
+      counter = 0;
       [timer setTolerance:30];
     }
     if (nextAction != LOGIN) {
@@ -156,6 +153,13 @@ typedef enum {
       [self syncItemsWithIds:unreadItemIds];
     }
   } failure:nil];
+  counter++;
+  if (counter % 10 == 0) {
+    counter = 0;
+    [self getFeeds:^{
+      [self getFavicons:nil];
+    }];
+  }
 }
 
 - (void)syncItemsWithIds:(NSString *)unreadItemIds {
