@@ -12,6 +12,7 @@
 #import <MASPreferencesWindowController.h>
 #import <HTMLKit.h>
 
+#import "AppUtils.h"
 #import "ServiceHelper.h"
 #import "Notifications.h"
 #import "TheTableCellView.h"
@@ -187,11 +188,7 @@
   if (currentRow && [currentRow integerValue] >= 0) {
     [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:[currentRow unsignedIntegerValue]] byExtendingSelection:NO];
   }
-  if ([[[ServiceHelper sharedInstance] items] count] > 0) {
-    [[[NSApplication sharedApplication] dockTile] setBadgeLabel:[NSString stringWithFormat:@"%lu", [[[ServiceHelper sharedInstance] items] count]]];
-  } else {
-    [[[NSApplication sharedApplication] dockTile] setBadgeLabel:@""];
-  }
+  [[AppUtils sharedInstance] updateBadge];
 }
 
 #pragma mark WebView
@@ -347,6 +344,8 @@
     return;
   }
   Item *item = [[ServiceHelper sharedInstance] getItemAt:(NSUInteger)current];
+  item.is_read = YES;
+  [[AppUtils sharedInstance] updateBadge];
   [[self webView] loadHTMLString:[self preprocessHTML:item] baseURL:nil];
   [[self window] makeFirstResponder:[self webView]];
 }

@@ -190,23 +190,20 @@ typedef enum {
   if (currentRow != -1 && [[self itemIds] count] >= (currentRow + 1)) {
     currentId = [self itemIds][(NSUInteger)currentRow];
   }
-  NSMutableSet *stickedItemIds = [NSMutableSet set];
-  for (Item *item in [[self items] allValues]) {
-    if (item.sticked) {
-      [stickedItemIds addObject:item.id];
-    }
-  }
   if ([[self itemIds] count] > 0) {
     changed = YES;
   }
+  NSMutableDictionary<NSNumber *, Item *> *oldItems = [self items];
   [[self itemIds] removeAllObjects];
-  [[self items] removeAllObjects];
+  self.items = [NSMutableDictionary dictionary];
   for (Item *item in newItems) {
     if ([item is_read]) {
       continue;
     }
-    if ([stickedItemIds containsObject:item.id]) {
-      [item setSticked:YES];
+    Item *oldItem = oldItems[[item id]];
+    if (oldItem) {
+      [item setIs_read:[oldItem is_read]];
+      [item setSticked:[oldItem sticked]];
     }
     [[self itemIds] addObject:[item id]];
     [self items][[item id]] = item;

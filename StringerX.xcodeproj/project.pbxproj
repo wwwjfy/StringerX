@@ -10,6 +10,7 @@
 		061DC02EF191B0B45743EE05 /* libPods-StringerX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB3EB12BE7DD8595EE2FC65 /* libPods-StringerX.a */; };
 		EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2A4953178B0F5700220F35 /* TheTableCellView.m */; };
 		EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B40301786BA31002A785D /* WebKit.framework */; };
+		EA349E861E6A68160050115D /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA349E851E6A68150050115D /* AppUtils.m */; };
 		EA5645C017808697001EDBA4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645BF17808697001EDBA4 /* Cocoa.framework */; };
 		EA5645CA17808698001EDBA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5645C817808698001EDBA4 /* InfoPlist.strings */; };
 		EA5645CC17808698001EDBA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5645CB17808698001EDBA4 /* main.m */; };
@@ -31,6 +32,8 @@
 		EA2A4952178B0F5700220F35 /* TheTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheTableCellView.h; sourceTree = "<group>"; };
 		EA2A4953178B0F5700220F35 /* TheTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheTableCellView.m; sourceTree = "<group>"; };
 		EA2B40301786BA31002A785D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		EA349E841E6A68150050115D /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
+		EA349E851E6A68150050115D /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
 		EA5645BC17808697001EDBA4 /* StringerX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StringerX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5645BF17808697001EDBA4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EA5645C217808697001EDBA4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -87,6 +90,8 @@
 		EA349E831E6A671D0050115D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EA349E841E6A68150050115D /* AppUtils.h */,
+				EA349E851E6A68150050115D /* AppUtils.m */,
 				EA6335E717BF478D00963F9F /* ServiceHelper.h */,
 				EA6335E817BF478D00963F9F /* ServiceHelper.m */,
 				EA63356417BBD31400963F9F /* URLHelper.h */,
@@ -301,6 +306,7 @@
 				EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */,
 				EA5645CC17808698001EDBA4 /* main.m in Sources */,
 				EA63348D17BA167400963F9F /* AccountPreferencesViewController.m in Sources */,
+				EA349E861E6A68160050115D /* AppUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
