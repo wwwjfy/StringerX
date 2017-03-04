@@ -84,13 +84,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EA349E831E6A671D0050115D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EA6335E717BF478D00963F9F /* ServiceHelper.h */,
+				EA6335E817BF478D00963F9F /* ServiceHelper.m */,
+				EA63356417BBD31400963F9F /* URLHelper.h */,
+				EA63356517BBD31400963F9F /* URLHelper.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		EA5645B317808697001EDBA4 = {
 			isa = PBXGroup;
 			children = (
 				EA5645C517808698001EDBA4 /* StringerX */,
+				8A31BEC2A5F351AF0EC1559A /* Pods */,
 				EA5645BE17808697001EDBA4 /* Frameworks */,
 				EA5645BD17808697001EDBA4 /* Products */,
-				8A31BEC2A5F351AF0EC1559A /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -130,6 +141,8 @@
 		EA5645C517808698001EDBA4 /* StringerX */ = {
 			isa = PBXGroup;
 			children = (
+				EA5645C617808698001EDBA4 /* Supporting Files */,
+				EA349E831E6A671D0050115D /* Utils */,
 				EA63348A17BA167400963F9F /* AccountPreferencesViewController.h */,
 				EA63348B17BA167400963F9F /* AccountPreferencesViewController.m */,
 				EA63348C17BA167400963F9F /* AccountPreferencesViewController.xib */,
@@ -137,16 +150,11 @@
 				EA5645D217808698001EDBA4 /* AppDelegate.m */,
 				EA5645D717808698001EDBA4 /* Images.xcassets */,
 				EA5645D417808698001EDBA4 /* MainMenu.xib */,
-				EA6335EA17BF503200963F9F /* Notifications.h */,
-				EA6335E717BF478D00963F9F /* ServiceHelper.h */,
-				EA6335E817BF478D00963F9F /* ServiceHelper.m */,
-				EA5645C617808698001EDBA4 /* Supporting Files */,
-				EA2A4952178B0F5700220F35 /* TheTableCellView.h */,
-				EA2A4953178B0F5700220F35 /* TheTableCellView.m */,
-				EA63356417BBD31400963F9F /* URLHelper.h */,
-				EA63356517BBD31400963F9F /* URLHelper.m */,
 				EA82923E1E533F670095555F /* Models.h */,
 				EA8292411E53519A0095555F /* Models.m */,
+				EA6335EA17BF503200963F9F /* Notifications.h */,
+				EA2A4952178B0F5700220F35 /* TheTableCellView.h */,
+				EA2A4953178B0F5700220F35 /* TheTableCellView.m */,
 			);
 			path = StringerX;
 			sourceTree = "<group>";
@@ -154,13 +162,13 @@
 		EA5645C617808698001EDBA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EA5645C717808698001EDBA4 /* StringerX-Info.plist */,
-				EA5645C817808698001EDBA4 /* InfoPlist.strings */,
-				EA5645CB17808698001EDBA4 /* main.m */,
-				EA5645CD17808698001EDBA4 /* StringerX-Prefix.pch */,
 				EA5645CE17808698001EDBA4 /* Credits.rtf */,
+				EA5645C817808698001EDBA4 /* InfoPlist.strings */,
+				EA5645C717808698001EDBA4 /* StringerX-Info.plist */,
+				EA5645CD17808698001EDBA4 /* StringerX-Prefix.pch */,
+				EA5645CB17808698001EDBA4 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +313,7 @@
 				EA5645C917808698001EDBA4 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		EA5645CE17808698001EDBA4 /* Credits.rtf */ = {
@@ -313,6 +322,7 @@
 				EA5645CF17808698001EDBA4 /* en */,
 			);
 			name = Credits.rtf;
+			path = .;
 			sourceTree = "<group>";
 		};
 		EA5645D417808698001EDBA4 /* MainMenu.xib */ = {
@@ -321,6 +331,7 @@
 				EA5645D517808698001EDBA4 /* Base */,
 			);
 			name = MainMenu.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -416,9 +427,9 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "StringerX/StringerX-Prefix.pch";
+				GCC_PREFIX_HEADER = "StringerX/Supporting Files/StringerX-Prefix.pch";
 				GCC_WARN_SHADOW = YES;
-				INFOPLIST_FILE = "StringerX/StringerX-Info.plist";
+				INFOPLIST_FILE = "StringerX/Supporting Files/StringerX-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
@@ -438,9 +449,9 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "StringerX/StringerX-Prefix.pch";
+				GCC_PREFIX_HEADER = "StringerX/Supporting Files/StringerX-Prefix.pch";
 				GCC_WARN_SHADOW = YES;
-				INFOPLIST_FILE = "StringerX/StringerX-Info.plist";
+				INFOPLIST_FILE = "StringerX/Supporting Files/StringerX-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
