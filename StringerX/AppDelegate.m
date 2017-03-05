@@ -344,7 +344,7 @@
     return;
   }
   Item *item = [[ServiceHelper sharedInstance] getItemAt:(NSUInteger)current];
-  item.is_read = YES;
+  [item setLocalRead:YES];
   [[AppUtils sharedInstance] updateBadge];
   [[self webView] loadHTMLString:[self preprocessHTML:item] baseURL:nil];
   [[self window] makeFirstResponder:[self webView]];

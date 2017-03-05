@@ -22,7 +22,7 @@
 - (void)updateBadge {
   NSUInteger unreadCount = 0;
   for (Item *item in [[[ServiceHelper sharedInstance] items] allValues]) {
-    if (!item.is_read) {
+    if (![item localRead]) {
       unreadCount++;
     }
   }

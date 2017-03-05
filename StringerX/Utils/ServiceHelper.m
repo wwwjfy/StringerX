@@ -202,7 +202,7 @@ typedef enum {
     }
     Item *oldItem = oldItems[[item id]];
     if (oldItem) {
-      [item setIs_read:[oldItem is_read]];
+      [item setLocalRead:[oldItem localRead]];
       [item setSticked:[oldItem sticked]];
     }
     [[self itemIds] addObject:[item id]];
