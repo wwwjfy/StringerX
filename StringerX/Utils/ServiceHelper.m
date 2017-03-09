@@ -244,12 +244,12 @@ typedef enum {
 - (void)markAllReadExceptSticked {
   NSMutableArray *toReadItemIds = [NSMutableArray array];
   NSMutableArray *newItems = [NSMutableArray array];
-  for (Item *item in [items allValues]) {
-    if ([item sticked]) {
-      [newItems addObject:item];
+  for (NSNumber *itemId in itemIds) {
+    if ([items[itemId] sticked]) {
+      [newItems addObject:items[itemId]];
       continue;
     }
-    [toReadItemIds addObject:item.id];
+    [toReadItemIds addObject:itemId];
   }
   if ([toReadItemIds count] > 0) {
     NSString *ids = [toReadItemIds componentsJoinedByString:@","];
