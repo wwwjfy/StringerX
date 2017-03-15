@@ -114,6 +114,10 @@ typedef enum {
 - (void)getFeeds:(void (^)())success {
   [[URLHelper sharedInstance] requestWithPath:@"fever/?feeds" success:^(NSHTTPURLResponse *response, id JSON) {
     for (Feed *feed in [[Feeds yy_modelWithJSON:JSON] feeds]) {
+      Feed *oldFeed = [self feeds][feed.id];
+      if (oldFeed) {
+        [feed setFavicon:[oldFeed favicon]];
+      }
       [self feeds][feed.id] = feed;
     };
     if (success) {
