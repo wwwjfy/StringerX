@@ -250,6 +250,7 @@ typedef enum {
   NSMutableArray *newItems = [NSMutableArray array];
   for (NSNumber *itemId in itemIds) {
     if ([items[itemId] sticked]) {
+      items[itemId].localRead = YES;
       [newItems addObject:items[itemId]];
       continue;
     }
@@ -261,6 +262,10 @@ typedef enum {
                                         success:^(NSHTTPURLResponse *response, id responseObject) {
                                           [self updateItems:newItems];
                                         } failure:nil];
+  } else {
+    [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION
+                                                        object:nil
+                                                      userInfo:@{@"currentRow": [NSNumber numberWithInteger:currentRow]}];
   }
 }
 
