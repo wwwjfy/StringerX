@@ -12,8 +12,8 @@
 
 @property (weak) IBOutlet NSTextField *sourceField;
 @property (weak) IBOutlet NSTextField *detailedText;
-@property (weak) IBOutlet NSView *stickIndicator;
+@property (weak) IBOutlet NSView *starredIndicator;
 
-- (void)setSticked:(BOOL)sticked;
+- (void)setStarred:(BOOL)starred;
 
 @end

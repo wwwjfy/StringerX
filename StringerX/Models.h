@@ -57,7 +57,7 @@
 @property NSString *html;
 @property NSString *author;
 @property NSString *url;
-@property BOOL sticked;
+@property BOOL is_saved;
 @property BOOL localRead;
 
 @end

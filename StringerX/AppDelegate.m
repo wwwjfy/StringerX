@@ -236,7 +236,7 @@
   // favicon
   [[view imageView] setImage:[[ServiceHelper sharedInstance] getFaviconOfItemAt:urow]];
 
-  [view setSticked:[item sticked]];
+  [view setStarred:[item is_saved]];
 
   // detailed text
   NSString *html = [item html];
@@ -373,8 +373,7 @@
   if (webViewOpen) {
     [self openItem:nil];
   }
-//  [[ServiceHelper sharedInstance] markAllRead];
-  [[ServiceHelper sharedInstance] markAllReadExceptSticked];
+  [[ServiceHelper sharedInstance] markAllRead];
 }
 
 @end

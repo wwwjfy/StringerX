@@ -26,7 +26,6 @@
                  success:(void (^)(NSHTTPURLResponse *response, id responseObject))success
                  failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failure;
 - (void)markAllRead;
-- (void)markAllReadExceptSticked;
 - (void)setCurrentRow:(NSInteger)row;
 - (Item *)getItemAt:(NSUInteger)index;
 - (NSString *)getFeedNameOfItemAt:(NSUInteger)index;

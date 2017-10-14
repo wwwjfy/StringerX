@@ -10,15 +10,15 @@
 
 @implementation TheTableCellView
 
-- (void)setSticked:(BOOL)sticked {
-  if (sticked) {
-    [_stickIndicator setHidden:NO];
-    [_stickIndicator setWantsLayer:YES];
-    _stickIndicator.layer.cornerRadius = _stickIndicator.frame.size.width / 2;
-    _stickIndicator.layer.masksToBounds = YES;
-    [_stickIndicator.layer setBackgroundColor:[NSColor redColor].CGColor];
+- (void)setStarred:(BOOL)starred {
+  if (starred) {
+    [_starredIndicator setHidden:NO];
+    [_starredIndicator setWantsLayer:YES];
+    _starredIndicator.layer.cornerRadius = _starredIndicator.frame.size.width / 2;
+    _starredIndicator.layer.masksToBounds = YES;
+    [_starredIndicator.layer setBackgroundColor:[NSColor redColor].CGColor];
   } else {
-    [_stickIndicator setHidden:YES];
+    [_starredIndicator setHidden:YES];
   }
 }
 

@@ -111,7 +111,7 @@ typedef enum {
   }];
 }
 
-- (void)getFeeds:(void (^)())success {
+- (void)getFeeds:(void (^)(void))success {
   [[URLHelper sharedInstance] requestWithPath:@"fever/?feeds" success:^(NSHTTPURLResponse *response, id JSON) {
     for (Feed *feed in [[Feeds yy_modelWithJSON:JSON] feeds]) {
       Feed *oldFeed = [self feeds][feed.id];
@@ -128,7 +128,7 @@ typedef enum {
   }];
 }
 
-- (void)getFavicons:(void (^)())success {
+- (void)getFavicons:(void (^)(void))success {
   [[URLHelper sharedInstance] requestWithPath:@"fever/?favicons" success:^(NSHTTPURLResponse *response, id JSON) {
     NSMutableDictionary *favicons = [NSMutableDictionary dictionary];
     for (Favicon *favicon in [[Favicons yy_modelWithJSON:JSON] favicons]) {
@@ -151,11 +151,12 @@ typedef enum {
 }
 
 - (void)syncUnreadItemIds {
-  [[URLHelper sharedInstance] requestWithPath:@"fever/?unread_item_ids" success:^(NSHTTPURLResponse *response, id JSON) {
-    NSString *unreadItemIds = JSON[@"unread_item_ids"];
-    if (![unreadItemIds isEqualToString:@""]) {
-      [self syncItemsWithIds:unreadItemIds];
-    }
+  [[URLHelper sharedInstance] requestWithPath:@"fever/?unread_item_ids" success:^(NSHTTPURLResponse *responseUnread, id JSONUnread) {
+    NSString *unreadItemIds = JSONUnread[@"unread_item_ids"];
+    [[URLHelper sharedInstance] requestWithPath:@"fever/?saved_item_ids" success:^(NSHTTPURLResponse *responseSaved, id JSONSaved) {
+      NSString *savedItemIds = JSONSaved[@"saved_item_ids"];
+      [self syncItemsWithIds:[@[unreadItemIds, savedItemIds] componentsJoinedByString:@","]];
+    } failure:nil];
   } failure:nil];
   counter++;
   if (counter % 10 == 0) {
@@ -166,14 +167,8 @@ typedef enum {
   }
 }
 
-- (void)syncItemsWithIds:(NSString *)unreadItemIds {
-  long min = NSIntegerMax;
-  for (NSString *item in [unreadItemIds componentsSeparatedByString:@","]) {
-    if ([item intValue] < min) {
-      min = [item intValue];
-    }
-  }
-  NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&since_id=%ld", min-1];
+- (void)syncItemsWithIds:(NSString *)newItemIds {
+  NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&with_ids=%@", newItemIds];
   [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(NSHTTPURLResponse *response, id JSON) {
     NSArray *newItems = [[Items yy_modelWithJSON:JSON].items sortedArrayUsingComparator:^NSComparisonResult(Item *obj1, Item *obj2) {
       if ([obj1 created_on_time] > [obj2 created_on_time]) {
@@ -201,13 +196,11 @@ typedef enum {
   [[self itemIds] removeAllObjects];
   self.items = [NSMutableDictionary dictionary];
   for (Item *item in newItems) {
-    if ([item is_read]) {
-      continue;
-    }
     Item *oldItem = oldItems[[item id]];
     if (oldItem) {
-      [item setLocalRead:[oldItem localRead]];
-      [item setSticked:[oldItem sticked]];
+      [item setLocalRead:[oldItem localRead] || [item is_read]];
+    } else {
+      [item setLocalRead: [item is_read]];
     }
     [[self itemIds] addObject:[item id]];
     [self items][[item id]] = item;
@@ -236,37 +229,21 @@ typedef enum {
 - (void)markAllRead {
   [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=group&as=read&id=0&before=%d", last_item_created_on + 1]
                                       success:^(NSHTTPURLResponse *response, id responseObject) {
-                                        [[self itemIds] removeAllObjects];
-                                        [[self items] removeAllObjects];
+                                        NSMutableDictionary<NSNumber *, Item *> *newItems = [[NSMutableDictionary alloc] init];
+                                        NSMutableArray<NSNumber *> *newItemIds = [[NSMutableArray alloc] init];
+                                        for (NSNumber *itemId in itemIds) {
+                                          if ([self items][itemId].is_saved) {
+                                            [newItemIds addObject:itemId];
+                                            newItems[itemId] = [self items][itemId];
+                                          }
+                                        }
+                                        self.itemIds = newItemIds;
+                                        self.items = newItems;
                                         [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION object:nil];
                                       } failure:^(NSHTTPURLResponse *response, NSError *error) {
                                         NSLog(@"Failed to mark all read: %@", [error localizedDescription]);
                                       }];
   currentRow = -1;
-}
-
-- (void)markAllReadExceptSticked {
-  NSMutableArray *toReadItemIds = [NSMutableArray array];
-  NSMutableArray *newItems = [NSMutableArray array];
-  for (NSNumber *itemId in itemIds) {
-    if ([items[itemId] sticked]) {
-      items[itemId].localRead = YES;
-      [newItems addObject:items[itemId]];
-      continue;
-    }
-    [toReadItemIds addObject:itemId];
-  }
-  if ([toReadItemIds count] > 0) {
-    NSString *ids = [toReadItemIds componentsJoinedByString:@","];
-    [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=item&as=read&id=%@", ids]
-                                        success:^(NSHTTPURLResponse *response, id responseObject) {
-                                          [self updateItems:newItems];
-                                        } failure:nil];
-  } else {
-    [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION
-                                                        object:nil
-                                                      userInfo:@{@"currentRow": [NSNumber numberWithInteger:currentRow]}];
-  }
 }
 
 - (void)setCurrentRow:(NSInteger)row {
@@ -275,7 +252,13 @@ typedef enum {
 
 - (void)toggleSticked:(NSUInteger)row {
   Item *item = [self getItemAt:row];
-  [item setSticked:![item sticked]];
+  NSString *action = [item is_saved] ? @"unsaved" : @"saved";
+  BOOL was_saved = item.is_saved;
+  item.is_saved = !was_saved;
+  [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=item&as=%@&id=%@", action, [item id]]
+                                      success:nil failure:^(NSHTTPURLResponse *response, NSError *error) {
+                                        item.is_saved = was_saved;
+                                      }];
 }
 
 - (Item *)getItemAt:(NSUInteger)index {
