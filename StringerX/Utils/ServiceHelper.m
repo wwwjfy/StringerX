@@ -227,6 +227,10 @@ typedef enum {
 }
 
 - (void)markAllRead {
+  NSNumber *currentId;
+  if (currentRow != -1 && [[self itemIds] count] >= (currentRow + 1)) {
+    currentId = [self itemIds][(NSUInteger)currentRow];
+  }
   [[URLHelper sharedInstance] requestWithPath:[NSString stringWithFormat:@"fever/?mark=group&as=read&id=0&before=%d", last_item_created_on + 1]
                                       success:^(NSHTTPURLResponse *response, id responseObject) {
                                         NSMutableDictionary<NSNumber *, Item *> *newItems = [[NSMutableDictionary alloc] init];
@@ -239,7 +243,14 @@ typedef enum {
                                         }
                                         self.itemIds = newItemIds;
                                         self.items = newItems;
-                                        [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION object:nil];
+                                        NSDictionary *userInfo;
+                                        if (currentId) {
+                                          NSUInteger row = [[self itemIds] indexOfObject:currentId];
+                                          if (row != NSNotFound) {
+                                            userInfo = @{@"currentRow": [NSNumber numberWithUnsignedInteger:row]};
+                                          }
+                                        }
+                                        [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_NOTIFICATION object:nil userInfo:userInfo];
                                       } failure:^(NSHTTPURLResponse *response, NSError *error) {
                                         NSLog(@"Failed to mark all read: %@", [error localizedDescription]);
                                       }];
