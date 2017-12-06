@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <MASPreferences.h>
 
 typedef enum {
   LOGGED_IN,
@@ -14,7 +15,7 @@ typedef enum {
   LOGGED_OUT
 } LOGIN_STATUS;
 
-@interface AccountPreferencesViewController : NSViewController {
+@interface AccountPreferencesViewController : NSViewController <MASPreferencesViewController> {
   LOGIN_STATUS status;
 }
 

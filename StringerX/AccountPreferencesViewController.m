@@ -23,7 +23,7 @@
   [self setLoginStatus:status];
 }
 
-- (NSString *)identifier {
+- (NSString *)viewIdentifier {
   return @"AccountPreferences";
 }
 
@@ -141,5 +141,7 @@
       break;
   }
 }
+
+@synthesize viewIdentifier;
 
 @end
