@@ -241,10 +241,16 @@
   // detailed text
   NSString *html = [item html];
   NSRange r;
-  while ((r = [html rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-    html = [html stringByReplacingCharactersInRange:r withString:@""];
-  NSString *text = [NSString string];
   int count = 0;
+  while ((r = [html rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound) {
+    html = [html stringByReplacingCharactersInRange:r withString:@""];
+    count++;
+    if (count >= 100) {
+      break;
+    }
+  }
+  NSString *text = [NSString string];
+  count = 0;
   for (NSString *paragraph in [[html stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString:@"\n"]) {
     if ([paragraph isEqualToString:@""]) {
       continue;
