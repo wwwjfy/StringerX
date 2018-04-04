@@ -15,10 +15,10 @@ typedef enum {
   NONE,
   LOGIN,
   SYNC
-} ACTION;
+} SACTION;
 
 @interface ServiceHelper () {
-  ACTION nextAction;
+  SACTION nextAction;
   NSTimer *timer;
   NSUInteger counter; // sync feed every 10 timer-triggers
 }
@@ -101,7 +101,7 @@ typedef enum {
     [self getFeeds:^{
       [self getFavicons:^{
         [self syncUnreadItemIds];
-        nextAction = SYNC;
+        self->nextAction = SYNC;
       }];
     }];
   } failure:^(NSHTTPURLResponse *response, NSError *error) {
@@ -235,7 +235,7 @@ typedef enum {
                                       success:^(NSHTTPURLResponse *response, id responseObject) {
                                         NSMutableDictionary<NSNumber *, Item *> *newItems = [[NSMutableDictionary alloc] init];
                                         NSMutableArray<NSNumber *> *newItemIds = [[NSMutableArray alloc] init];
-                                        for (NSNumber *itemId in itemIds) {
+                                        for (NSNumber *itemId in self->itemIds) {
                                           if ([self items][itemId].is_saved) {
                                             [newItemIds addObject:itemId];
                                             newItems[itemId] = [self items][itemId];
