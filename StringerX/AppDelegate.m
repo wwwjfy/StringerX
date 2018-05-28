@@ -164,7 +164,7 @@
 }
 
 - (void)openInBrowserForURL:(NSURL *)url {
-  LSLaunchURLSpec urlSpec = {nil, (__bridge CFArrayRef)@[url], nil, kLSLaunchDontSwitch, nil};
+  LSLaunchURLSpec urlSpec = {(__bridge CFURLRef)[NSURL fileURLWithPath:@"/Applications/Safari.app"], (__bridge CFArrayRef)@[url], nil, kLSLaunchDontSwitch, nil};
   LSOpenFromURLSpec(&urlSpec, nil);
 }
 
