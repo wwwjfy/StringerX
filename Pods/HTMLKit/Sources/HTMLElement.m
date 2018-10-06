@@ -144,7 +144,7 @@
 {
 	HTMLElement *copy = [super copyWithZone:zone];
 	copy->_tagName = [_tagName copy];
-	copy->_attributes = [_attributes copy];
+	copy->_attributes = [_attributes mutableCopy];
 	copy->_htmlNamespace = _htmlNamespace;
 	return copy;
 }
@@ -157,11 +157,10 @@
 
 	[result appendFormat:@"<%@", self.tagName];
 	[self.attributes enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, BOOL *stop) {
-		NSRange range = NSMakeRange(0, value.length);
 		NSMutableString *escaped = [value mutableCopy];
-		[escaped replaceOccurrencesOfString:@"&" withString:@"&amp;" options:0 range:range];
-		[escaped replaceOccurrencesOfString:@"\00A0" withString:@"&nbsp;" options:0 range:range];
-		[escaped replaceOccurrencesOfString:@"\"" withString:@"&quot;" options:0 range:range];
+		[escaped replaceOccurrencesOfString:@"&" withString:@"&amp;" options:0 range:NSMakeRange(0, escaped.length)];
+		[escaped replaceOccurrencesOfString:@"0x00A0" withString:@"&nbsp;" options:0 range:NSMakeRange(0, escaped.length)];
+		[escaped replaceOccurrencesOfString:@"\"" withString:@"&quot;" options:0 range:NSMakeRange(0, escaped.length)];
 
 		[result appendFormat:@" %@=\"%@\"", key, escaped];
 	}];
