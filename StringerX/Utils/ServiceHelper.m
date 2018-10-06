@@ -171,7 +171,7 @@ typedef enum {
   NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&with_ids=%@", newItemIds];
   [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(NSHTTPURLResponse *response, id JSON) {
     NSArray *newItems = [[Items yy_modelWithJSON:JSON].items sortedArrayUsingComparator:^NSComparisonResult(Item *obj1, Item *obj2) {
-      if ([obj1 created_on_time] > [obj2 created_on_time]) {
+      if ([[obj1 created_on_time] intValue] > [[obj2 created_on_time] intValue]) {
         // reversed because the sort function itself return ascending results
         return NSOrderedAscending;
       }
