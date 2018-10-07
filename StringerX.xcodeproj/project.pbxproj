@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		061DC02EF191B0B45743EE05 /* libPods-StringerX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB3EB12BE7DD8595EE2FC65 /* libPods-StringerX.a */; };
+		EA1B8C7F2169B57400037C49 /* ThemedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B8C7E2169B57400037C49 /* ThemedView.m */; };
 		EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2A4953178B0F5700220F35 /* TheTableCellView.m */; };
 		EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B40301786BA31002A785D /* WebKit.framework */; };
 		EA349E861E6A68160050115D /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA349E851E6A68150050115D /* AppUtils.m */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		0CC9728633C295175461B600 /* Pods-StringerX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StringerX/Pods-StringerX.debug.xcconfig"; sourceTree = "<group>"; };
 		CEB3EB12BE7DD8595EE2FC65 /* libPods-StringerX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringerX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1B8C7D2169B57400037C49 /* ThemedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemedView.h; sourceTree = "<group>"; };
+		EA1B8C7E2169B57400037C49 /* ThemedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemedView.m; sourceTree = "<group>"; };
 		EA2A4952178B0F5700220F35 /* TheTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheTableCellView.h; sourceTree = "<group>"; };
 		EA2A4953178B0F5700220F35 /* TheTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheTableCellView.m; sourceTree = "<group>"; };
 		EA2B40301786BA31002A785D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -160,6 +163,8 @@
 				EA6335EA17BF503200963F9F /* Notifications.h */,
 				EA2A4952178B0F5700220F35 /* TheTableCellView.h */,
 				EA2A4953178B0F5700220F35 /* TheTableCellView.m */,
+				EA1B8C7D2169B57400037C49 /* ThemedView.h */,
+				EA1B8C7E2169B57400037C49 /* ThemedView.m */,
 			);
 			path = StringerX;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				EA6335E917BF478D00963F9F /* ServiceHelper.m in Sources */,
 				EA8292421E53519A0095555F /* Models.m in Sources */,
 				EA5645D317808698001EDBA4 /* AppDelegate.m in Sources */,
+				EA1B8C7F2169B57400037C49 /* ThemedView.m in Sources */,
 				EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */,
 				EA5645CC17808698001EDBA4 /* main.m in Sources */,
 				EA63348D17BA167400963F9F /* AccountPreferencesViewController.m in Sources */,
