@@ -18,6 +18,7 @@ default_platform :mac
 platform :mac do
   lane :generate do
     gym(scheme: "StringerX")
+    sh("codesign", "-s", "Mac Developer", "../StringerX.app")
   end
 end
 
