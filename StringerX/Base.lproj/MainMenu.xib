@@ -158,10 +158,16 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="aA3-av-50B"/>
-                            <menuItem title="Mark All as Read" keyEquivalent="A" id="kfI-U8-FMZ">
+                            <menuItem title="Go to top" keyEquivalent="g" id="kfI-U8-FMZ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="markAllRead:" target="494" id="TdV-Yb-TTv"/>
+                                    <action selector="goToTop:" target="494" id="0fP-kd-Ylt"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Mark All as Read" keyEquivalent="A" id="yf5-h9-HAM">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="markAllRead:" target="494" id="lOv-Dt-Zx2"/>
                                 </connections>
                             </menuItem>
                         </items>

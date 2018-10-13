@@ -375,6 +375,17 @@
   }
 }
 
+- (IBAction)goToTop:(id)sender {
+  if ([[[ServiceHelper sharedInstance] itemIds] count] == 0) {
+    return;
+  }
+  if (webViewOpen) {
+    return;
+  }
+  [[self tableView] selectRowIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
+  [[self tableView] scrollRowToVisible:0];
+}
+
 - (IBAction)markAllRead:(id)sender {
   if (webViewOpen) {
     [self openItem:nil];
