@@ -10,13 +10,13 @@
 
 #import <AFNetworking.h>
 #import <MASPreferencesWindowController.h>
-#import <HTMLKit.h>
 
 #import "AppUtils.h"
 #import "ServiceHelper.h"
 #import "Notifications.h"
 #import "TheTableCellView.h"
 #import "AccountPreferencesViewController.h"
+#import "SWebView.h"
 
 @interface WebViewMouseOverHandler: NSObject <WKScriptMessageHandler>
 @property (copy) void (^onURLHover)(id url);
@@ -37,7 +37,7 @@
   NSWindowController *_preferencesWindowController;
 }
 
-@property WKWebView *webView;
+@property SWebView *webView;
 
 @end
 
@@ -83,7 +83,7 @@
   [contentController addScriptMessageHandler:messageHandler name:@"mouseover"];
   WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
   configuration.userContentController = contentController;
-  self.webView = [[WKWebView alloc] initWithFrame:[[[self window] contentView] bounds] configuration:configuration];
+  self.webView = [[SWebView alloc] initWithFrame:[[[self window] contentView] bounds] configuration:configuration];
   [[[self window] contentView] addSubview:self.webView];
   [[self webView] setNavigationDelegate:self];
   [[self webView] setUIDelegate:self];
@@ -324,26 +324,6 @@
   }
 }
 
-- (NSString *)preprocessHTML: (Item *)item {
-    HTMLDocument *document = [HTMLDocument documentWithString:[item html]];
-    HTMLElement *css = [[HTMLElement alloc] initWithTagName:@"style" attributes:@{@"type": @"text/css"}];
-    [css setTextContent:@"img {max-width: 100%; height: auto; display: block; margin: 0 auto;}</style>"];
-    HTMLElement *title = [[HTMLElement alloc] initWithTagName:@"div" attributes:@{@"style": @"text-align: center"}];
-    [title setInnerHTML:[NSString stringWithFormat:@"<h1>%@</h1>"
-                            "<div style=\"color: gray\">%@</div>"
-                            "<div style=\"color: gray\">%@</div>",
-                         [item title],
-                         [item author],
-                         [NSDateFormatter localizedStringFromDate:[NSDate dateWithTimeIntervalSince1970:[[item created_on_time] intValue]]
-                                                        dateStyle:NSDateFormatterShortStyle
-                                                        timeStyle:NSDateFormatterMediumStyle]]];
-    HTMLElement *body = [[HTMLElement alloc] initWithTagName:@"div" attributes:@{@"style": @"max-width:1000px; margin: 0 auto;"}];
-    [body setInnerHTML:[document.body innerHTML]];
-    [document.body removeAllChildNodes];
-    [document.body appendNodes:@[css, title, body]];
-    return [document innerHTML];
-}
-
 - (void)loadWeb {
   NSInteger current = [[self tableView] selectedRow];
   if ([[self tableView] selectedRow] == -1) {
@@ -352,7 +332,7 @@
   Item *item = [[ServiceHelper sharedInstance] getItemAt:(NSUInteger)current];
   [item setLocalRead:YES];
   [[AppUtils sharedInstance] updateBadge];
-  [[self webView] loadHTMLString:[self preprocessHTML:item] baseURL:nil];
+  [[self webView] setItem:item];
   [[self window] makeFirstResponder:[self webView]];
 }
 

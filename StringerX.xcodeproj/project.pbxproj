@@ -25,6 +25,7 @@
 		EA63356617BBD31400963F9F /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA63356517BBD31400963F9F /* URLHelper.m */; };
 		EA6335E917BF478D00963F9F /* ServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6335E817BF478D00963F9F /* ServiceHelper.m */; };
 		EA8292421E53519A0095555F /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8292411E53519A0095555F /* Models.m */; };
+		EA878A9321A9CB74003ADE78 /* SWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA878A9221A9CB74003ADE78 /* SWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		EA6335EA17BF503200963F9F /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		EA82923E1E533F670095555F /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		EA8292411E53519A0095555F /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
+		EA878A9121A9CB74003ADE78 /* SWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWebView.h; sourceTree = "<group>"; };
+		EA878A9221A9CB74003ADE78 /* SWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWebView.m; sourceTree = "<group>"; };
 		EE24B738E8CD57F21ED75082 /* Pods-StringerX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.release.xcconfig"; path = "Pods/Target Support Files/Pods-StringerX/Pods-StringerX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +168,8 @@
 				EA2A4953178B0F5700220F35 /* TheTableCellView.m */,
 				EA1B8C7D2169B57400037C49 /* ThemedView.h */,
 				EA1B8C7E2169B57400037C49 /* ThemedView.m */,
+				EA878A9121A9CB74003ADE78 /* SWebView.h */,
+				EA878A9221A9CB74003ADE78 /* SWebView.m */,
 			);
 			path = StringerX;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 				EA1B8C7F2169B57400037C49 /* ThemedView.m in Sources */,
 				EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */,
 				EA5645CC17808698001EDBA4 /* main.m in Sources */,
+				EA878A9321A9CB74003ADE78 /* SWebView.m in Sources */,
 				EA63348D17BA167400963F9F /* AccountPreferencesViewController.m in Sources */,
 				EA349E861E6A68160050115D /* AppUtils.m in Sources */,
 			);
