@@ -314,7 +314,7 @@
   }
   if (webViewOpen) {
     [[self webView] setHidden:YES];
-      [[self webView] loadHTMLString:@"" baseURL:nil];
+    [[self webView] clear];
     webViewOpen = NO;
     [[self window] makeFirstResponder:[self tableView]];
   } else {

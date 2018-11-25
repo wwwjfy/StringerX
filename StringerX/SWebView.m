@@ -26,10 +26,12 @@
   [self loadPage];
 }
 
+- (void)clear {
+  self->_item = nil;
+  [self loadPage];
+}
+
 - (void)loadPage {
-  if (![self item]) {
-    return;
-  }
   HTMLDocument *document = [HTMLDocument documentWithString:[[self item] html]];
   HTMLElement *cssNode = [[HTMLElement alloc] initWithTagName:@"style" attributes:@{@"type": @"text/css"}];
   NSString *css = @"img {max-width: 100%; height: auto; display: block; margin: 0 auto;}";

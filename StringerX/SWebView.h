@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SWebView : WKWebView
 
 - (void)setItem:(Item *)item;
+- (void)clear;
 
 @end
 
