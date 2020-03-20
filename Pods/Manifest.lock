@@ -12,7 +12,7 @@ PODS:
   - AFNetworking/Reachability (3.2.1)
   - AFNetworking/Security (3.2.1)
   - AFNetworking/Serialization (3.2.1)
-  - HTMLKit (2.1.5)
+  - HTMLKit (3.1.0)
   - MASPreferences (1.3)
   - YYModel (1.0.4)
 
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - YYModel
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - HTMLKit
     - MASPreferences
@@ -31,10 +31,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  HTMLKit: 91dbd983c94f264c6ddea27d317f5a66368dd20b
+  HTMLKit: 4ed10a911462cbf972329ec6aaaa827208dfd70c
   MASPreferences: c08b8622dd17b47da87669e741efd7c92e970e8c
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 75a90e3bc02a714d0502e37599c3eed404433f73
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1
