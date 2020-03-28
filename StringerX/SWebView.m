@@ -34,7 +34,7 @@
 - (void)loadPage {
   HTMLDocument *document = [HTMLDocument documentWithString:[[self item] html]];
   HTMLElement *cssNode = [[HTMLElement alloc] initWithTagName:@"style" attributes:@{@"type": @"text/css"}];
-  NSString *css = @"img {max-width: 100%; height: auto; display: block; margin: 0 auto;}";
+  NSString *css = @"body {font-size: 1.2em} img {max-width: 100%; height: auto; display: block; margin: 0 auto;}";
   if ([self isDark]) {
     css = [css stringByAppendingString:@"body {color: #eee; background-color: #333} a:link {color: #37abc8}</style>"];
   }
