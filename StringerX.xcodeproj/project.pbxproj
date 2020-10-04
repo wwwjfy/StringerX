@@ -461,6 +461,7 @@
 				INFOPLIST_FILE = "StringerX/Supporting Files/StringerX-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = StringerX;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -484,6 +485,7 @@
 				INFOPLIST_FILE = "StringerX/Supporting Files/StringerX-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = StringerX;
 				SWIFT_VERSION = 3.0;

@@ -152,10 +152,10 @@ typedef enum {
 
 - (void)syncUnreadItemIds {
   [[URLHelper sharedInstance] requestWithPath:@"fever/?unread_item_ids" success:^(NSHTTPURLResponse *responseUnread, id JSONUnread) {
-    NSString *unreadItemIds = JSONUnread[@"unread_item_ids"];
+    NSArray *unreadItemIds = [JSONUnread[@"unread_item_ids"] componentsSeparatedByString:@","];
     [[URLHelper sharedInstance] requestWithPath:@"fever/?saved_item_ids" success:^(NSHTTPURLResponse *responseSaved, id JSONSaved) {
-      NSString *savedItemIds = JSONSaved[@"saved_item_ids"];
-      [self syncItemsWithIds:[@[unreadItemIds, savedItemIds] componentsJoinedByString:@","]];
+      NSArray *savedItemIds = [JSONSaved[@"saved_item_ids"] componentsSeparatedByString:@","];
+      [self syncItemsWithIds:[unreadItemIds arrayByAddingObjectsFromArray:savedItemIds]];
     } failure:nil];
   } failure:nil];
   counter++;
@@ -167,20 +167,35 @@ typedef enum {
   }
 }
 
-- (void)syncItemsWithIds:(NSString *)newItemIds {
-  NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&with_ids=%@", newItemIds];
-  [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(NSHTTPURLResponse *response, id JSON) {
-    NSArray *newItems = [[Items yy_modelWithJSON:JSON].items sortedArrayUsingComparator:^NSComparisonResult(Item *obj1, Item *obj2) {
-      if ([[obj1 created_on_time] intValue] > [[obj2 created_on_time] intValue]) {
-        // reversed because the sort function itself return ascending results
-        return NSOrderedAscending;
+- (void)syncItemsWithIds:(NSArray *)newItemIds {
+  NSMutableArray *newItems = [NSMutableArray array];
+  for (NSUInteger i = 0; i <= [newItemIds count] / 50; i++) {
+    NSRange itemRange;
+    itemRange.location = i * 50;
+    itemRange.length = 50;
+    if ([newItemIds count] <= (i*50+50)) {
+      itemRange.length = [newItemIds count] - i * 50;
+    }
+    NSString *itemIdStrings = [[newItemIds subarrayWithRange:itemRange] componentsJoinedByString:@","];
+    NSString *urlWithItemIds = [NSString stringWithFormat:@"fever/?items&with_ids=%@", itemIdStrings];
+    [[URLHelper sharedInstance] requestWithPath:urlWithItemIds success:^(NSHTTPURLResponse *response, id JSON) {
+      [newItems addObjectsFromArray:[Items yy_modelWithJSON:JSON].items];
+      // assuming each item is valid
+      // TODO: make it more error resistent
+      if ([newItems count] == [newItemIds count]) {
+        [newItems sortUsingComparator:^NSComparisonResult(Item *obj1, Item *obj2) {
+            if ([[obj1 created_on_time] intValue] > [[obj2 created_on_time] intValue]) {
+              // reversed because the sort function itself return ascending results
+              return NSOrderedAscending;
+            }
+            return NSOrderedDescending;
+        }];
+        [self updateItems:newItems];
       }
-      return NSOrderedDescending;
+    } failure:^(NSHTTPURLResponse *response, NSError *error) {
+      NSLog(@"Failed to get items: %@", [error localizedDescription]);
     }];
-    [self updateItems:newItems];
-  } failure:^(NSHTTPURLResponse *response, NSError *error) {
-    NSLog(@"Failed to get items: %@", [error localizedDescription]);
-  }];
+  }
 }
 
 - (void)updateItems:(NSArray *)newItems {
