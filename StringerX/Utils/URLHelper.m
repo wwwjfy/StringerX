@@ -52,7 +52,7 @@
     NSLog(@"ERROR: base url is not set");
     return;
   }
-  [sessionManager GET:path parameters:@{@"api_key": token} progress:nil
+  [sessionManager GET:path parameters:@{@"api_key": token} headers:nil progress:nil
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 if (success) {
                   success((NSHTTPURLResponse *)[task response], responseObject);
