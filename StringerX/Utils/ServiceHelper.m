@@ -152,7 +152,10 @@ typedef enum {
 
 - (void)syncUnreadItemIds {
   [[URLHelper sharedInstance] requestWithPath:@"fever/?unread_item_ids" success:^(NSHTTPURLResponse *responseUnread, id JSONUnread) {
-    NSArray *unreadItemIds = [JSONUnread[@"unread_item_ids"] componentsSeparatedByString:@","];
+    NSArray *unreadItemIds = [NSArray array];
+    if ([JSONUnread[@"unread_item_ids"] length] > 0) {
+      unreadItemIds = [JSONUnread[@"unread_item_ids"] componentsSeparatedByString:@","];
+    }
     [[URLHelper sharedInstance] requestWithPath:@"fever/?saved_item_ids" success:^(NSHTTPURLResponse *responseSaved, id JSONSaved) {
       NSArray *savedItemIds = [JSONSaved[@"saved_item_ids"] componentsSeparatedByString:@","];
       [self syncItemsWithIds:[unreadItemIds arrayByAddingObjectsFromArray:savedItemIds]];
@@ -169,7 +172,7 @@ typedef enum {
 
 - (void)syncItemsWithIds:(NSArray *)newItemIds {
   NSMutableArray *newItems = [NSMutableArray array];
-  for (NSUInteger i = 0; i <= [newItemIds count] / 50; i++) {
+  for (NSUInteger i = 0; i <= ([newItemIds count]-1) / 50; i++) {
     NSRange itemRange;
     itemRange.location = i * 50;
     itemRange.length = 50;
