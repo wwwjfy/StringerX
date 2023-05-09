@@ -202,6 +202,12 @@
   if ([[url absoluteString] isEqualToString:@"about:blank"]) {
     decisionHandler(WKNavigationActionPolicyAllow);
   } else {
+    // iframe is included in this
+    if ([navigationAction navigationType] == WKNavigationTypeOther) {
+      decisionHandler(WKNavigationActionPolicyAllow);
+      return;
+    }
+
     decisionHandler(WKNavigationActionPolicyCancel);
     [self openInBrowserForURL:url];
   }
