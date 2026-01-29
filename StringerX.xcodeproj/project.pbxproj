@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		061DC02EF191B0B45743EE05 /* libPods-StringerX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB3EB12BE7DD8595EE2FC65 /* libPods-StringerX.a */; };
+		C71936CBD1E96EE0538FE9DC /* libPods-StringerX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3ED9B311E885963BCEDB93F /* libPods-StringerX.a */; };
 		EA1B8C7F2169B57400037C49 /* ThemedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B8C7E2169B57400037C49 /* ThemedView.m */; };
 		EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2A4953178B0F5700220F35 /* TheTableCellView.m */; };
 		EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B40301786BA31002A785D /* WebKit.framework */; };
@@ -29,8 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0CC9728633C295175461B600 /* Pods-StringerX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StringerX/Pods-StringerX.debug.xcconfig"; sourceTree = "<group>"; };
-		CEB3EB12BE7DD8595EE2FC65 /* libPods-StringerX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringerX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFC55BD1FFE03EEA42B1CB25 /* Pods-StringerX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.debug.xcconfig"; path = "Target Support Files/Pods-StringerX/Pods-StringerX.debug.xcconfig"; sourceTree = "<group>"; };
+		D3ED9B311E885963BCEDB93F /* libPods-StringerX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringerX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1B8C7D2169B57400037C49 /* ThemedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemedView.h; sourceTree = "<group>"; };
 		EA1B8C7E2169B57400037C49 /* ThemedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemedView.m; sourceTree = "<group>"; };
 		EA2A4952178B0F5700220F35 /* TheTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheTableCellView.h; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		EA8292411E53519A0095555F /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
 		EA878A9121A9CB74003ADE78 /* SWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWebView.h; sourceTree = "<group>"; };
 		EA878A9221A9CB74003ADE78 /* SWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWebView.m; sourceTree = "<group>"; };
-		EE24B738E8CD57F21ED75082 /* Pods-StringerX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.release.xcconfig"; path = "Pods/Target Support Files/Pods-StringerX/Pods-StringerX.release.xcconfig"; sourceTree = "<group>"; };
+		ED0B8FB69B6E930B005FF8E9 /* Pods-StringerX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.release.xcconfig"; path = "Target Support Files/Pods-StringerX/Pods-StringerX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,20 +77,20 @@
 				EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */,
 				EA5645F41781CF03001EDBA4 /* SystemConfiguration.framework in Frameworks */,
 				EA5645C017808697001EDBA4 /* Cocoa.framework in Frameworks */,
-				061DC02EF191B0B45743EE05 /* libPods-StringerX.a in Frameworks */,
+				C71936CBD1E96EE0538FE9DC /* libPods-StringerX.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A31BEC2A5F351AF0EC1559A /* Pods */ = {
+		ACB7BB8327EEE20921230581 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0CC9728633C295175461B600 /* Pods-StringerX.debug.xcconfig */,
-				EE24B738E8CD57F21ED75082 /* Pods-StringerX.release.xcconfig */,
+				AFC55BD1FFE03EEA42B1CB25 /* Pods-StringerX.debug.xcconfig */,
+				ED0B8FB69B6E930B005FF8E9 /* Pods-StringerX.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		EA349E831E6A671D0050115D /* Utils */ = {
@@ -110,9 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				EA5645C517808698001EDBA4 /* StringerX */,
-				8A31BEC2A5F351AF0EC1559A /* Pods */,
 				EA5645BE17808697001EDBA4 /* Frameworks */,
 				EA5645BD17808697001EDBA4 /* Products */,
+				ACB7BB8327EEE20921230581 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 				EA5645BF17808697001EDBA4 /* Cocoa.framework */,
 				EA5645DE17808698001EDBA4 /* XCTest.framework */,
 				EA5645C117808697001EDBA4 /* Other Frameworks */,
-				CEB3EB12BE7DD8595EE2FC65 /* libPods-StringerX.a */,
+				D3ED9B311E885963BCEDB93F /* libPods-StringerX.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,11 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA5645ED17808698001EDBA4 /* Build configuration list for PBXNativeTarget "StringerX" */;
 			buildPhases = (
-				A0F621A4C306BA58C22DF469 /* [CP] Check Pods Manifest.lock */,
+				21F96247EE2676EE2EC22319 /* [CP] Check Pods Manifest.lock */,
 				EA5645B817808697001EDBA4 /* Sources */,
 				EA5645B917808697001EDBA4 /* Frameworks */,
 				EA5645BA17808697001EDBA4 /* Resources */,
-				5E860EEA3142F49204451841 /* [CP] Copy Pods Resources */,
+				006DFCF82C9CD70D876273B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,7 +214,8 @@
 		EA5645B417808697001EDBA4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2620;
 				ORGANIZATIONNAME = "Tony Wang";
 				TargetAttributes = {
 					EA5645BB17808697001EDBA4 = {
@@ -256,7 +257,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5E860EEA3142F49204451841 /* [CP] Copy Pods Resources */ = {
+		006DFCF82C9CD70D876273B7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,19 +272,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StringerX/Pods-StringerX-resources.sh\"\n";
+			shellScript = "PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH \"${PODS_ROOT}/Target Support Files/Pods-StringerX/Pods-StringerX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A0F621A4C306BA58C22DF469 /* [CP] Check Pods Manifest.lock */ = {
+		21F96247EE2676EE2EC22319 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-StringerX-checkManifestLockResult.txt",
 			);
@@ -375,9 +380,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 93RF9AKSH8;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -397,6 +404,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Debug;
 		};
@@ -430,10 +438,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 93RF9AKSH8;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -445,28 +455,37 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Release;
 		};
 		EA5645EE17808698001EDBA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CC9728633C295175461B600 /* Pods-StringerX.debug.xcconfig */;
+			baseConfigurationReference = AFC55BD1FFE03EEA42B1CB25 /* Pods-StringerX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 93RF9AKSH8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StringerX/Supporting Files/StringerX-Prefix.pch";
 				GCC_WARN_SHADOW = YES;
 				INFOPLIST_FILE = "StringerX/Supporting Files/StringerX-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = StringerX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
@@ -475,23 +494,31 @@
 		};
 		EA5645EF17808698001EDBA4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE24B738E8CD57F21ED75082 /* Pods-StringerX.release.xcconfig */;
+			baseConfigurationReference = ED0B8FB69B6E930B005FF8E9 /* Pods-StringerX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 93RF9AKSH8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StringerX/Supporting Files/StringerX-Prefix.pch";
 				GCC_WARN_SHADOW = YES;
 				INFOPLIST_FILE = "StringerX/Supporting Files/StringerX-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = StringerX;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};

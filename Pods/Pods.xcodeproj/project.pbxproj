@@ -3,199 +3,199 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		034E5EB98F1BCEE0DAF146E24AC9924A /* HTMLRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FC5F7B328579FFCFBCB50EF29729D63 /* HTMLRange.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		04B14F7B48594B42A008976F9D1C1E62 /* HTMLStackOfOpenElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 3108FE17086CAB3BC5342AACCA17240A /* HTMLStackOfOpenElements.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		09FEA363E05A849429B31253AC4D8FDC /* CSSNthExpressionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 89923E9A60C35477BD81DD7C60D922F5 /* CSSNthExpressionSelector.m */; };
-		0D25B65E97C86F8DC85A1EFD8540425B /* NSCharacterSet+HTMLKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A99A69E37AA8D81C323F3CAB430A117A /* NSCharacterSet+HTMLKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0DE190ADD71F0B10D00105A965D5D343 /* NSString+HTMLKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D25791DC1451B08EB5B633C3EA8F79C /* NSString+HTMLKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0F7CC8CA537BA9542FBF6DEC1E9623E0 /* HTMLInputStreamReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E945D2D201E3D85751E6247A9B0C755 /* HTMLInputStreamReader.m */; };
-		0FF48722484682AE94E54365087F7B2B /* HTMLRange.m in Sources */ = {isa = PBXBuildFile; fileRef = C087F4A24C7421A938715AF382415694 /* HTMLRange.m */; };
-		112421072ABB23067341C72606FA7489 /* CSSSelectors.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E60E033575ED0D2E2348D60C48640FF /* CSSSelectors.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1531A8FA862E8A3172D041D3ECC34917 /* HTMLKitErrorDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 808959E12C0CDFA0B12F5FD80BF0E1FA /* HTMLKitErrorDomain.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1770272345F8D68D58979FAEAEF7C4C7 /* CSSTypeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAEAFFA8E9F13408E4BF887E805306 /* CSSTypeSelector.m */; };
-		1910F49BF598AF66123ACB352EF2CB7D /* HTMLComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 878E1370FB22FBB7EF62DBF9A4ECD731 /* HTMLComment.m */; };
-		1E816CD88C7917B66D93034A8F17F661 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0243FFFBA361363CAFE50AA0B0B17A77 /* MASPreferencesWindow.xib */; };
-		20673ABCC56BFAD1E2AD0B860EA0056C /* HTMLNodeIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0759B548A2C15A8C52CFE99E8AD1F489 /* HTMLNodeIterator.m */; };
-		20BD3F57DD7EB744DC4A1573149990AB /* HTMLDOM.h in Headers */ = {isa = PBXBuildFile; fileRef = F8C857BFCDB49AD30659B87FAE54D93C /* HTMLDOM.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2485F94C8844C56A5D97E968AFBA163C /* CSSInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C308B881DFA5C0A19F302C7F563D831 /* CSSInputStream.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		25383C6F658623C4F3F27292E0375BC6 /* HTMLElementAdjustment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EDB16BD23E730974FF6817D88033962 /* HTMLElementAdjustment.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		265BE4A078D1442DDD1F61B61E73ED6D /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB11D8160DFEE928D802D6F58729AF /* AFURLSessionManager.m */; };
-		2811D9F9471B880887FC0254D04E5AF2 /* CSSCompoundSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251C497EA2053742FE56E422E616E62 /* CSSCompoundSelector.m */; };
-		282097395C4AB36EE32F8801C41554DF /* HTMLTokenizerEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BBA5F3030A9C498809BFD8FB9FD8E /* HTMLTokenizerEntities.m */; };
-		28CD3ACF72BBC80F79277F250D030D07 /* HTMLNodeIterator+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 06C13EC4ACC3A4F2C834A0B7C3BF3357 /* HTMLNodeIterator+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2A5FD5F8E43D704474602A2AC2CDC340 /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 8724401DD405E18E529CE54EB2CB945F /* NSObject+YYModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2E60FF1766558ABDAF3F94C9846703BE /* CSSNthExpressionSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1B45EC47B5D175AEF5C6DAA2938443 /* CSSNthExpressionSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2E7547952B9C58B09844D0598563EC45 /* HTMLTreeWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 65636467955F0D6709F823A8793CDF70 /* HTMLTreeWalker.m */; };
-		32C12BEF20F128F0D645AB4224071C1C /* CSSPseudoFunctionSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = C16552653A916AB1EEB5BDE80499729B /* CSSPseudoFunctionSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		34EAD8CEB4EEA3D05F2416107B949382 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC445F7007839EA8E29C80F4CDDC44 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3539CB17CC6DB2369483F632564DC1FD /* HTMLCharacterToken.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E1B97127C68678928AB1EE529AB7F /* HTMLCharacterToken.m */; };
-		3552BBF760BF7E77C49C3417415FE47D /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E7443729F866B53AA5B1D9801D1723 /* AFNetworkReachabilityManager.m */; };
-		3634F0EEC68F6A23E00F7E8E60968CDB /* NSCharacterSet+HTMLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F44CD1C3185623200E992D49DE3795 /* NSCharacterSet+HTMLKit.m */; };
-		36CDF337CAADBBEE9A0454379A2224D2 /* CSSStructuralPseudoSelectors.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BEB577E5B3461D1A1AC938F0A75F12F /* CSSStructuralPseudoSelectors.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3A6842CA99DBCE95A3B5723E40B84965 /* HTMLTreeWalker.h in Headers */ = {isa = PBXBuildFile; fileRef = B49B5A6C4BCCD4336F7328DD2D89C931 /* HTMLTreeWalker.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3AFEC7E9D59C6B581343BF58A58DB05D /* HTMLSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C172A451231D2DEA2452E9D7F4CCE9A1 /* HTMLSerializer.m */; };
-		3B562DF6C640ABAE1243BC42966D9D0A /* CSSSelectorBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A48729D2276E4E8946D41FC8615FC9F7 /* CSSSelectorBlock.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		40A9E4A0B2522AEEC63F08B7B9671217 /* HTMLNodeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E0A05E63F1249A60D9E791F3A58E6 /* HTMLNodeFilter.m */; };
-		4232A5CE5E3676BDE17484B59A7D2DE0 /* HTMLDOCTYPEToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E6558229A63F92A81D410C6FDED9AD7B /* HTMLDOCTYPEToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4634A66A18C2D17D6BC3A8C38AAB6BD0 /* HTMLNodeVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C08272177BD6EE570D6377FEFCCFBF /* HTMLNodeVisitor.m */; };
-		47A14316B0DE15FABCEE6893722FE5F9 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 42C2888B7002820DB7A4CDDB10F8A8C1 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4836DFEBAC7B965302C5590399681483 /* HTMLTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 94D761B995EDB592F5EF989228622BEF /* HTMLTokenizer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		48696689F09E63A8022F8CE74F86708B /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97823B9993749AA472EC8F769B919044 /* NSObject+YYModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4FA91BC844EE31947C8522BFE16BD79C /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = CA5450C44733E88AF1BB59370BE3D1B8 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		504D8672AD75A7C69C86E2623730C650 /* CSSCompoundSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A7209C8C55C550CDB24C8FD09EB326E /* CSSCompoundSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		52484D70AFFAD42DCB504D8DFCB98359 /* YYModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1323854660F43CCD232CB275A84C395B /* YYModel-dummy.m */; };
-		537A3326040E64F1374965424B5DFFEF /* HTMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 201CD1D5FE7752051682D728EA2E86C2 /* HTMLNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		57C7FECB5B46F81D897B706CA9304401 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C17C573222F0AF5A9FD6F434DFDFDF /* AFURLRequestSerialization.m */; };
-		58CFA73112449ED86D6B11661003A44D /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA884E93CD52199B4538D8F56DF5D77 /* HTMLParser.m */; };
-		5961DD113EA9889A3F4AB5E7BBD332AE /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 4011E948F14DA173C36F19E27767D6DA /* AFCompatibilityMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5999DE5E3BF62146488D362F16EC4C09 /* HTMLCharacterData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E716E3F3FFFABB0BE29FB26459DABDD /* HTMLCharacterData.m */; };
-		5B45155A4D4B66EB8D80202151BB876B /* HTMLParser+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F2729455E86B32D6FC896559E18450A /* HTMLParser+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5C388877B19AF915FCEA389AB7513C81 /* CSSInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBC0D62FDCD3B246B8C128888D2E196 /* CSSInputStream.m */; };
-		5D60A779A0C71F246E6697539A5A4336 /* HTMLNodeVisitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 219F3D60ED1405D48C64020A1D24EC9F /* HTMLNodeVisitor.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5E5E8940904AB4381253A9E629A3CEFC /* CSSNthExpressionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F500A03A671FEB8AE3DB1CC26A91715 /* CSSNthExpressionParser.m */; };
-		60269B303A4B96F34CCDF4CAD86DA7AE /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DDB5AB447AB377AB2D85DDE627231D7D /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		605D482EB6DB70037765A760FB8BCA43 /* HTMLTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1439A21853825620EA88E30A541AA3 /* HTMLTemplate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		62B446BDD0681A93BE91D23C8703B794 /* HTMLListOfActiveFormattingElements.h in Headers */ = {isa = PBXBuildFile; fileRef = BB0A4D33678C1C4D9BA5BC4E7243B103 /* HTMLListOfActiveFormattingElements.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		62F152B0F8729A54C2563AFA917DF42C /* HTMLCharacterToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FC4B0569B35BCF775838D04B8372946 /* HTMLCharacterToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		643D98D6DE3B9186D79C928235EBD3F9 /* HTMLKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2052DCF06ED261F89165BE1EB359D5E8 /* HTMLKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		65DA8BE03936999819822C2A7C6DA577 /* HTMLToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F86A6BCCAA98571F1AE1DDD294FF6D /* HTMLToken.m */; };
-		6687E91B78E9CC41655B3297BD3AAC2B /* HTMLParseErrorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B3F5B7EB693C09FED55C26B1AF0D31 /* HTMLParseErrorToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6867463524D72760EE04CC0C33EE40E8 /* MASPreferencesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F926DC591F5B271D73F0DEF4D43A803 /* MASPreferencesViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6932AB4320568B9DC8E7A2129F8A9E4B /* HTMLTokenizerEntities.h in Headers */ = {isa = PBXBuildFile; fileRef = DBD78465FA65C3E4A2A69A8820624A74 /* HTMLTokenizerEntities.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6950C999969D92E386679D0104DFB11B /* HTMLToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D38A0D585AF5D5285559595D77764C /* HTMLToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6DFCEB06E2821A5002D543D61EB4ADD0 /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E13F15DEEBA0C23607ADEF42F969E94 /* YYModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		709A8AA8BC2E949A6A4B363D9220D3AC /* HTMLTagToken.m in Sources */ = {isa = PBXBuildFile; fileRef = CB511585978A0D4A0DD49227606A120B /* HTMLTagToken.m */; };
-		726CA7B9E7C2905CE671CE97A48ED72F /* MASPreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 948D81FF70A2105B30A0669BA634D242 /* MASPreferencesWindowController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		75B9427FE7CC45CA81AC79E6CDA797EB /* HTMLEOFToken.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A0E56342D197BF58ED47F4BBBA8906 /* HTMLEOFToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		77C3433D6DC2EBF80D71712A543D9E81 /* HTMLOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2854282305DD4E3BA62AA297E0BD05A1 /* HTMLOrderedDictionary.m */; };
-		78D0ABAD633A1CA309762F9EA8799D18 /* NSString+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA1058B6EB34E112E310D3B87FCAAD /* NSString+Private.m */; };
-		7B4BE029B077A8336D5F822DC607AE6B /* HTMLOrderedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E451BD66FA21AE8DC84874A3948F8A3 /* HTMLOrderedDictionary.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7B573FF009473D38DE8190B4BE90560E /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698F2B2C98389DB2FF90FAAB7CCCEEE /* MASPreferencesWindowController.m */; };
-		7CA9148AFF313DF5B79EF8511AA6A365 /* HTMLTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C232E786CB991A600DF5BF42F9A42 /* HTMLTokenizer.m */; };
-		7E661DB0601F263B4F8D0EDF98E65978 /* HTMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 836D2CF4CC84D0E461DDD278890128D8 /* HTMLElement.m */; };
-		8022FE599CABE8A69D7FCB5C02E0829D /* HTMLNodeFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 451E04D08766FCFCCE9F0FCECEB49B5A /* HTMLNodeFilter.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		810DD899A2FE134519A6F6A439250C6A /* HTMLCharacterData+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = B19D4BCC6EB1A69777B017147A85697F /* HTMLCharacterData+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		81E52AC12D7A4E3C8F9F31923FC3FE79 /* HTMLTokenizerStates.h in Headers */ = {isa = PBXBuildFile; fileRef = 63EC25FD41C0C159FE4CC5333C6A10DF /* HTMLTokenizerStates.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		84C6516E46313C853723F8AB60AE7EB6 /* HTMLSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C8BA986E99D39EE511770D651B4FB7 /* HTMLSerializer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		86355ED1A46D5CE74826CA45EFA6CF89 /* HTMLParseErrorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB4F021007CD5DC6E3DE76D0C6C7094 /* HTMLParseErrorToken.m */; };
-		894839D489BB732833BD6487D310BE69 /* CSSSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3AECD3190EF03A43DF637F87CCD20B /* CSSSelectors.m */; };
-		89AB7D96102E7D63C630332403CB1010 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F96F35A5E63F8404A67B47965D7CC7C /* YYClassInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8B7CADD3A17F0B973D73B89CCDC3DC4E /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A63955E4F43237551DAABF91F8EF9A /* AFNetworking-dummy.m */; };
-		8C1307E88B258A507370D20A5C99D6AD /* CSSSelectorBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EC63693ABD8709773007A5659223D4C3 /* CSSSelectorBlock.m */; };
-		90347891E1503FBC39B6F4C009DDA700 /* HTMLTokens.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C47E4E0153B078F1E3DBEB401997418 /* HTMLTokens.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		90E0659CD39D35FB234807156BB5BDA1 /* HTMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 579475DC65DF71A3522ACD63D429498E /* HTMLElement.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		921E1EE79520387935E52B20FE33B901 /* HTMLText.h in Headers */ = {isa = PBXBuildFile; fileRef = C14A3F71B13C56C341F707B3063DABBC /* HTMLText.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		925064694EA2AA721C6DCE82C68F9CBC /* HTMLListOfActiveFormattingElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 102D4C4234561E68717A0253E07E2936 /* HTMLListOfActiveFormattingElements.m */; };
-		93F6BF0387C1D711ACC39C226506C44F /* HTMLDOMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D5077B9502C02B1469E36A037462239C /* HTMLDOMUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9AFF6B2869F92C3A4C974B0786C6632F /* HTMLCommentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7B51BF0151DB27CF5B311129E6FAB2 /* HTMLCommentToken.m */; };
-		9B6765E8FC0BFDB0EC145C0D9EECD722 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 847B6A15D5250BB55C816388BE860173 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9C0E7948D88E2CA53754F69F44998BFE /* HTMLDOCTYPEToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 329473DDF16B09D3DC365CC86A71BB5E /* HTMLDOCTYPEToken.m */; };
-		9CB21953B6B94BB8CC05F038294E0864 /* HTMLQuircksMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3290C3C70C7563AB73CB570AE240F51C /* HTMLQuircksMode.m */; };
-		9E57E5655241E04ECB684DF1A6B9AAE2 /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = F8409AA335F7D4A0AD7EFE2F1B38B5B3 /* HTMLDocument.m */; };
-		9E5B50687CBBDA05B6A12E5FD3938623 /* MASPreferences-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 242F92225726D0E2BFB4C9412489CCBA /* MASPreferences-dummy.m */; };
-		9E8684B7B439184CEE9B5A73875105AF /* CSSCombinatorSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AAF387C3E6BE43AF656A9AF4B5B509 /* CSSCombinatorSelector.m */; };
-		A12AA4F3AC556CC0D3E43FEBDCBD9652 /* HTMLMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2A03134A50178E38AD81FB76ACD6E8 /* HTMLMarker.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A21B2727056379748A40DDD957EA4E79 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E772BF3583F9CCB4E383F3E95BCBFBF3 /* AFURLResponseSerialization.m */; };
-		A35C7ABC2F7E8375CF112BA3586C8E4E /* HTMLParserInsertionModes.h in Headers */ = {isa = PBXBuildFile; fileRef = 49586240AFD75D53393A1B1CC8E2CC74 /* HTMLParserInsertionModes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A89F64C8E0323B73BC7782556B772ADF /* HTMLTreeVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B28BCCB417E7401CCC67AAE6424D2DC /* HTMLTreeVisitor.m */; };
-		A990DFC24B29274B75079CE26FA54411 /* NSString+HTMLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F73D7A7A43F3DEB7525714E18B5836 /* NSString+HTMLKit.m */; };
-		A9E034CB67512D25CA7CB28945E698F2 /* CSSNthExpressionParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBD97F408198047A34B5C22DC62A737 /* CSSNthExpressionParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AA005E815E67BDDE6B6DAD2CD923E3A8 /* HTMLNodeIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = D256C019EC821490B5FE4AC141F71339 /* HTMLNodeIterator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AD88E36657A2ED717851D4B92E83D37A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F75751325D18461B84F3B320616EE632 /* YYClassInfo.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AEED421A57710BB673525F35F6E0A9AF /* HTMLTokenizerCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 53ADD0D4689E9498936B08CF296DC8ED /* HTMLTokenizerCharacters.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B2EAB2461DA0E07E13AD963BEE0D2DC3 /* HTMLElementTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E8C20A47AA1FBD940C56A9E324D56B7 /* HTMLElementTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B36B10C2D657C11BCBA8C3850B447008 /* HTMLTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CB804A6BF37E66332B814CBCA61961 /* HTMLTemplate.m */; };
-		B4B570FDB8E8A2BC6F4B0B2444423312 /* HTMLInputStreamReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 302B06ED8D16A8A1FE2ED553622CCA28 /* HTMLInputStreamReader.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BA6139A433DC7915BB2749CAEF786E0D /* HTMLNamespaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 61884746C558E799943FA6C3B7F5C0F5 /* HTMLNamespaces.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BDC15E63DC521F96FC77FB1784797D4F /* MASPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F4DCB8861D3638EA19AC82A0B2B5ED26 /* MASPreferences.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BFF44C61702902EE76EE293095F0BB6F /* NSString+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C54D86554CB7FA1261800A6E636E3AED /* NSString+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C04DE02F9C5221CF65F98A155AB061D7 /* HTMLStackOfOpenElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E98EA6D55FADD0809F66A4E2EDC64B1 /* HTMLStackOfOpenElements.m */; };
-		C0ACC74C272392231D784054132B2196 /* HTMLTagToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 193BD543FBD42586580EAA2A77D9CBBC /* HTMLTagToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C0FDE93D1BF13BC185FE0FE3E5AFD904 /* HTMLDocumentFragment.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B55DDA83991F483EFF6C00FA975E88 /* HTMLDocumentFragment.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C158DC48518F68CFB0174FD19C6BF09B /* HTMLComment.h in Headers */ = {isa = PBXBuildFile; fileRef = C175885CD821B8D8E483FBF909E79173 /* HTMLComment.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C31F285AA0B9075106C7D467D76C336B /* CSSSelectorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A51A523C88D93E0FFE215376C0055A /* CSSSelectorParser.m */; };
-		C68F29DD0B45AC20426ED1904CC163EB /* HTMLMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A50AD2C7BBF218AEDD550D0176D28F6 /* HTMLMarker.m */; };
-		C6CEBF8D757BB598F9E1749DAC72B133 /* HTMLDocumentFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A5F1554114BEB52FC3D723F691596 /* HTMLDocumentFragment.m */; };
-		C6D622F9C35AE654F3406195F6447092 /* CSSCodePoints.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E183FA937099DB79325BFA6A241E19 /* CSSCodePoints.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C804AA440F4DBF5B16D53135D8D6F691 /* CSSStructuralPseudoSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = D767EA26C77AC430485D9076AC52A326 /* CSSStructuralPseudoSelectors.m */; };
-		CB23FC44A628E3CD31FFD34DF184D1D5 /* HTMLDOMTokenList.m in Sources */ = {isa = PBXBuildFile; fileRef = F6428EA22FA5A94EC814C02F95EAC5A9 /* HTMLDOMTokenList.m */; };
-		CB86F9FFA0FA735D03162151A602543A /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520C562FAE8E4DEF9C5846426BD97E1 /* AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CB89CBCC3CCAFEB2DB6C9B9FAE341A2F /* HTMLDOMTokenList.h in Headers */ = {isa = PBXBuildFile; fileRef = 0775665E5F5C6FC41E4136B9D30BDAF9 /* HTMLDOMTokenList.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CBF1FD13E4815BC665F1CF97947F0A2D /* HTMLEOFToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CB41895C32A1FA4B0054144BE6AC02 /* HTMLEOFToken.m */; };
-		CCFDB887F95A961B828BF66F35E61B34 /* HTMLDocument+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 294CD99C27D9A8CD686237BCB79D59DB /* HTMLDocument+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CE0ACF1D280CC3DB3E4E79F084011A06 /* HTMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = A795CB6FDCAA9280CCC559884A6A17D9 /* HTMLDocument.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D231F7DF6C567DA9F1E040EA56D80DB0 /* Pods-StringerX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 634A1D859B06E52657A9DAAB46CE3139 /* Pods-StringerX-dummy.m */; };
-		D32643A3EA0673E21595E3EDC6AFBC52 /* CSSTypeSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 159F7CC4BC7E16E2320CAA8007308631 /* CSSTypeSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D40313A8F0AB747E9170252C07A027A8 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D928DAF482BB7160A96F90CA9FF173 /* AFHTTPSessionManager.m */; };
-		D4A155AF2137A449162E0B250F20EDCA /* CSSSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = FE17B77917751A52F45E92923134BF0D /* CSSSelector.m */; };
-		D4BECD0C6CA4196F97EFA723812626A8 /* CSSSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 06E7F3F7769C5AB48A9CB615FD6D5BD9 /* CSSSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D6A89808F261ACEA0D4A9D298472F897 /* CSSPseudoClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = BAAE23E95D0EB1C1C877BDD244F56753 /* CSSPseudoClassSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D711833BE7F5587AB6F48FA98B1286E8 /* HTMLCommentToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E6856AE946FA3A37BB325C7E8A48D9C8 /* HTMLCommentToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D83225BBC4689A90047EC49531449145 /* HTMLTreeVisitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 97174FE49AC3A6692394DF7887A7066F /* HTMLTreeVisitor.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DB1A811CE2A232AA086432F5FB539747 /* CSSCombinatorSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B3B9012BF0045FDC46922C3266ADB80 /* CSSCombinatorSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E2D0F43B51D9DAE7B165EE1ED846A399 /* CSSPseudoFunctionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = F71B737EEB59A5A3B940FA8755BBFCF1 /* CSSPseudoFunctionSelector.m */; };
-		E543A71099923114714E0B2E8B56FD62 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = B26E492EB9A3124B12DACFA00BDA716E /* AFSecurityPolicy.m */; };
-		E636B2FAAFA76C4CA3137A0639488CAF /* HTMLText.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C6D3424A451C279FDBF9325615C8A8 /* HTMLText.m */; };
-		E77FF8479D52D003804AA15A5E12E27A /* HTMLDOMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F97B6AC3F5F71F801B2018938B205B64 /* HTMLDOMUtils.m */; };
-		E8B8AB108D923C708A8F66A51E2489FA /* CSSSelectorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 132834501FC19F70BA223845C572C129 /* CSSSelectorParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E93BE446DC7D841220BB4941790207A5 /* HTMLKitDOMExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4609951D6C30ABBD08FDF45BDF6D /* HTMLKitDOMExceptions.m */; };
-		E94C526D824266825AC7F0B87FA48868 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = BDA611C6BC07B08704A78E0D6D742BDD /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E9673DCC1B1DAB428187DE747146F661 /* HTMLQuirksMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FAF35CDDB57DFCEB557E1A8421980C1 /* HTMLQuirksMode.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E9B3CB8BF2581D4AA1DABC1A1984411A /* CSSAttributeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876EE806AF7636B76DC78F5F7106B54 /* CSSAttributeSelector.m */; };
-		EB24FE5BEEA11B262D1B921BEBAC78FA /* CSSPseudoClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 16736409907AD46C7772C764809CE497 /* CSSPseudoClassSelector.m */; };
-		EDDD06164567BA823C08BCC12DC34D17 /* HTMLNodeTraversal.h in Headers */ = {isa = PBXBuildFile; fileRef = F8AD0D2BE8B784751EDB836EEEA67AE5 /* HTMLNodeTraversal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F0C660D26B32DD978FB418BABEC79521 /* HTMLKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1DE687AC1972883891B65739F3C49F /* HTMLKit-dummy.m */; };
-		F28181CD68CBAE3A2B2FE4CE56A880BA /* HTMLDocumentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 410972E9346F2F3B1783B229991D4034 /* HTMLDocumentType.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5D60999E2726A80150B0CEFFFFC6E19 /* HTMLNodeTraversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC45584DC4BAAB1650040814ED10EC9 /* HTMLNodeTraversal.m */; };
-		F5ED30686E9E61E0ABBC45197112F1E0 /* CSSAttributeSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6878AB4810B57178F5BC87225DAED488 /* CSSAttributeSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F6936F7F33B6B03CDFA98E48546E79A8 /* HTMLNode+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 50498AACFFAE2CB70A570208D2950663 /* HTMLNode+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F7D66617944DDC072E879E9841835CE0 /* HTMLDocumentType.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6653ECB954F9E7ABF0938D47CF3643 /* HTMLDocumentType.m */; };
-		F9B754B7F3C11B438E255839DD3F19F5 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F6E03D0E5164216CBBDA1FA53D5AC /* HTMLNode.m */; };
-		FC6B8E70F7D75929DC47BB47D28CC620 /* HTMLRange+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 957D8DB0C1FFED2E8F3011D90F3E30EE /* HTMLRange+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FD9798F967807A9EF8249A15189D2E07 /* HTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B7CCAA1FA8F9217F3CD30A0CDA43980A /* HTMLParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FDAB6827A0F8D1A63A57E3F43DDA43C7 /* HTMLKitDOMExceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E9D25C463CFCF87E1D4B13FA43E9B40 /* HTMLKitDOMExceptions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FDF3E03318AB23B79114D1AFF47CFD2C /* HTMLCharacterData.h in Headers */ = {isa = PBXBuildFile; fileRef = 81BCBC832AACD41CA999B0410B0A03B4 /* HTMLCharacterData.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		02168880C8B93A7FE2EC901358AF36D4 /* HTMLDOM.h in Headers */ = {isa = PBXBuildFile; fileRef = F8C857BFCDB49AD30659B87FAE54D93C /* HTMLDOM.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		03F828B3E5173A16EC67ED7F550C1744 /* HTMLKitDOMExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFB4609951D6C30ABBD08FDF45BDF6D /* HTMLKitDOMExceptions.m */; };
+		06D61792AC70C07B860424AD072EA547 /* HTMLKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1DE687AC1972883891B65739F3C49F /* HTMLKit-dummy.m */; };
+		08263430FD3F054FC4F922DC67E4D3C6 /* HTMLParseErrorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB4F021007CD5DC6E3DE76D0C6C7094 /* HTMLParseErrorToken.m */; };
+		0ABF98E4F8F4BD3C8752F73A1B41494A /* CSSSelectorBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EC63693ABD8709773007A5659223D4C3 /* CSSSelectorBlock.m */; };
+		0C63325674F06FB70A5A356E599F2A6E /* CSSPseudoClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 16736409907AD46C7772C764809CE497 /* CSSPseudoClassSelector.m */; };
+		10B4D30A90C47EF0AD99E20ECB5EE58B /* HTMLText.h in Headers */ = {isa = PBXBuildFile; fileRef = C14A3F71B13C56C341F707B3063DABBC /* HTMLText.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		11541F11AFB980B792D87313434BE7FC /* CSSCombinatorSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AAF387C3E6BE43AF656A9AF4B5B509 /* CSSCombinatorSelector.m */; };
+		115C61C61C79B715BF87C070DF9C4011 /* CSSPseudoFunctionSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = C16552653A916AB1EEB5BDE80499729B /* CSSPseudoFunctionSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		15E577BB5DE1A4A0117E32AF03983E4F /* HTMLNodeTraversal.h in Headers */ = {isa = PBXBuildFile; fileRef = F8AD0D2BE8B784751EDB836EEEA67AE5 /* HTMLNodeTraversal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1666FC617F84D77BC250312D4822E512 /* HTMLNamespaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 61884746C558E799943FA6C3B7F5C0F5 /* HTMLNamespaces.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		18C980E1B61701C995CF9C66DC591F03 /* HTMLNodeVisitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 219F3D60ED1405D48C64020A1D24EC9F /* HTMLNodeVisitor.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		19090672C9D66CA29CE511928972990C /* HTMLDOMTokenList.m in Sources */ = {isa = PBXBuildFile; fileRef = F6428EA22FA5A94EC814C02F95EAC5A9 /* HTMLDOMTokenList.m */; };
+		19E3590C81FD6185071C270F2A98F16F /* Pods-StringerX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 634A1D859B06E52657A9DAAB46CE3139 /* Pods-StringerX-dummy.m */; };
+		1A805CE3175E6A4563B55898556ECFE9 /* CSSTypeSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 159F7CC4BC7E16E2320CAA8007308631 /* CSSTypeSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1BCA3619005508CD1C6071F1D6990406 /* HTMLComment.h in Headers */ = {isa = PBXBuildFile; fileRef = C175885CD821B8D8E483FBF909E79173 /* HTMLComment.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1D9EE8E14BEEA24D814F4F4C2C1FB48B /* HTMLNodeVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C08272177BD6EE570D6377FEFCCFBF /* HTMLNodeVisitor.m */; };
+		1F83EF0E0C85DF932AA4E2F722675C80 /* NSString+HTMLKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D25791DC1451B08EB5B633C3EA8F79C /* NSString+HTMLKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		211292FB891BDCDC4DA83FBD6B5DCD6E /* HTMLNode+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 50498AACFFAE2CB70A570208D2950663 /* HTMLNode+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		212332C6875E28BDD638FBF70664519D /* HTMLTagToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 193BD543FBD42586580EAA2A77D9CBBC /* HTMLTagToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		23498598A6DDA7C48976E57C92F85FE7 /* CSSNthExpressionSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1B45EC47B5D175AEF5C6DAA2938443 /* CSSNthExpressionSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		26163000E678A1697B290AE1C55F1B63 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E7443729F866B53AA5B1D9801D1723 /* AFNetworkReachabilityManager.m */; };
+		27FED57A8F3B0C2F9CEB2282F2F6DAFC /* HTMLTreeVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B28BCCB417E7401CCC67AAE6424D2DC /* HTMLTreeVisitor.m */; };
+		28A099D1E138DA84E442D6F7A145367A /* HTMLKitErrorDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 808959E12C0CDFA0B12F5FD80BF0E1FA /* HTMLKitErrorDomain.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		29156D293625C741152AB2D731A3E889 /* HTMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 579475DC65DF71A3522ACD63D429498E /* HTMLElement.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		292FCE3F6BF808827513D07EAB76E86D /* HTMLTreeWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 65636467955F0D6709F823A8793CDF70 /* HTMLTreeWalker.m */; };
+		294FA8C4D6F510F53C01669A173F0221 /* CSSSelectors.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E60E033575ED0D2E2348D60C48640FF /* CSSSelectors.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2D21A50A45875079A48BD431091C487E /* CSSSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 06E7F3F7769C5AB48A9CB615FD6D5BD9 /* CSSSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2DA1AE834A2DBCC708217D5D90E1CCAC /* HTMLToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D38A0D585AF5D5285559595D77764C /* HTMLToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2F7B9828628E3123504B1E75FCE21C3D /* CSSNthExpressionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F500A03A671FEB8AE3DB1CC26A91715 /* CSSNthExpressionParser.m */; };
+		30DF963D9A1CB29F8547147FD3AC65CE /* CSSStructuralPseudoSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = D767EA26C77AC430485D9076AC52A326 /* CSSStructuralPseudoSelectors.m */; };
+		317DCC468244ED49332E7EDFDD709294 /* HTMLTagToken.m in Sources */ = {isa = PBXBuildFile; fileRef = CB511585978A0D4A0DD49227606A120B /* HTMLTagToken.m */; };
+		31D146939B754F5BC1F96E20C8F033FB /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D928DAF482BB7160A96F90CA9FF173 /* AFHTTPSessionManager.m */; };
+		341CE3BDEBAADD915E644444E6275C91 /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 4011E948F14DA173C36F19E27767D6DA /* AFCompatibilityMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		347FADBA83E6CD1994E05E13E64A5BD5 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F96F35A5E63F8404A67B47965D7CC7C /* YYClassInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		362798079FD43DDA37648552B6E21F6B /* HTMLTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CB804A6BF37E66332B814CBCA61961 /* HTMLTemplate.m */; };
+		382283413D1C42CBA2CA56F473A6A6B4 /* HTMLTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1439A21853825620EA88E30A541AA3 /* HTMLTemplate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		386E2AE4D769217F9D32BCF803EFC0D2 /* HTMLKitDOMExceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E9D25C463CFCF87E1D4B13FA43E9B40 /* HTMLKitDOMExceptions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3B17F804BE87F921F905B1487049857C /* HTMLDocumentType.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6653ECB954F9E7ABF0938D47CF3643 /* HTMLDocumentType.m */; };
+		3D227D313932EF8A057BF1782E67BE66 /* HTMLMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A50AD2C7BBF218AEDD550D0176D28F6 /* HTMLMarker.m */; };
+		4139875D7ECB247ADD8AFE92DB41B780 /* HTMLText.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C6D3424A451C279FDBF9325615C8A8 /* HTMLText.m */; };
+		42362B4210BE08B0CFB7C8E36B98DE21 /* NSCharacterSet+HTMLKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A99A69E37AA8D81C323F3CAB430A117A /* NSCharacterSet+HTMLKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		43A4CF2FD8F3239B87B8458EEC60E826 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E772BF3583F9CCB4E383F3E95BCBFBF3 /* AFURLResponseSerialization.m */; };
+		475E5A0946EDB33B01E12961EE4A7D27 /* HTMLNodeIterator+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 06C13EC4ACC3A4F2C834A0B7C3BF3357 /* HTMLNodeIterator+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4B0827F577597156051D460AB9648099 /* HTMLListOfActiveFormattingElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 102D4C4234561E68717A0253E07E2936 /* HTMLListOfActiveFormattingElements.m */; };
+		4D13CE45630C96D070BA9C4122D2AFEF /* CSSNthExpressionParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBD97F408198047A34B5C22DC62A737 /* CSSNthExpressionParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4EEF4C6F8FE225F1E7CEABAE084F784E /* HTMLDocument+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 294CD99C27D9A8CD686237BCB79D59DB /* HTMLDocument+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		50B7940C4A959E70658D67BE5407C5BF /* HTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B7CCAA1FA8F9217F3CD30A0CDA43980A /* HTMLParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		51D0E147DB28C2D9D894819B8735CF8C /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0243FFFBA361363CAFE50AA0B0B17A77 /* MASPreferencesWindow.xib */; };
+		51E6A4CDC33938CFC01051BB0FE648C7 /* HTMLToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F86A6BCCAA98571F1AE1DDD294FF6D /* HTMLToken.m */; };
+		52126ED85EB8EF3ECABB928037694082 /* NSString+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA1058B6EB34E112E310D3B87FCAAD /* NSString+Private.m */; };
+		5441FFBDBF8B31E4685B2D522E0A2A9A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F75751325D18461B84F3B320616EE632 /* YYClassInfo.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5462F9DF67D245D0D2201A85C6094D89 /* CSSSelectorBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A48729D2276E4E8946D41FC8615FC9F7 /* CSSSelectorBlock.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		55465EA6B71B72FD99D89D1EA4E79AAD /* HTMLParser+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F2729455E86B32D6FC896559E18450A /* HTMLParser+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5592671598AD1D82655D727C694373EE /* HTMLDOMTokenList.h in Headers */ = {isa = PBXBuildFile; fileRef = 0775665E5F5C6FC41E4136B9D30BDAF9 /* HTMLDOMTokenList.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		566C98A8B05B65ED8EF35505450B5CF1 /* MASPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F4DCB8861D3638EA19AC82A0B2B5ED26 /* MASPreferences.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		572A4D15065358034F9E580320D4EB52 /* HTMLOrderedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E451BD66FA21AE8DC84874A3948F8A3 /* HTMLOrderedDictionary.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5A0A860757F647285072DFF5C8EB1A18 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = CA5450C44733E88AF1BB59370BE3D1B8 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5B06AE27BD6C01D7C34291FDF95CA6CF /* HTMLDOCTYPEToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E6558229A63F92A81D410C6FDED9AD7B /* HTMLDOCTYPEToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5B5E852C05152A82E2695CC49CA65322 /* CSSSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = FE17B77917751A52F45E92923134BF0D /* CSSSelector.m */; };
+		5C429E81388A9786CFF0E923EEB61AAE /* HTMLTokenizerEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BBA5F3030A9C498809BFD8FB9FD8E /* HTMLTokenizerEntities.m */; };
+		5FF401423FACC3C73D195B3CF85C476E /* HTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = F8409AA335F7D4A0AD7EFE2F1B38B5B3 /* HTMLDocument.m */; };
+		60293E618727F0FB7CE4AB9D5CCF45CF /* HTMLDOCTYPEToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 329473DDF16B09D3DC365CC86A71BB5E /* HTMLDOCTYPEToken.m */; };
+		610EB1814D8530D518B622780BE15CDA /* CSSTypeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAEAFFA8E9F13408E4BF887E805306 /* CSSTypeSelector.m */; };
+		620EDAF710D4ABB23DF9356C6AA22988 /* HTMLOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2854282305DD4E3BA62AA297E0BD05A1 /* HTMLOrderedDictionary.m */; };
+		6287F606ABA781B727DCA327D21E7510 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C17C573222F0AF5A9FD6F434DFDFDF /* AFURLRequestSerialization.m */; };
+		69F802C2895C0F0483646F3C364F1C0A /* CSSAttributeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5876EE806AF7636B76DC78F5F7106B54 /* CSSAttributeSelector.m */; };
+		6BCB768D44D41DA39944064605578A3F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = B26E492EB9A3124B12DACFA00BDA716E /* AFSecurityPolicy.m */; };
+		6D18F18D0BB379B8DB7DCC39E9532356 /* HTMLParseErrorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B3F5B7EB693C09FED55C26B1AF0D31 /* HTMLParseErrorToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7059D76350DCE7098A583B1751CF4686 /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E13F15DEEBA0C23607ADEF42F969E94 /* YYModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		70B361EA6F178FCB4E3A7CAA785EBF20 /* HTMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = A795CB6FDCAA9280CCC559884A6A17D9 /* HTMLDocument.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		710ED301B43D5285FED3BB947BE2B8D8 /* HTMLMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2A03134A50178E38AD81FB76ACD6E8 /* HTMLMarker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		71F43B4296189CE906F596566CF54A73 /* HTMLQuircksMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3290C3C70C7563AB73CB570AE240F51C /* HTMLQuircksMode.m */; };
+		72468123F030C4F6ED10D95E4FF71CBD /* NSCharacterSet+HTMLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F44CD1C3185623200E992D49DE3795 /* NSCharacterSet+HTMLKit.m */; };
+		754874DC3D6CA009B3065A4ACA1A9744 /* HTMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 836D2CF4CC84D0E461DDD278890128D8 /* HTMLElement.m */; };
+		78E164A9A58E198F421A657ED7CFE26C /* HTMLTreeVisitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 97174FE49AC3A6692394DF7887A7066F /* HTMLTreeVisitor.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		797A3E22B1E19708B724854C904767C3 /* MASPreferences-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 242F92225726D0E2BFB4C9412489CCBA /* MASPreferences-dummy.m */; };
+		7D8B70741226C01BC9A9DE955AB712A8 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A63955E4F43237551DAABF91F8EF9A /* AFNetworking-dummy.m */; };
+		824EDF432C3BFC1BB66E13EC6B58A0FC /* MASPreferencesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F926DC591F5B271D73F0DEF4D43A803 /* MASPreferencesViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		84238A42B71002754DCCFC6A672AB9DE /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA884E93CD52199B4538D8F56DF5D77 /* HTMLParser.m */; };
+		845C2CF5462F1654334136ACB540B3FD /* HTMLInputStreamReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 302B06ED8D16A8A1FE2ED553622CCA28 /* HTMLInputStreamReader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		84E1CA0B530599330265ADF29775A725 /* CSSCompoundSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A7209C8C55C550CDB24C8FD09EB326E /* CSSCompoundSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		86530F37C7986B977C6DEAEE8EF8DDF1 /* HTMLTokenizerCharacters.h in Headers */ = {isa = PBXBuildFile; fileRef = 53ADD0D4689E9498936B08CF296DC8ED /* HTMLTokenizerCharacters.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8719DE9B67F10A5CDDD55E34EA832F42 /* HTMLCharacterData.h in Headers */ = {isa = PBXBuildFile; fileRef = 81BCBC832AACD41CA999B0410B0A03B4 /* HTMLCharacterData.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		874D99043088E6C657C645538348A571 /* CSSSelectorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 132834501FC19F70BA223845C572C129 /* CSSSelectorParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		88066249E70C364F18DB71F4848E67B5 /* HTMLCommentToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E6856AE946FA3A37BB325C7E8A48D9C8 /* HTMLCommentToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8BA5AC2B1A43407A10C80112BC981DCF /* HTMLDOMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F97B6AC3F5F71F801B2018938B205B64 /* HTMLDOMUtils.m */; };
+		8D830EB2F7295950D717BFBF9253004C /* HTMLCommentToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7B51BF0151DB27CF5B311129E6FAB2 /* HTMLCommentToken.m */; };
+		8E5CBAD90B47CB7FE6A3B33C3288671F /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DDB5AB447AB377AB2D85DDE627231D7D /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8F3017E978F0D73B7449F29594F47BA3 /* HTMLDocumentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 410972E9346F2F3B1783B229991D4034 /* HTMLDocumentType.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		90AEB6E41F9B05408F0C46A6533845BC /* HTMLStackOfOpenElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E98EA6D55FADD0809F66A4E2EDC64B1 /* HTMLStackOfOpenElements.m */; };
+		91B291588EBC22A7CE4C7DEE1C25A864 /* YYModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1323854660F43CCD232CB275A84C395B /* YYModel-dummy.m */; };
+		94FF566A27BA036E5554875E7DFE6A51 /* HTMLElementAdjustment.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EDB16BD23E730974FF6817D88033962 /* HTMLElementAdjustment.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		95558038EA7DB62D80B0A7B7D5AFCBDD /* HTMLQuirksMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FAF35CDDB57DFCEB557E1A8421980C1 /* HTMLQuirksMode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		95CAA68F394760EBA8905CC74F732F77 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97823B9993749AA472EC8F769B919044 /* NSObject+YYModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		962980A9DBF2A550B32473251DFE620E /* CSSPseudoClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = BAAE23E95D0EB1C1C877BDD244F56753 /* CSSPseudoClassSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		99FF51CF49E376E445FAE1EB2F256FED /* CSSSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3AECD3190EF03A43DF637F87CCD20B /* CSSSelectors.m */; };
+		9A690BDA522807D3B9A06C15A655C3BD /* HTMLComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 878E1370FB22FBB7EF62DBF9A4ECD731 /* HTMLComment.m */; };
+		9C9043C261E69033A4FE4DA652174313 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 4520C562FAE8E4DEF9C5846426BD97E1 /* AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9F9CA1EE8BB72D3139FB220F9D88A1AF /* CSSPseudoFunctionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = F71B737EEB59A5A3B940FA8755BBFCF1 /* CSSPseudoFunctionSelector.m */; };
+		A01C3B1269374BEBA1D60EBAA1DAA630 /* CSSCombinatorSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B3B9012BF0045FDC46922C3266ADB80 /* CSSCombinatorSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A259299ED6BDE253026C18902D6D12AC /* HTMLEOFToken.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CB41895C32A1FA4B0054144BE6AC02 /* HTMLEOFToken.m */; };
+		A369B1544C7A07B95DCEAFD10613C53A /* HTMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 201CD1D5FE7752051682D728EA2E86C2 /* HTMLNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A433A9B7DE5B6A4C1BE9B65E763A1AA6 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0698F2B2C98389DB2FF90FAAB7CCCEEE /* MASPreferencesWindowController.m */; };
+		A4E6FEB936131CEA29A977DAF774E5DC /* HTMLNodeTraversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC45584DC4BAAB1650040814ED10EC9 /* HTMLNodeTraversal.m */; };
+		A5DDAC5EF061DB04D3F6D3D56B52CE76 /* HTMLInputStreamReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E945D2D201E3D85751E6247A9B0C755 /* HTMLInputStreamReader.m */; };
+		A603E95B0E96A3BC5E5914CB5D8348F5 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BC445F7007839EA8E29C80F4CDDC44 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A67E4B6D68A9764D88AD6EC8941C3BBF /* HTMLTokenizerEntities.h in Headers */ = {isa = PBXBuildFile; fileRef = DBD78465FA65C3E4A2A69A8820624A74 /* HTMLTokenizerEntities.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A9C70532A5B8673BE47E3B02F70C4FF8 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F6E03D0E5164216CBBDA1FA53D5AC /* HTMLNode.m */; };
+		ADD8EB5A0DEEE8BA456F3EB72FA4F1D8 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = BDA611C6BC07B08704A78E0D6D742BDD /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B512CC5A84FC00FC061F14D9C3467C54 /* HTMLNodeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E0A05E63F1249A60D9E791F3A58E6 /* HTMLNodeFilter.m */; };
+		B6B7409ACEC28A366E6D1049E6D958DD /* HTMLRange.m in Sources */ = {isa = PBXBuildFile; fileRef = C087F4A24C7421A938715AF382415694 /* HTMLRange.m */; };
+		B726807193FE73E5EC6C29006089DE2D /* HTMLNodeIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0759B548A2C15A8C52CFE99E8AD1F489 /* HTMLNodeIterator.m */; };
+		B8AE83A0D524310E1D4351823A7C6BCB /* MASPreferencesWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 948D81FF70A2105B30A0669BA634D242 /* MASPreferencesWindowController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BB03EBACD4300B131255F0C02631F653 /* CSSStructuralPseudoSelectors.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BEB577E5B3461D1A1AC938F0A75F12F /* CSSStructuralPseudoSelectors.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BD0B9D6F761734673206C92250D330A3 /* HTMLTokens.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C47E4E0153B078F1E3DBEB401997418 /* HTMLTokens.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BDA0939D628A45C1611B70F9F08D024F /* HTMLCharacterData+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = B19D4BCC6EB1A69777B017147A85697F /* HTMLCharacterData+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BE43F1F8DE24376A5705EF28F20DDDB9 /* HTMLSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C8BA986E99D39EE511770D651B4FB7 /* HTMLSerializer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C269B16B32B493079D8154D1FED1EF82 /* HTMLTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 94D761B995EDB592F5EF989228622BEF /* HTMLTokenizer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C29AE792311409ACCE7CC645ECB48394 /* HTMLTokenizerStates.h in Headers */ = {isa = PBXBuildFile; fileRef = 63EC25FD41C0C159FE4CC5333C6A10DF /* HTMLTokenizerStates.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C2A5CA7522F6BFD2E9E9F8C8D70E3227 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB11D8160DFEE928D802D6F58729AF /* AFURLSessionManager.m */; };
+		C3CA7A81CCFC08C5135E6B84A4202A85 /* CSSCodePoints.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E183FA937099DB79325BFA6A241E19 /* CSSCodePoints.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CB0731A6DFF1418A59BA04C4C21B5DCF /* HTMLCharacterToken.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E1B97127C68678928AB1EE529AB7F /* HTMLCharacterToken.m */; };
+		CB466118DD01FAEB8863BB6040C4558F /* HTMLCharacterData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E716E3F3FFFABB0BE29FB26459DABDD /* HTMLCharacterData.m */; };
+		CBB182F5AE88FBAA83AADD092BF29EB2 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 847B6A15D5250BB55C816388BE860173 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D17848C6840458373D6A4E158CA88AB8 /* HTMLNodeIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = D256C019EC821490B5FE4AC141F71339 /* HTMLNodeIterator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D2D932F55EB9316C823B5CE7EC84076B /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 42C2888B7002820DB7A4CDDB10F8A8C1 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D6A39B9FEA37BF0D92F7B7F50E282F93 /* NSString+HTMLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F73D7A7A43F3DEB7525714E18B5836 /* NSString+HTMLKit.m */; };
+		D9287FAAEF55CC9F4BEE6129CCB7F3E0 /* HTMLSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C172A451231D2DEA2452E9D7F4CCE9A1 /* HTMLSerializer.m */; };
+		DBAC44A606FA037E5D70677DBA350539 /* CSSNthExpressionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 89923E9A60C35477BD81DD7C60D922F5 /* CSSNthExpressionSelector.m */; };
+		DBFFEFDA60A3051F4E0A5C3459BF916D /* HTMLRange+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 957D8DB0C1FFED2E8F3011D90F3E30EE /* HTMLRange+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DD0EE97CA1E0C280DC02567BEF9995F8 /* CSSCompoundSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251C497EA2053742FE56E422E616E62 /* CSSCompoundSelector.m */; };
+		E070651F6C9B2E6E681D6491FE5F91D8 /* CSSSelectorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A51A523C88D93E0FFE215376C0055A /* CSSSelectorParser.m */; };
+		E185705452D424E73CF3167CF3EEBB94 /* HTMLDocumentFragment.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B55DDA83991F483EFF6C00FA975E88 /* HTMLDocumentFragment.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E2F130E5B7122D74A84599BF3E14D8E7 /* HTMLRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FC5F7B328579FFCFBCB50EF29729D63 /* HTMLRange.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E731A51780A5A3B611BD240986ED2C73 /* HTMLStackOfOpenElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 3108FE17086CAB3BC5342AACCA17240A /* HTMLStackOfOpenElements.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E778C263B81D595877566C209C60BE49 /* HTMLDOMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D5077B9502C02B1469E36A037462239C /* HTMLDOMUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E83BB46093841C35928F8365F8FAD9C6 /* HTMLKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2052DCF06ED261F89165BE1EB359D5E8 /* HTMLKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E89766632FD21D8891C5B3674566A07B /* HTMLEOFToken.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A0E56342D197BF58ED47F4BBBA8906 /* HTMLEOFToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E9455B38DF7A67C5A62766F2F204ED7B /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 8724401DD405E18E529CE54EB2CB945F /* NSObject+YYModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EB1753EC4519B98BA5200A54646EBCD3 /* CSSInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBC0D62FDCD3B246B8C128888D2E196 /* CSSInputStream.m */; };
+		EC85302E1E04F6B8532A3BA32D81C418 /* HTMLCharacterToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FC4B0569B35BCF775838D04B8372946 /* HTMLCharacterToken.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		ED3587C1B98B60F88976DED3E3D9DCD2 /* HTMLTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C232E786CB991A600DF5BF42F9A42 /* HTMLTokenizer.m */; };
+		EEAC7E2532E6FE9D9FD29499B3E3BEC4 /* CSSAttributeSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6878AB4810B57178F5BC87225DAED488 /* CSSAttributeSelector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EF245C89530651CB72A3BF37B3433D12 /* HTMLElementTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E8C20A47AA1FBD940C56A9E324D56B7 /* HTMLElementTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F1E105C1321F2E1EDC3BECE34CBAD918 /* HTMLNodeFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 451E04D08766FCFCCE9F0FCECEB49B5A /* HTMLNodeFilter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F425C70AFE44A9708EF964B9A4C2D492 /* HTMLListOfActiveFormattingElements.h in Headers */ = {isa = PBXBuildFile; fileRef = BB0A4D33678C1C4D9BA5BC4E7243B103 /* HTMLListOfActiveFormattingElements.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F581636DA3B9FDD0999A6BDEA6A8AA20 /* NSString+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C54D86554CB7FA1261800A6E636E3AED /* NSString+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F767B6E67B349FBFA0F290F3AE29589B /* HTMLParserInsertionModes.h in Headers */ = {isa = PBXBuildFile; fileRef = 49586240AFD75D53393A1B1CC8E2CC74 /* HTMLParserInsertionModes.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F87FF417F0DF931774ADD813EE9A2C06 /* HTMLDocumentFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A5F1554114BEB52FC3D723F691596 /* HTMLDocumentFragment.m */; };
+		FCFF59F5E97C9E54A29F13DB46F81F68 /* CSSInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C308B881DFA5C0A19F302C7F563D831 /* CSSInputStream.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FEAD0A23AB91C1968E369D1E84C45964 /* HTMLTreeWalker.h in Headers */ = {isa = PBXBuildFile; fileRef = B49B5A6C4BCCD4336F7328DD2D89C931 /* HTMLTreeWalker.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2B984C7F7A382274C7E620B98147A0C6 /* PBXContainerItemProxy */ = {
+		2DA29D1653DF9617DDCB4D25CF5C4D97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 84B44807A12996D487A4A591A481D6A0;
-			remoteInfo = YYModel;
+			remoteGlobalIDString = D6807B82082F2598A4BABD0A6B657D10;
+			remoteInfo = HTMLKit;
 		};
-		ADFA370D394733B39A8B7E1E689704E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0A273FF147C6C1A3B504E3652CD01233;
-			remoteInfo = "MASPreferences-MASPreferences";
-		};
-		BA3825CCD445A39FC378D2B9E8C0300E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CCE0F64E83CEAFEE20D04DC7BD57303E;
-			remoteInfo = MASPreferences;
-		};
-		F0A6189FBCD7E022ECD705FD440A4063 /* PBXContainerItemProxy */ = {
+		4572F1DAD55817BFF2BE41BB9D9BF526 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0130B3724283586C0E9D2A112D4F2AA1;
 			remoteInfo = AFNetworking;
 		};
-		FBE2FACCECEABEE372752C453EC36BBB /* PBXContainerItemProxy */ = {
+		53692F8DE73CDC6424B400F72D8B0973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D6807B82082F2598A4BABD0A6B657D10;
-			remoteInfo = HTMLKit;
+			remoteGlobalIDString = CCE0F64E83CEAFEE20D04DC7BD57303E;
+			remoteInfo = MASPreferences;
+		};
+		8047E0518F101A1AC01184AA7FCCD45E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84B44807A12996D487A4A591A481D6A0;
+			remoteInfo = YYModel;
+		};
+		E5959892B503A06D213945B9DC3D87B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A273FF147C6C1A3B504E3652CD01233;
+			remoteInfo = "MASPreferences-MASPreferences";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -221,7 +221,7 @@
 		1EDB16BD23E730974FF6817D88033962 /* HTMLElementAdjustment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLElementAdjustment.h; path = Sources/include/HTMLElementAdjustment.h; sourceTree = "<group>"; };
 		1F7882DC1BB1A3D22DEAC2AD0EDB52CB /* YYModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYModel.debug.xcconfig; sourceTree = "<group>"; };
 		1F9BBA5F3030A9C498809BFD8FB9FD8E /* HTMLTokenizerEntities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HTMLTokenizerEntities.m; path = Sources/HTMLTokenizerEntities.m; sourceTree = "<group>"; };
-		20090293D4AE249A79E878C2E7F52482 /* HTMLKit */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = HTMLKit; path = libHTMLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		20090293D4AE249A79E878C2E7F52482 /* libHTMLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHTMLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		201CD1D5FE7752051682D728EA2E86C2 /* HTMLNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLNode.h; path = Sources/include/HTMLNode.h; sourceTree = "<group>"; };
 		2052DCF06ED261F89165BE1EB359D5E8 /* HTMLKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLKit.h; path = Sources/include/HTMLKit.h; sourceTree = "<group>"; };
 		219F3D60ED1405D48C64020A1D24EC9F /* HTMLNodeVisitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLNodeVisitor.h; path = Sources/include/HTMLNodeVisitor.h; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 		410972E9346F2F3B1783B229991D4034 /* HTMLDocumentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLDocumentType.h; path = Sources/include/HTMLDocumentType.h; sourceTree = "<group>"; };
 		41AAF387C3E6BE43AF656A9AF4B5B509 /* CSSCombinatorSelector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSSCombinatorSelector.m; path = Sources/CSSCombinatorSelector.m; sourceTree = "<group>"; };
 		42C2888B7002820DB7A4CDDB10F8A8C1 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		43F9966E7614888A0CDCFAB2F62F2FDD /* MASPreferences */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = MASPreferences; path = libMASPreferences.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F9966E7614888A0CDCFAB2F62F2FDD /* libMASPreferences.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMASPreferences.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		451E04D08766FCFCCE9F0FCECEB49B5A /* HTMLNodeFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLNodeFilter.h; path = Sources/include/HTMLNodeFilter.h; sourceTree = "<group>"; };
 		4520C562FAE8E4DEF9C5846426BD97E1 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		49586240AFD75D53393A1B1CC8E2CC74 /* HTMLParserInsertionModes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLParserInsertionModes.h; path = Sources/include/HTMLParserInsertionModes.h; sourceTree = "<group>"; };
@@ -306,14 +306,14 @@
 		97174FE49AC3A6692394DF7887A7066F /* HTMLTreeVisitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLTreeVisitor.h; path = Sources/include/HTMLTreeVisitor.h; sourceTree = "<group>"; };
 		97823B9993749AA472EC8F769B919044 /* NSObject+YYModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YYModel.m"; path = "YYModel/NSObject+YYModel.m"; sourceTree = "<group>"; };
 		9B28BCCB417E7401CCC67AAE6424D2DC /* HTMLTreeVisitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HTMLTreeVisitor.m; path = Sources/HTMLTreeVisitor.m; sourceTree = "<group>"; };
-		9D635ACBDB58BEC168F692A7F0132B89 /* MASPreferences-MASPreferences */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "MASPreferences-MASPreferences"; path = MASPreferences.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D635ACBDB58BEC168F692A7F0132B89 /* MASPreferences.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MASPreferences.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D9A14C933AD3E3934D92D7872D3E6E1 /* Pods-StringerX-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StringerX-resources.sh"; sourceTree = "<group>"; };
 		9E9D25C463CFCF87E1D4B13FA43E9B40 /* HTMLKitDOMExceptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLKitDOMExceptions.h; path = Sources/include/HTMLKitDOMExceptions.h; sourceTree = "<group>"; };
-		A1912AA74DEE6A3988CE2CF030BCE9B1 /* Pods-StringerX */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-StringerX"; path = "libPods-StringerX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1912AA74DEE6A3988CE2CF030BCE9B1 /* libPods-StringerX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringerX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48729D2276E4E8946D41FC8615FC9F7 /* CSSSelectorBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSSSelectorBlock.h; path = Sources/include/CSSSelectorBlock.h; sourceTree = "<group>"; };
 		A4B3F5B7EB693C09FED55C26B1AF0D31 /* HTMLParseErrorToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLParseErrorToken.h; path = Sources/include/HTMLParseErrorToken.h; sourceTree = "<group>"; };
-		A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = AFNetworking; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A795CB6FDCAA9280CCC559884A6A17D9 /* HTMLDocument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLDocument.h; path = Sources/include/HTMLDocument.h; sourceTree = "<group>"; };
 		A8D928DAF482BB7160A96F90CA9FF173 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		A99A69E37AA8D81C323F3CAB430A117A /* NSCharacterSet+HTMLKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCharacterSet+HTMLKit.h"; path = "Sources/include/NSCharacterSet+HTMLKit.h"; sourceTree = "<group>"; };
@@ -357,7 +357,7 @@
 		DFBC0D62FDCD3B246B8C128888D2E196 /* CSSInputStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSSInputStream.m; path = Sources/CSSInputStream.m; sourceTree = "<group>"; };
 		E1A63955E4F43237551DAABF91F8EF9A /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		E398D065A31BE30EBE870755871074FF /* MASPreferences-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MASPreferences-prefix.pch"; sourceTree = "<group>"; };
-		E460D5B0416D36F66EE8EC89E5D2FA0A /* YYModel */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = YYModel; path = libYYModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E460D5B0416D36F66EE8EC89E5D2FA0A /* libYYModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYYModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6558229A63F92A81D410C6FDED9AD7B /* HTMLDOCTYPEToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLDOCTYPEToken.h; path = Sources/include/HTMLDOCTYPEToken.h; sourceTree = "<group>"; };
 		E6856AE946FA3A37BB325C7E8A48D9C8 /* HTMLCommentToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLCommentToken.h; path = Sources/include/HTMLCommentToken.h; sourceTree = "<group>"; };
 		E772BF3583F9CCB4E383F3E95BCBFBF3 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
@@ -380,42 +380,42 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0AFA2E3ABACA7676A098C19CC4EBB3F8 /* Frameworks */ = {
+		0D966151AD22B6ACBDA5F01D0C89EBF0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1D62D0869B520DCD7FDFF0EA8D529A4A /* Frameworks */ = {
+		311F3CEE3C7A4F66D608BC947868891F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78174EF8EBA99B2D2F07AD2ADD024EAD /* Frameworks */ = {
+		57F9EE0AABF0EFDC9AFF0FDCDCC55A01 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98D599D33AC1F94BCD7EEC77276731B7 /* Frameworks */ = {
+		9068CD6B85C6F03AF752CA7B6CCF5A41 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFD074FDE7696C07EE5F04D14839C0B8 /* Frameworks */ = {
+		A35A8374ACCED0C12F0B93D35FCD8AF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C08C3DA5D5265523ABD3C9B0E7A9E726 /* Frameworks */ = {
+		FDB5F614D6495AF731C0156F4A5812A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -446,7 +446,6 @@
 				EBE93E034AE659630A512B77CE80683D /* Resources */,
 				77FEA9AB7A994781E62D6F8EB14F4977 /* Support Files */,
 			);
-			name = MASPreferences;
 			path = MASPreferences;
 			sourceTree = "<group>";
 		};
@@ -485,12 +484,12 @@
 		58617CDAD184656DA599126E6AE5DB92 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking */,
-				20090293D4AE249A79E878C2E7F52482 /* HTMLKit */,
-				43F9966E7614888A0CDCFAB2F62F2FDD /* MASPreferences */,
-				9D635ACBDB58BEC168F692A7F0132B89 /* MASPreferences-MASPreferences */,
-				A1912AA74DEE6A3988CE2CF030BCE9B1 /* Pods-StringerX */,
-				E460D5B0416D36F66EE8EC89E5D2FA0A /* YYModel */,
+				A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */,
+				20090293D4AE249A79E878C2E7F52482 /* libHTMLKit.a */,
+				43F9966E7614888A0CDCFAB2F62F2FDD /* libMASPreferences.a */,
+				9D635ACBDB58BEC168F692A7F0132B89 /* MASPreferences.bundle */,
+				A1912AA74DEE6A3988CE2CF030BCE9B1 /* libPods-StringerX.a */,
+				E460D5B0416D36F66EE8EC89E5D2FA0A /* libYYModel.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -691,7 +690,6 @@
 				D0AA1058B6EB34E112E310D3B87FCAAD /* NSString+Private.m */,
 				BCC9D71D5BF1878C7C2808A57200BA9E /* Support Files */,
 			);
-			name = HTMLKit;
 			path = HTMLKit;
 			sourceTree = "<group>";
 		};
@@ -743,7 +741,6 @@
 				2E13F15DEEBA0C23607ADEF42F969E94 /* YYModel.h */,
 				3E39F5F516992AB427718813D642354B /* Support Files */,
 			);
-			name = YYModel;
 			path = YYModel;
 			sourceTree = "<group>";
 		};
@@ -757,129 +754,128 @@
 				3169721FC16B0984954C0693FAEA15C1 /* Serialization */,
 				762B6D835753A45B3BD3436B5B362B9D /* Support Files */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		13EB20F076B2622D3170DFFAABFF4CBD /* Headers */ = {
+		01B5685C37595C838683EB40AED3136C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38C81EDC6C1DAD6BB38585C9F5C31AF9 /* Headers */ = {
+		565F9DC1DF738157E34150005C5B2305 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A5FD5F8E43D704474602A2AC2CDC340 /* NSObject+YYModel.h in Headers */,
-				89AB7D96102E7D63C630332403CB1010 /* YYClassInfo.h in Headers */,
-				6DFCEB06E2821A5002D543D61EB4ADD0 /* YYModel.h in Headers */,
+				341CE3BDEBAADD915E644444E6275C91 /* AFCompatibilityMacros.h in Headers */,
+				8E5CBAD90B47CB7FE6A3B33C3288671F /* AFHTTPSessionManager.h in Headers */,
+				9C9043C261E69033A4FE4DA652174313 /* AFNetworking.h in Headers */,
+				D2D932F55EB9316C823B5CE7EC84076B /* AFNetworkReachabilityManager.h in Headers */,
+				5A0A860757F647285072DFF5C8EB1A18 /* AFSecurityPolicy.h in Headers */,
+				ADD8EB5A0DEEE8BA456F3EB72FA4F1D8 /* AFURLRequestSerialization.h in Headers */,
+				CBB182F5AE88FBAA83AADD092BF29EB2 /* AFURLResponseSerialization.h in Headers */,
+				A603E95B0E96A3BC5E5914CB5D8348F5 /* AFURLSessionManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		754E2466A9073EC3918985561BA60F7F /* Headers */ = {
+		7EBBF9389ABA59D12D9DC5AA6EA0E597 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5961DD113EA9889A3F4AB5E7BBD332AE /* AFCompatibilityMacros.h in Headers */,
-				60269B303A4B96F34CCDF4CAD86DA7AE /* AFHTTPSessionManager.h in Headers */,
-				CB86F9FFA0FA735D03162151A602543A /* AFNetworking.h in Headers */,
-				47A14316B0DE15FABCEE6893722FE5F9 /* AFNetworkReachabilityManager.h in Headers */,
-				4FA91BC844EE31947C8522BFE16BD79C /* AFSecurityPolicy.h in Headers */,
-				E94C526D824266825AC7F0B87FA48868 /* AFURLRequestSerialization.h in Headers */,
-				9B6765E8FC0BFDB0EC145C0D9EECD722 /* AFURLResponseSerialization.h in Headers */,
-				34EAD8CEB4EEA3D05F2416107B949382 /* AFURLSessionManager.h in Headers */,
+				EEAC7E2532E6FE9D9FD29499B3E3BEC4 /* CSSAttributeSelector.h in Headers */,
+				C3CA7A81CCFC08C5135E6B84A4202A85 /* CSSCodePoints.h in Headers */,
+				A01C3B1269374BEBA1D60EBAA1DAA630 /* CSSCombinatorSelector.h in Headers */,
+				84E1CA0B530599330265ADF29775A725 /* CSSCompoundSelector.h in Headers */,
+				FCFF59F5E97C9E54A29F13DB46F81F68 /* CSSInputStream.h in Headers */,
+				4D13CE45630C96D070BA9C4122D2AFEF /* CSSNthExpressionParser.h in Headers */,
+				23498598A6DDA7C48976E57C92F85FE7 /* CSSNthExpressionSelector.h in Headers */,
+				962980A9DBF2A550B32473251DFE620E /* CSSPseudoClassSelector.h in Headers */,
+				115C61C61C79B715BF87C070DF9C4011 /* CSSPseudoFunctionSelector.h in Headers */,
+				2D21A50A45875079A48BD431091C487E /* CSSSelector.h in Headers */,
+				5462F9DF67D245D0D2201A85C6094D89 /* CSSSelectorBlock.h in Headers */,
+				874D99043088E6C657C645538348A571 /* CSSSelectorParser.h in Headers */,
+				294FA8C4D6F510F53C01669A173F0221 /* CSSSelectors.h in Headers */,
+				BB03EBACD4300B131255F0C02631F653 /* CSSStructuralPseudoSelectors.h in Headers */,
+				1A805CE3175E6A4563B55898556ECFE9 /* CSSTypeSelector.h in Headers */,
+				8719DE9B67F10A5CDDD55E34EA832F42 /* HTMLCharacterData.h in Headers */,
+				BDA0939D628A45C1611B70F9F08D024F /* HTMLCharacterData+Private.h in Headers */,
+				EC85302E1E04F6B8532A3BA32D81C418 /* HTMLCharacterToken.h in Headers */,
+				1BCA3619005508CD1C6071F1D6990406 /* HTMLComment.h in Headers */,
+				88066249E70C364F18DB71F4848E67B5 /* HTMLCommentToken.h in Headers */,
+				5B06AE27BD6C01D7C34291FDF95CA6CF /* HTMLDOCTYPEToken.h in Headers */,
+				70B361EA6F178FCB4E3A7CAA785EBF20 /* HTMLDocument.h in Headers */,
+				4EEF4C6F8FE225F1E7CEABAE084F784E /* HTMLDocument+Private.h in Headers */,
+				E185705452D424E73CF3167CF3EEBB94 /* HTMLDocumentFragment.h in Headers */,
+				8F3017E978F0D73B7449F29594F47BA3 /* HTMLDocumentType.h in Headers */,
+				02168880C8B93A7FE2EC901358AF36D4 /* HTMLDOM.h in Headers */,
+				5592671598AD1D82655D727C694373EE /* HTMLDOMTokenList.h in Headers */,
+				E778C263B81D595877566C209C60BE49 /* HTMLDOMUtils.h in Headers */,
+				29156D293625C741152AB2D731A3E889 /* HTMLElement.h in Headers */,
+				94FF566A27BA036E5554875E7DFE6A51 /* HTMLElementAdjustment.h in Headers */,
+				EF245C89530651CB72A3BF37B3433D12 /* HTMLElementTypes.h in Headers */,
+				E89766632FD21D8891C5B3674566A07B /* HTMLEOFToken.h in Headers */,
+				845C2CF5462F1654334136ACB540B3FD /* HTMLInputStreamReader.h in Headers */,
+				E83BB46093841C35928F8365F8FAD9C6 /* HTMLKit.h in Headers */,
+				386E2AE4D769217F9D32BCF803EFC0D2 /* HTMLKitDOMExceptions.h in Headers */,
+				28A099D1E138DA84E442D6F7A145367A /* HTMLKitErrorDomain.h in Headers */,
+				F425C70AFE44A9708EF964B9A4C2D492 /* HTMLListOfActiveFormattingElements.h in Headers */,
+				710ED301B43D5285FED3BB947BE2B8D8 /* HTMLMarker.h in Headers */,
+				1666FC617F84D77BC250312D4822E512 /* HTMLNamespaces.h in Headers */,
+				A369B1544C7A07B95DCEAFD10613C53A /* HTMLNode.h in Headers */,
+				211292FB891BDCDC4DA83FBD6B5DCD6E /* HTMLNode+Private.h in Headers */,
+				F1E105C1321F2E1EDC3BECE34CBAD918 /* HTMLNodeFilter.h in Headers */,
+				D17848C6840458373D6A4E158CA88AB8 /* HTMLNodeIterator.h in Headers */,
+				475E5A0946EDB33B01E12961EE4A7D27 /* HTMLNodeIterator+Private.h in Headers */,
+				15E577BB5DE1A4A0117E32AF03983E4F /* HTMLNodeTraversal.h in Headers */,
+				18C980E1B61701C995CF9C66DC591F03 /* HTMLNodeVisitor.h in Headers */,
+				572A4D15065358034F9E580320D4EB52 /* HTMLOrderedDictionary.h in Headers */,
+				6D18F18D0BB379B8DB7DCC39E9532356 /* HTMLParseErrorToken.h in Headers */,
+				50B7940C4A959E70658D67BE5407C5BF /* HTMLParser.h in Headers */,
+				55465EA6B71B72FD99D89D1EA4E79AAD /* HTMLParser+Private.h in Headers */,
+				F767B6E67B349FBFA0F290F3AE29589B /* HTMLParserInsertionModes.h in Headers */,
+				95558038EA7DB62D80B0A7B7D5AFCBDD /* HTMLQuirksMode.h in Headers */,
+				E2F130E5B7122D74A84599BF3E14D8E7 /* HTMLRange.h in Headers */,
+				DBFFEFDA60A3051F4E0A5C3459BF916D /* HTMLRange+Private.h in Headers */,
+				BE43F1F8DE24376A5705EF28F20DDDB9 /* HTMLSerializer.h in Headers */,
+				E731A51780A5A3B611BD240986ED2C73 /* HTMLStackOfOpenElements.h in Headers */,
+				212332C6875E28BDD638FBF70664519D /* HTMLTagToken.h in Headers */,
+				382283413D1C42CBA2CA56F473A6A6B4 /* HTMLTemplate.h in Headers */,
+				10B4D30A90C47EF0AD99E20ECB5EE58B /* HTMLText.h in Headers */,
+				2DA1AE834A2DBCC708217D5D90E1CCAC /* HTMLToken.h in Headers */,
+				C269B16B32B493079D8154D1FED1EF82 /* HTMLTokenizer.h in Headers */,
+				86530F37C7986B977C6DEAEE8EF8DDF1 /* HTMLTokenizerCharacters.h in Headers */,
+				A67E4B6D68A9764D88AD6EC8941C3BBF /* HTMLTokenizerEntities.h in Headers */,
+				C29AE792311409ACCE7CC645ECB48394 /* HTMLTokenizerStates.h in Headers */,
+				BD0B9D6F761734673206C92250D330A3 /* HTMLTokens.h in Headers */,
+				78E164A9A58E198F421A657ED7CFE26C /* HTMLTreeVisitor.h in Headers */,
+				FEAD0A23AB91C1968E369D1E84C45964 /* HTMLTreeWalker.h in Headers */,
+				42362B4210BE08B0CFB7C8E36B98DE21 /* NSCharacterSet+HTMLKit.h in Headers */,
+				1F83EF0E0C85DF932AA4E2F722675C80 /* NSString+HTMLKit.h in Headers */,
+				F581636DA3B9FDD0999A6BDEA6A8AA20 /* NSString+Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA6195D6244A16750816D0C2163B2B35 /* Headers */ = {
+		9CC9226A84450DF66450919DF94DC108 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDC15E63DC521F96FC77FB1784797D4F /* MASPreferences.h in Headers */,
-				6867463524D72760EE04CC0C33EE40E8 /* MASPreferencesViewController.h in Headers */,
-				726CA7B9E7C2905CE671CE97A48ED72F /* MASPreferencesWindowController.h in Headers */,
+				E9455B38DF7A67C5A62766F2F204ED7B /* NSObject+YYModel.h in Headers */,
+				347FADBA83E6CD1994E05E13E64A5BD5 /* YYClassInfo.h in Headers */,
+				7059D76350DCE7098A583B1751CF4686 /* YYModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F0871ED2D09ABBF06B71C7D03B6C22D0 /* Headers */ = {
+		E68B4EED95E8BA3E8178227E0181885F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5ED30686E9E61E0ABBC45197112F1E0 /* CSSAttributeSelector.h in Headers */,
-				C6D622F9C35AE654F3406195F6447092 /* CSSCodePoints.h in Headers */,
-				DB1A811CE2A232AA086432F5FB539747 /* CSSCombinatorSelector.h in Headers */,
-				504D8672AD75A7C69C86E2623730C650 /* CSSCompoundSelector.h in Headers */,
-				2485F94C8844C56A5D97E968AFBA163C /* CSSInputStream.h in Headers */,
-				A9E034CB67512D25CA7CB28945E698F2 /* CSSNthExpressionParser.h in Headers */,
-				2E60FF1766558ABDAF3F94C9846703BE /* CSSNthExpressionSelector.h in Headers */,
-				D6A89808F261ACEA0D4A9D298472F897 /* CSSPseudoClassSelector.h in Headers */,
-				32C12BEF20F128F0D645AB4224071C1C /* CSSPseudoFunctionSelector.h in Headers */,
-				D4BECD0C6CA4196F97EFA723812626A8 /* CSSSelector.h in Headers */,
-				3B562DF6C640ABAE1243BC42966D9D0A /* CSSSelectorBlock.h in Headers */,
-				E8B8AB108D923C708A8F66A51E2489FA /* CSSSelectorParser.h in Headers */,
-				112421072ABB23067341C72606FA7489 /* CSSSelectors.h in Headers */,
-				36CDF337CAADBBEE9A0454379A2224D2 /* CSSStructuralPseudoSelectors.h in Headers */,
-				D32643A3EA0673E21595E3EDC6AFBC52 /* CSSTypeSelector.h in Headers */,
-				FDF3E03318AB23B79114D1AFF47CFD2C /* HTMLCharacterData.h in Headers */,
-				810DD899A2FE134519A6F6A439250C6A /* HTMLCharacterData+Private.h in Headers */,
-				62F152B0F8729A54C2563AFA917DF42C /* HTMLCharacterToken.h in Headers */,
-				C158DC48518F68CFB0174FD19C6BF09B /* HTMLComment.h in Headers */,
-				D711833BE7F5587AB6F48FA98B1286E8 /* HTMLCommentToken.h in Headers */,
-				4232A5CE5E3676BDE17484B59A7D2DE0 /* HTMLDOCTYPEToken.h in Headers */,
-				CE0ACF1D280CC3DB3E4E79F084011A06 /* HTMLDocument.h in Headers */,
-				CCFDB887F95A961B828BF66F35E61B34 /* HTMLDocument+Private.h in Headers */,
-				C0FDE93D1BF13BC185FE0FE3E5AFD904 /* HTMLDocumentFragment.h in Headers */,
-				F28181CD68CBAE3A2B2FE4CE56A880BA /* HTMLDocumentType.h in Headers */,
-				20BD3F57DD7EB744DC4A1573149990AB /* HTMLDOM.h in Headers */,
-				CB89CBCC3CCAFEB2DB6C9B9FAE341A2F /* HTMLDOMTokenList.h in Headers */,
-				93F6BF0387C1D711ACC39C226506C44F /* HTMLDOMUtils.h in Headers */,
-				90E0659CD39D35FB234807156BB5BDA1 /* HTMLElement.h in Headers */,
-				25383C6F658623C4F3F27292E0375BC6 /* HTMLElementAdjustment.h in Headers */,
-				B2EAB2461DA0E07E13AD963BEE0D2DC3 /* HTMLElementTypes.h in Headers */,
-				75B9427FE7CC45CA81AC79E6CDA797EB /* HTMLEOFToken.h in Headers */,
-				B4B570FDB8E8A2BC6F4B0B2444423312 /* HTMLInputStreamReader.h in Headers */,
-				643D98D6DE3B9186D79C928235EBD3F9 /* HTMLKit.h in Headers */,
-				FDAB6827A0F8D1A63A57E3F43DDA43C7 /* HTMLKitDOMExceptions.h in Headers */,
-				1531A8FA862E8A3172D041D3ECC34917 /* HTMLKitErrorDomain.h in Headers */,
-				62B446BDD0681A93BE91D23C8703B794 /* HTMLListOfActiveFormattingElements.h in Headers */,
-				A12AA4F3AC556CC0D3E43FEBDCBD9652 /* HTMLMarker.h in Headers */,
-				BA6139A433DC7915BB2749CAEF786E0D /* HTMLNamespaces.h in Headers */,
-				537A3326040E64F1374965424B5DFFEF /* HTMLNode.h in Headers */,
-				F6936F7F33B6B03CDFA98E48546E79A8 /* HTMLNode+Private.h in Headers */,
-				8022FE599CABE8A69D7FCB5C02E0829D /* HTMLNodeFilter.h in Headers */,
-				AA005E815E67BDDE6B6DAD2CD923E3A8 /* HTMLNodeIterator.h in Headers */,
-				28CD3ACF72BBC80F79277F250D030D07 /* HTMLNodeIterator+Private.h in Headers */,
-				EDDD06164567BA823C08BCC12DC34D17 /* HTMLNodeTraversal.h in Headers */,
-				5D60A779A0C71F246E6697539A5A4336 /* HTMLNodeVisitor.h in Headers */,
-				7B4BE029B077A8336D5F822DC607AE6B /* HTMLOrderedDictionary.h in Headers */,
-				6687E91B78E9CC41655B3297BD3AAC2B /* HTMLParseErrorToken.h in Headers */,
-				FD9798F967807A9EF8249A15189D2E07 /* HTMLParser.h in Headers */,
-				5B45155A4D4B66EB8D80202151BB876B /* HTMLParser+Private.h in Headers */,
-				A35C7ABC2F7E8375CF112BA3586C8E4E /* HTMLParserInsertionModes.h in Headers */,
-				E9673DCC1B1DAB428187DE747146F661 /* HTMLQuirksMode.h in Headers */,
-				034E5EB98F1BCEE0DAF146E24AC9924A /* HTMLRange.h in Headers */,
-				FC6B8E70F7D75929DC47BB47D28CC620 /* HTMLRange+Private.h in Headers */,
-				84C6516E46313C853723F8AB60AE7EB6 /* HTMLSerializer.h in Headers */,
-				04B14F7B48594B42A008976F9D1C1E62 /* HTMLStackOfOpenElements.h in Headers */,
-				C0ACC74C272392231D784054132B2196 /* HTMLTagToken.h in Headers */,
-				605D482EB6DB70037765A760FB8BCA43 /* HTMLTemplate.h in Headers */,
-				921E1EE79520387935E52B20FE33B901 /* HTMLText.h in Headers */,
-				6950C999969D92E386679D0104DFB11B /* HTMLToken.h in Headers */,
-				4836DFEBAC7B965302C5590399681483 /* HTMLTokenizer.h in Headers */,
-				AEED421A57710BB673525F35F6E0A9AF /* HTMLTokenizerCharacters.h in Headers */,
-				6932AB4320568B9DC8E7A2129F8A9E4B /* HTMLTokenizerEntities.h in Headers */,
-				81E52AC12D7A4E3C8F9F31923FC3FE79 /* HTMLTokenizerStates.h in Headers */,
-				90347891E1503FBC39B6F4C009DDA700 /* HTMLTokens.h in Headers */,
-				D83225BBC4689A90047EC49531449145 /* HTMLTreeVisitor.h in Headers */,
-				3A6842CA99DBCE95A3B5723E40B84965 /* HTMLTreeWalker.h in Headers */,
-				0D25B65E97C86F8DC85A1EFD8540425B /* NSCharacterSet+HTMLKit.h in Headers */,
-				0DE190ADD71F0B10D00105A965D5D343 /* NSString+HTMLKit.h in Headers */,
-				BFF44C61702902EE76EE293095F0BB6F /* NSString+Private.h in Headers */,
+				566C98A8B05B65ED8EF35505450B5CF1 /* MASPreferences.h in Headers */,
+				824EDF432C3BFC1BB66E13EC6B58A0FC /* MASPreferencesViewController.h in Headers */,
+				B8AE83A0D524310E1D4351823A7C6BCB /* MASPreferencesWindowController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,11 +884,11 @@
 /* Begin PBXNativeTarget section */
 		0130B3724283586C0E9D2A112D4F2AA1 /* AFNetworking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F4C3A2A63040A5FCA48223496409995 /* Build configuration list for PBXNativeTarget "AFNetworking" */;
+			buildConfigurationList = 209B9A4BDFBEF629261D3B545C2B12E3 /* Build configuration list for PBXNativeTarget "AFNetworking" */;
 			buildPhases = (
-				754E2466A9073EC3918985561BA60F7F /* Headers */,
-				C268FCF6E8E40050E1EB81F33471151C /* Sources */,
-				0AFA2E3ABACA7676A098C19CC4EBB3F8 /* Frameworks */,
+				565F9DC1DF738157E34150005C5B2305 /* Headers */,
+				7FC2296D9792C8E6BF2CE33AF85D71E2 /* Sources */,
+				FDB5F614D6495AF731C0156F4A5812A8 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -900,16 +896,16 @@
 			);
 			name = AFNetworking;
 			productName = AFNetworking;
-			productReference = A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking */;
+			productReference = A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		0A273FF147C6C1A3B504E3652CD01233 /* MASPreferences-MASPreferences */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F52FDB92F53622DE0CF4C3013F5E8AB8 /* Build configuration list for PBXNativeTarget "MASPreferences-MASPreferences" */;
+			buildConfigurationList = 5F39CFE3E9D8344B0EC7249DB5CA3C73 /* Build configuration list for PBXNativeTarget "MASPreferences-MASPreferences" */;
 			buildPhases = (
-				DC1ACFB288842FD7011FBF31AD8FF294 /* Sources */,
-				AFD074FDE7696C07EE5F04D14839C0B8 /* Frameworks */,
-				735127FF70B5C55B82BDAF6076C1BF55 /* Resources */,
+				43FE75DCA60598639B389FABB8032971 /* Sources */,
+				9068CD6B85C6F03AF752CA7B6CCF5A41 /* Frameworks */,
+				C518BD8A63A28CCFF9066AC6C5F4E3FF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -917,37 +913,37 @@
 			);
 			name = "MASPreferences-MASPreferences";
 			productName = MASPreferences;
-			productReference = 9D635ACBDB58BEC168F692A7F0132B89 /* MASPreferences-MASPreferences */;
+			productReference = 9D635ACBDB58BEC168F692A7F0132B89 /* MASPreferences.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		53C43BFF9D3C1E1983D3CCE2BCB6683A /* Pods-StringerX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C42611522E4186A9F155F09F08A241 /* Build configuration list for PBXNativeTarget "Pods-StringerX" */;
+			buildConfigurationList = 21867B155C0F8DED9F9162FA2C8874A2 /* Build configuration list for PBXNativeTarget "Pods-StringerX" */;
 			buildPhases = (
-				13EB20F076B2622D3170DFFAABFF4CBD /* Headers */,
-				90BA3F7C39BD6A8EE1963E7DC4ED704F /* Sources */,
-				98D599D33AC1F94BCD7EEC77276731B7 /* Frameworks */,
+				01B5685C37595C838683EB40AED3136C /* Headers */,
+				1C84B24FD5AC9180EFC45D3A6153574F /* Sources */,
+				57F9EE0AABF0EFDC9AFF0FDCDCC55A01 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E028BF9D1B18E372D2BC10FF0C767637 /* PBXTargetDependency */,
-				3FE54A779CCA5B39FEC484C43D5A49CE /* PBXTargetDependency */,
-				6F0E3E6AC316A95F2214C30167A12052 /* PBXTargetDependency */,
-				1806762C3E81ABBC5DF5AE20FBD1A352 /* PBXTargetDependency */,
+				4CE665CB5C24D32BC680B0849E9681A0 /* PBXTargetDependency */,
+				BFB79AD4472F516EB5A16FD94AE0E10D /* PBXTargetDependency */,
+				CC0CA33DB9F3CBEEBCB9769AA94595DE /* PBXTargetDependency */,
+				A6916E6B27369C6F24B432D3AA37B6AA /* PBXTargetDependency */,
 			);
 			name = "Pods-StringerX";
 			productName = "Pods-StringerX";
-			productReference = A1912AA74DEE6A3988CE2CF030BCE9B1 /* Pods-StringerX */;
+			productReference = A1912AA74DEE6A3988CE2CF030BCE9B1 /* libPods-StringerX.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		84B44807A12996D487A4A591A481D6A0 /* YYModel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9818D8B3BDFE7C917B7EE4D9074797C /* Build configuration list for PBXNativeTarget "YYModel" */;
+			buildConfigurationList = 8F245EA8C004305BE516222DF3C3259D /* Build configuration list for PBXNativeTarget "YYModel" */;
 			buildPhases = (
-				38C81EDC6C1DAD6BB38585C9F5C31AF9 /* Headers */,
-				D86A6EBF7463DBD8C5276B363F151E1A /* Sources */,
-				78174EF8EBA99B2D2F07AD2ADD024EAD /* Frameworks */,
+				9CC9226A84450DF66450919DF94DC108 /* Headers */,
+				60B36DD71B5947E7748008465AF013B9 /* Sources */,
+				311F3CEE3C7A4F66D608BC947868891F /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -955,34 +951,34 @@
 			);
 			name = YYModel;
 			productName = YYModel;
-			productReference = E460D5B0416D36F66EE8EC89E5D2FA0A /* YYModel */;
+			productReference = E460D5B0416D36F66EE8EC89E5D2FA0A /* libYYModel.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		CCE0F64E83CEAFEE20D04DC7BD57303E /* MASPreferences */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6ED893C1E9C792AFD8DA7C33CCE40CA /* Build configuration list for PBXNativeTarget "MASPreferences" */;
+			buildConfigurationList = 887A97148D1A96E43D9081EC5D8715F8 /* Build configuration list for PBXNativeTarget "MASPreferences" */;
 			buildPhases = (
-				BA6195D6244A16750816D0C2163B2B35 /* Headers */,
-				DCFB7AAF9E40AD92C71D0B0D5C251686 /* Sources */,
-				1D62D0869B520DCD7FDFF0EA8D529A4A /* Frameworks */,
+				E68B4EED95E8BA3E8178227E0181885F /* Headers */,
+				CB91808830B1CF967ED082220F782332 /* Sources */,
+				0D966151AD22B6ACBDA5F01D0C89EBF0 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EF21AEF947C198DC142CEBB189EF5F46 /* PBXTargetDependency */,
+				4290C830DA5E2F96A20EBEAC4542D57B /* PBXTargetDependency */,
 			);
 			name = MASPreferences;
 			productName = MASPreferences;
-			productReference = 43F9966E7614888A0CDCFAB2F62F2FDD /* MASPreferences */;
+			productReference = 43F9966E7614888A0CDCFAB2F62F2FDD /* libMASPreferences.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		D6807B82082F2598A4BABD0A6B657D10 /* HTMLKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0E176DEE286045D7CDE9DD94C9E89C4 /* Build configuration list for PBXNativeTarget "HTMLKit" */;
+			buildConfigurationList = 89744EF8BD6B9D4AE79ED1FEA3239FDC /* Build configuration list for PBXNativeTarget "HTMLKit" */;
 			buildPhases = (
-				F0871ED2D09ABBF06B71C7D03B6C22D0 /* Headers */,
-				E2E793FDEE25C031D6DE48E245609316 /* Sources */,
-				C08C3DA5D5265523ABD3C9B0E7A9E726 /* Frameworks */,
+				7EBBF9389ABA59D12D9DC5AA6EA0E597 /* Headers */,
+				BABED01C0E46F4C2C0CE97F33C42E9C2 /* Sources */,
+				A35A8374ACCED0C12F0B93D35FCD8AF6 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -990,7 +986,7 @@
 			);
 			name = HTMLKit;
 			productName = HTMLKit;
-			productReference = 20090293D4AE249A79E878C2E7F52482 /* HTMLKit */;
+			productReference = 20090293D4AE249A79E878C2E7F52482 /* libHTMLKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -999,11 +995,12 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2620;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1026,158 +1023,158 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		735127FF70B5C55B82BDAF6076C1BF55 /* Resources */ = {
+		C518BD8A63A28CCFF9066AC6C5F4E3FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E816CD88C7917B66D93034A8F17F661 /* MASPreferencesWindow.xib in Resources */,
+				51D0E147DB28C2D9D894819B8735CF8C /* MASPreferencesWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		90BA3F7C39BD6A8EE1963E7DC4ED704F /* Sources */ = {
+		1C84B24FD5AC9180EFC45D3A6153574F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D231F7DF6C567DA9F1E040EA56D80DB0 /* Pods-StringerX-dummy.m in Sources */,
+				19E3590C81FD6185071C270F2A98F16F /* Pods-StringerX-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C268FCF6E8E40050E1EB81F33471151C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D40313A8F0AB747E9170252C07A027A8 /* AFHTTPSessionManager.m in Sources */,
-				8B7CADD3A17F0B973D73B89CCDC3DC4E /* AFNetworking-dummy.m in Sources */,
-				3552BBF760BF7E77C49C3417415FE47D /* AFNetworkReachabilityManager.m in Sources */,
-				E543A71099923114714E0B2E8B56FD62 /* AFSecurityPolicy.m in Sources */,
-				57C7FECB5B46F81D897B706CA9304401 /* AFURLRequestSerialization.m in Sources */,
-				A21B2727056379748A40DDD957EA4E79 /* AFURLResponseSerialization.m in Sources */,
-				265BE4A078D1442DDD1F61B61E73ED6D /* AFURLSessionManager.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D86A6EBF7463DBD8C5276B363F151E1A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				48696689F09E63A8022F8CE74F86708B /* NSObject+YYModel.m in Sources */,
-				AD88E36657A2ED717851D4B92E83D37A /* YYClassInfo.m in Sources */,
-				52484D70AFFAD42DCB504D8DFCB98359 /* YYModel-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC1ACFB288842FD7011FBF31AD8FF294 /* Sources */ = {
+		43FE75DCA60598639B389FABB8032971 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCFB7AAF9E40AD92C71D0B0D5C251686 /* Sources */ = {
+		60B36DD71B5947E7748008465AF013B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E5B50687CBBDA05B6A12E5FD3938623 /* MASPreferences-dummy.m in Sources */,
-				7B573FF009473D38DE8190B4BE90560E /* MASPreferencesWindowController.m in Sources */,
+				95CAA68F394760EBA8905CC74F732F77 /* NSObject+YYModel.m in Sources */,
+				5441FFBDBF8B31E4685B2D522E0A2A9A /* YYClassInfo.m in Sources */,
+				91B291588EBC22A7CE4C7DEE1C25A864 /* YYModel-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2E793FDEE25C031D6DE48E245609316 /* Sources */ = {
+		7FC2296D9792C8E6BF2CE33AF85D71E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B3CB8BF2581D4AA1DABC1A1984411A /* CSSAttributeSelector.m in Sources */,
-				9E8684B7B439184CEE9B5A73875105AF /* CSSCombinatorSelector.m in Sources */,
-				2811D9F9471B880887FC0254D04E5AF2 /* CSSCompoundSelector.m in Sources */,
-				5C388877B19AF915FCEA389AB7513C81 /* CSSInputStream.m in Sources */,
-				5E5E8940904AB4381253A9E629A3CEFC /* CSSNthExpressionParser.m in Sources */,
-				09FEA363E05A849429B31253AC4D8FDC /* CSSNthExpressionSelector.m in Sources */,
-				EB24FE5BEEA11B262D1B921BEBAC78FA /* CSSPseudoClassSelector.m in Sources */,
-				E2D0F43B51D9DAE7B165EE1ED846A399 /* CSSPseudoFunctionSelector.m in Sources */,
-				D4A155AF2137A449162E0B250F20EDCA /* CSSSelector.m in Sources */,
-				8C1307E88B258A507370D20A5C99D6AD /* CSSSelectorBlock.m in Sources */,
-				C31F285AA0B9075106C7D467D76C336B /* CSSSelectorParser.m in Sources */,
-				894839D489BB732833BD6487D310BE69 /* CSSSelectors.m in Sources */,
-				C804AA440F4DBF5B16D53135D8D6F691 /* CSSStructuralPseudoSelectors.m in Sources */,
-				1770272345F8D68D58979FAEAEF7C4C7 /* CSSTypeSelector.m in Sources */,
-				5999DE5E3BF62146488D362F16EC4C09 /* HTMLCharacterData.m in Sources */,
-				3539CB17CC6DB2369483F632564DC1FD /* HTMLCharacterToken.m in Sources */,
-				1910F49BF598AF66123ACB352EF2CB7D /* HTMLComment.m in Sources */,
-				9AFF6B2869F92C3A4C974B0786C6632F /* HTMLCommentToken.m in Sources */,
-				9C0E7948D88E2CA53754F69F44998BFE /* HTMLDOCTYPEToken.m in Sources */,
-				9E57E5655241E04ECB684DF1A6B9AAE2 /* HTMLDocument.m in Sources */,
-				C6CEBF8D757BB598F9E1749DAC72B133 /* HTMLDocumentFragment.m in Sources */,
-				F7D66617944DDC072E879E9841835CE0 /* HTMLDocumentType.m in Sources */,
-				CB23FC44A628E3CD31FFD34DF184D1D5 /* HTMLDOMTokenList.m in Sources */,
-				E77FF8479D52D003804AA15A5E12E27A /* HTMLDOMUtils.m in Sources */,
-				7E661DB0601F263B4F8D0EDF98E65978 /* HTMLElement.m in Sources */,
-				CBF1FD13E4815BC665F1CF97947F0A2D /* HTMLEOFToken.m in Sources */,
-				0F7CC8CA537BA9542FBF6DEC1E9623E0 /* HTMLInputStreamReader.m in Sources */,
-				F0C660D26B32DD978FB418BABEC79521 /* HTMLKit-dummy.m in Sources */,
-				E93BE446DC7D841220BB4941790207A5 /* HTMLKitDOMExceptions.m in Sources */,
-				925064694EA2AA721C6DCE82C68F9CBC /* HTMLListOfActiveFormattingElements.m in Sources */,
-				C68F29DD0B45AC20426ED1904CC163EB /* HTMLMarker.m in Sources */,
-				F9B754B7F3C11B438E255839DD3F19F5 /* HTMLNode.m in Sources */,
-				40A9E4A0B2522AEEC63F08B7B9671217 /* HTMLNodeFilter.m in Sources */,
-				20673ABCC56BFAD1E2AD0B860EA0056C /* HTMLNodeIterator.m in Sources */,
-				F5D60999E2726A80150B0CEFFFFC6E19 /* HTMLNodeTraversal.m in Sources */,
-				4634A66A18C2D17D6BC3A8C38AAB6BD0 /* HTMLNodeVisitor.m in Sources */,
-				77C3433D6DC2EBF80D71712A543D9E81 /* HTMLOrderedDictionary.m in Sources */,
-				86355ED1A46D5CE74826CA45EFA6CF89 /* HTMLParseErrorToken.m in Sources */,
-				58CFA73112449ED86D6B11661003A44D /* HTMLParser.m in Sources */,
-				9CB21953B6B94BB8CC05F038294E0864 /* HTMLQuircksMode.m in Sources */,
-				0FF48722484682AE94E54365087F7B2B /* HTMLRange.m in Sources */,
-				3AFEC7E9D59C6B581343BF58A58DB05D /* HTMLSerializer.m in Sources */,
-				C04DE02F9C5221CF65F98A155AB061D7 /* HTMLStackOfOpenElements.m in Sources */,
-				709A8AA8BC2E949A6A4B363D9220D3AC /* HTMLTagToken.m in Sources */,
-				B36B10C2D657C11BCBA8C3850B447008 /* HTMLTemplate.m in Sources */,
-				E636B2FAAFA76C4CA3137A0639488CAF /* HTMLText.m in Sources */,
-				65DA8BE03936999819822C2A7C6DA577 /* HTMLToken.m in Sources */,
-				7CA9148AFF313DF5B79EF8511AA6A365 /* HTMLTokenizer.m in Sources */,
-				282097395C4AB36EE32F8801C41554DF /* HTMLTokenizerEntities.m in Sources */,
-				A89F64C8E0323B73BC7782556B772ADF /* HTMLTreeVisitor.m in Sources */,
-				2E7547952B9C58B09844D0598563EC45 /* HTMLTreeWalker.m in Sources */,
-				3634F0EEC68F6A23E00F7E8E60968CDB /* NSCharacterSet+HTMLKit.m in Sources */,
-				A990DFC24B29274B75079CE26FA54411 /* NSString+HTMLKit.m in Sources */,
-				78D0ABAD633A1CA309762F9EA8799D18 /* NSString+Private.m in Sources */,
+				31D146939B754F5BC1F96E20C8F033FB /* AFHTTPSessionManager.m in Sources */,
+				7D8B70741226C01BC9A9DE955AB712A8 /* AFNetworking-dummy.m in Sources */,
+				26163000E678A1697B290AE1C55F1B63 /* AFNetworkReachabilityManager.m in Sources */,
+				6BCB768D44D41DA39944064605578A3F /* AFSecurityPolicy.m in Sources */,
+				6287F606ABA781B727DCA327D21E7510 /* AFURLRequestSerialization.m in Sources */,
+				43A4CF2FD8F3239B87B8458EEC60E826 /* AFURLResponseSerialization.m in Sources */,
+				C2A5CA7522F6BFD2E9E9F8C8D70E3227 /* AFURLSessionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BABED01C0E46F4C2C0CE97F33C42E9C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F802C2895C0F0483646F3C364F1C0A /* CSSAttributeSelector.m in Sources */,
+				11541F11AFB980B792D87313434BE7FC /* CSSCombinatorSelector.m in Sources */,
+				DD0EE97CA1E0C280DC02567BEF9995F8 /* CSSCompoundSelector.m in Sources */,
+				EB1753EC4519B98BA5200A54646EBCD3 /* CSSInputStream.m in Sources */,
+				2F7B9828628E3123504B1E75FCE21C3D /* CSSNthExpressionParser.m in Sources */,
+				DBAC44A606FA037E5D70677DBA350539 /* CSSNthExpressionSelector.m in Sources */,
+				0C63325674F06FB70A5A356E599F2A6E /* CSSPseudoClassSelector.m in Sources */,
+				9F9CA1EE8BB72D3139FB220F9D88A1AF /* CSSPseudoFunctionSelector.m in Sources */,
+				5B5E852C05152A82E2695CC49CA65322 /* CSSSelector.m in Sources */,
+				0ABF98E4F8F4BD3C8752F73A1B41494A /* CSSSelectorBlock.m in Sources */,
+				E070651F6C9B2E6E681D6491FE5F91D8 /* CSSSelectorParser.m in Sources */,
+				99FF51CF49E376E445FAE1EB2F256FED /* CSSSelectors.m in Sources */,
+				30DF963D9A1CB29F8547147FD3AC65CE /* CSSStructuralPseudoSelectors.m in Sources */,
+				610EB1814D8530D518B622780BE15CDA /* CSSTypeSelector.m in Sources */,
+				CB466118DD01FAEB8863BB6040C4558F /* HTMLCharacterData.m in Sources */,
+				CB0731A6DFF1418A59BA04C4C21B5DCF /* HTMLCharacterToken.m in Sources */,
+				9A690BDA522807D3B9A06C15A655C3BD /* HTMLComment.m in Sources */,
+				8D830EB2F7295950D717BFBF9253004C /* HTMLCommentToken.m in Sources */,
+				60293E618727F0FB7CE4AB9D5CCF45CF /* HTMLDOCTYPEToken.m in Sources */,
+				5FF401423FACC3C73D195B3CF85C476E /* HTMLDocument.m in Sources */,
+				F87FF417F0DF931774ADD813EE9A2C06 /* HTMLDocumentFragment.m in Sources */,
+				3B17F804BE87F921F905B1487049857C /* HTMLDocumentType.m in Sources */,
+				19090672C9D66CA29CE511928972990C /* HTMLDOMTokenList.m in Sources */,
+				8BA5AC2B1A43407A10C80112BC981DCF /* HTMLDOMUtils.m in Sources */,
+				754874DC3D6CA009B3065A4ACA1A9744 /* HTMLElement.m in Sources */,
+				A259299ED6BDE253026C18902D6D12AC /* HTMLEOFToken.m in Sources */,
+				A5DDAC5EF061DB04D3F6D3D56B52CE76 /* HTMLInputStreamReader.m in Sources */,
+				06D61792AC70C07B860424AD072EA547 /* HTMLKit-dummy.m in Sources */,
+				03F828B3E5173A16EC67ED7F550C1744 /* HTMLKitDOMExceptions.m in Sources */,
+				4B0827F577597156051D460AB9648099 /* HTMLListOfActiveFormattingElements.m in Sources */,
+				3D227D313932EF8A057BF1782E67BE66 /* HTMLMarker.m in Sources */,
+				A9C70532A5B8673BE47E3B02F70C4FF8 /* HTMLNode.m in Sources */,
+				B512CC5A84FC00FC061F14D9C3467C54 /* HTMLNodeFilter.m in Sources */,
+				B726807193FE73E5EC6C29006089DE2D /* HTMLNodeIterator.m in Sources */,
+				A4E6FEB936131CEA29A977DAF774E5DC /* HTMLNodeTraversal.m in Sources */,
+				1D9EE8E14BEEA24D814F4F4C2C1FB48B /* HTMLNodeVisitor.m in Sources */,
+				620EDAF710D4ABB23DF9356C6AA22988 /* HTMLOrderedDictionary.m in Sources */,
+				08263430FD3F054FC4F922DC67E4D3C6 /* HTMLParseErrorToken.m in Sources */,
+				84238A42B71002754DCCFC6A672AB9DE /* HTMLParser.m in Sources */,
+				71F43B4296189CE906F596566CF54A73 /* HTMLQuircksMode.m in Sources */,
+				B6B7409ACEC28A366E6D1049E6D958DD /* HTMLRange.m in Sources */,
+				D9287FAAEF55CC9F4BEE6129CCB7F3E0 /* HTMLSerializer.m in Sources */,
+				90AEB6E41F9B05408F0C46A6533845BC /* HTMLStackOfOpenElements.m in Sources */,
+				317DCC468244ED49332E7EDFDD709294 /* HTMLTagToken.m in Sources */,
+				362798079FD43DDA37648552B6E21F6B /* HTMLTemplate.m in Sources */,
+				4139875D7ECB247ADD8AFE92DB41B780 /* HTMLText.m in Sources */,
+				51E6A4CDC33938CFC01051BB0FE648C7 /* HTMLToken.m in Sources */,
+				ED3587C1B98B60F88976DED3E3D9DCD2 /* HTMLTokenizer.m in Sources */,
+				5C429E81388A9786CFF0E923EEB61AAE /* HTMLTokenizerEntities.m in Sources */,
+				27FED57A8F3B0C2F9CEB2282F2F6DAFC /* HTMLTreeVisitor.m in Sources */,
+				292FCE3F6BF808827513D07EAB76E86D /* HTMLTreeWalker.m in Sources */,
+				72468123F030C4F6ED10D95E4FF71CBD /* NSCharacterSet+HTMLKit.m in Sources */,
+				D6A39B9FEA37BF0D92F7B7F50E282F93 /* NSString+HTMLKit.m in Sources */,
+				52126ED85EB8EF3ECABB928037694082 /* NSString+Private.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB91808830B1CF967ED082220F782332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797A3E22B1E19708B724854C904767C3 /* MASPreferences-dummy.m in Sources */,
+				A433A9B7DE5B6A4C1BE9B65E763A1AA6 /* MASPreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1806762C3E81ABBC5DF5AE20FBD1A352 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = YYModel;
-			target = 84B44807A12996D487A4A591A481D6A0 /* YYModel */;
-			targetProxy = 2B984C7F7A382274C7E620B98147A0C6 /* PBXContainerItemProxy */;
-		};
-		3FE54A779CCA5B39FEC484C43D5A49CE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = HTMLKit;
-			target = D6807B82082F2598A4BABD0A6B657D10 /* HTMLKit */;
-			targetProxy = FBE2FACCECEABEE372752C453EC36BBB /* PBXContainerItemProxy */;
-		};
-		6F0E3E6AC316A95F2214C30167A12052 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MASPreferences;
-			target = CCE0F64E83CEAFEE20D04DC7BD57303E /* MASPreferences */;
-			targetProxy = BA3825CCD445A39FC378D2B9E8C0300E /* PBXContainerItemProxy */;
-		};
-		E028BF9D1B18E372D2BC10FF0C767637 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AFNetworking;
-			target = 0130B3724283586C0E9D2A112D4F2AA1 /* AFNetworking */;
-			targetProxy = F0A6189FBCD7E022ECD705FD440A4063 /* PBXContainerItemProxy */;
-		};
-		EF21AEF947C198DC142CEBB189EF5F46 /* PBXTargetDependency */ = {
+		4290C830DA5E2F96A20EBEAC4542D57B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MASPreferences-MASPreferences";
 			target = 0A273FF147C6C1A3B504E3652CD01233 /* MASPreferences-MASPreferences */;
-			targetProxy = ADFA370D394733B39A8B7E1E689704E3 /* PBXContainerItemProxy */;
+			targetProxy = E5959892B503A06D213945B9DC3D87B1 /* PBXContainerItemProxy */;
+		};
+		4CE665CB5C24D32BC680B0849E9681A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = 0130B3724283586C0E9D2A112D4F2AA1 /* AFNetworking */;
+			targetProxy = 4572F1DAD55817BFF2BE41BB9D9BF526 /* PBXContainerItemProxy */;
+		};
+		A6916E6B27369C6F24B432D3AA37B6AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YYModel;
+			target = 84B44807A12996D487A4A591A481D6A0 /* YYModel */;
+			targetProxy = 8047E0518F101A1AC01184AA7FCCD45E /* PBXContainerItemProxy */;
+		};
+		BFB79AD4472F516EB5A16FD94AE0E10D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HTMLKit;
+			target = D6807B82082F2598A4BABD0A6B657D10 /* HTMLKit */;
+			targetProxy = 2DA29D1653DF9617DDCB4D25CF5C4D97 /* PBXContainerItemProxy */;
+		};
+		CC0CA33DB9F3CBEEBCB9769AA94595DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MASPreferences;
+			target = CCE0F64E83CEAFEE20D04DC7BD57303E /* MASPreferences */;
+			targetProxy = 53692F8DE73CDC6424B400F72D8B0973 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1194,60 +1191,21 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		03FD67268AE7621D752837C43E91FFEE /* Debug */ = {
+		0DC1F1A29476A8F69F9EFDC0B5B35112 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 744AB2187E225FFB03820B790BF4CD12 /* MASPreferences.debug.xcconfig */;
+			baseConfigurationReference = 0A2055BF857A70D3C65A2BAC1E8310A9 /* AFNetworking.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MASPreferences";
-				IBSC_MODULE = MASPreferences;
-				INFOPLIST_FILE = "Target Support Files/MASPreferences/ResourceBundle-MASPreferences-MASPreferences-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = MASPreferences;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		2620A584202E55029D0CE8A43067C41D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F7882DC1BB1A3D22DEAC2AD0EDB52CB /* YYModel.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = YYModel;
-				PRODUCT_NAME = YYModel;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		3175E975D709318AE3208BA42357BA24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F23574B4201A144D1562ABE00F22392D /* AFNetworking.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1257,41 +1215,25 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		66E04EA1B0FAE2EBE86423DA1CB7BCC2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEB5220C95DD436C01B3016834593F85 /* MASPreferences.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MASPreferences";
-				IBSC_MODULE = MASPreferences;
-				INFOPLIST_FILE = "Target Support Files/MASPreferences/ResourceBundle-MASPreferences-MASPreferences-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = MASPreferences;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
-		72627E25A6E9BAF2FAD012911DD289DF /* Release */ = {
+		13B5A745427DDA515862EB27A93E62ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AB0F52B232FAB9290178209CA90378E /* Pods-StringerX.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1301,18 +1243,49 @@
 			};
 			name = Release;
 		};
-		86F1FFB566AD4DADDC85E646FE7FC560 /* Release */ = {
+		1B48803B6661AFBFF085CF6EBD007EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240051329D848B5117D5DD4388CC21DF /* YYModel.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = YYModel;
+				PRODUCT_NAME = YYModel;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		292EECF76131D0FBF1292F8857A8F83B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EEB5220C95DD436C01B3016834593F85 /* MASPreferences.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREFIX_HEADER = "Target Support Files/MASPreferences/MASPreferences-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1322,29 +1295,163 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		9026D07A2EB1737863C091973E50630E /* Debug */ = {
+		477CD64306D75BF64C8488717133A591 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEB5220C95DD436C01B3016834593F85 /* MASPreferences.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MASPreferences";
+				DEAD_CODE_STRIPPING = YES;
+				IBSC_MODULE = MASPreferences;
+				INFOPLIST_FILE = "Target Support Files/MASPreferences/ResourceBundle-MASPreferences-MASPreferences-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_NAME = MASPreferences;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		5B972D5A6E05D3B2F4FF7AE6AE444076 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C401EB109B78B576B8765EB31365B12 /* Pods-StringerX.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5C0EAC70F904F0D5B3A74FB84A0C12C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F7882DC1BB1A3D22DEAC2AD0EDB52CB /* YYModel.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = YYModel;
+				PRODUCT_NAME = YYModel;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6366BC07E50470614F144F4AB01CD0F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE4B7003266BEFBA8CD1E6895C2B5E8C /* HTMLKit.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/HTMLKit/HTMLKit-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = HTMLKit;
+				PRODUCT_NAME = HTMLKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6A6A0571A2ECE64949577465E342611C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 744AB2187E225FFB03820B790BF4CD12 /* MASPreferences.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/MASPreferences/MASPreferences-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MASPreferences;
+				PRODUCT_NAME = MASPreferences;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		84A2BB9151B0AA19F80AE9A7B7B38565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22CC75F6308C7DA60D488063FA1535CC /* HTMLKit.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/HTMLKit/HTMLKit-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = HTMLKit;
+				PRODUCT_NAME = HTMLKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1383,6 +1490,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1401,113 +1509,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		A85A26737D3B3D230703A11466A94A6A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 744AB2187E225FFB03820B790BF4CD12 /* MASPreferences.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/MASPreferences/MASPreferences-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MASPreferences;
-				PRODUCT_NAME = MASPreferences;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		A97A646247354EFF3A2BC11E36927BF6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE4B7003266BEFBA8CD1E6895C2B5E8C /* HTMLKit.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/HTMLKit/HTMLKit-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = HTMLKit;
-				PRODUCT_NAME = HTMLKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		AFFF272ED94A8A808DC188946535F25D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 240051329D848B5117D5DD4388CC21DF /* YYModel.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = YYModel;
-				PRODUCT_NAME = YYModel;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		D581322D9C54F369CEF20DEE690186AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22CC75F6308C7DA60D488063FA1535CC /* HTMLKit.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/HTMLKit/HTMLKit-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = HTMLKit;
-				PRODUCT_NAME = HTMLKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1546,6 +1557,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1561,11 +1573,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -1573,18 +1585,21 @@
 			};
 			name = Release;
 		};
-		E25793510813318A0E89D7ED14989445 /* Release */ = {
+		DB577002B3502A5B504B7EB84A5EF87D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A2055BF857A70D3C65A2BAC1E8310A9 /* AFNetworking.release.xcconfig */;
+			baseConfigurationReference = F23574B4201A144D1562ABE00F22392D /* AFNetworking.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -1594,18 +1609,47 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 3.0;
 			};
-			name = Release;
+			name = Debug;
+		};
+		F3F4728015DFF3E8E1D99B90F9D1CB61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 744AB2187E225FFB03820B790BF4CD12 /* MASPreferences.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MASPreferences";
+				DEAD_CODE_STRIPPING = YES;
+				IBSC_MODULE = MASPreferences;
+				INFOPLIST_FILE = "Target Support Files/MASPreferences/ResourceBundle-MASPreferences-MASPreferences-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_NAME = MASPreferences;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		29C42611522E4186A9F155F09F08A241 /* Build configuration list for PBXNativeTarget "Pods-StringerX" */ = {
+		209B9A4BDFBEF629261D3B545C2B12E3 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9026D07A2EB1737863C091973E50630E /* Debug */,
-				72627E25A6E9BAF2FAD012911DD289DF /* Release */,
+				DB577002B3502A5B504B7EB84A5EF87D /* Debug */,
+				0DC1F1A29476A8F69F9EFDC0B5B35112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21867B155C0F8DED9F9162FA2C8874A2 /* Build configuration list for PBXNativeTarget "Pods-StringerX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B972D5A6E05D3B2F4FF7AE6AE444076 /* Debug */,
+				13B5A745427DDA515862EB27A93E62ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1619,47 +1663,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F4C3A2A63040A5FCA48223496409995 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
+		5F39CFE3E9D8344B0EC7249DB5CA3C73 /* Build configuration list for PBXNativeTarget "MASPreferences-MASPreferences" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3175E975D709318AE3208BA42357BA24 /* Debug */,
-				E25793510813318A0E89D7ED14989445 /* Release */,
+				F3F4728015DFF3E8E1D99B90F9D1CB61 /* Debug */,
+				477CD64306D75BF64C8488717133A591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0E176DEE286045D7CDE9DD94C9E89C4 /* Build configuration list for PBXNativeTarget "HTMLKit" */ = {
+		887A97148D1A96E43D9081EC5D8715F8 /* Build configuration list for PBXNativeTarget "MASPreferences" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D581322D9C54F369CEF20DEE690186AE /* Debug */,
-				A97A646247354EFF3A2BC11E36927BF6 /* Release */,
+				6A6A0571A2ECE64949577465E342611C /* Debug */,
+				292EECF76131D0FBF1292F8857A8F83B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9818D8B3BDFE7C917B7EE4D9074797C /* Build configuration list for PBXNativeTarget "YYModel" */ = {
+		89744EF8BD6B9D4AE79ED1FEA3239FDC /* Build configuration list for PBXNativeTarget "HTMLKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2620A584202E55029D0CE8A43067C41D /* Debug */,
-				AFFF272ED94A8A808DC188946535F25D /* Release */,
+				84A2BB9151B0AA19F80AE9A7B7B38565 /* Debug */,
+				6366BC07E50470614F144F4AB01CD0F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6ED893C1E9C792AFD8DA7C33CCE40CA /* Build configuration list for PBXNativeTarget "MASPreferences" */ = {
+		8F245EA8C004305BE516222DF3C3259D /* Build configuration list for PBXNativeTarget "YYModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A85A26737D3B3D230703A11466A94A6A /* Debug */,
-				86F1FFB566AD4DADDC85E646FE7FC560 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F52FDB92F53622DE0CF4C3013F5E8AB8 /* Build configuration list for PBXNativeTarget "MASPreferences-MASPreferences" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				03FD67268AE7621D752837C43E91FFEE /* Debug */,
-				66E04EA1B0FAE2EBE86423DA1CB7BCC2 /* Release */,
+				5C0EAC70F904F0D5B3A74FB84A0C12C6 /* Debug */,
+				1B48803B6661AFBFF085CF6EBD007EC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
