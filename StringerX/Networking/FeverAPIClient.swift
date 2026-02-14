@@ -59,11 +59,27 @@ actor FeverAPIClient {
         }
 
         // Make request
-        let (data, response) = try await session.data(from: url)
+        #if DEBUG
+        print("🌐 FeverAPI: Fetching \(url.absoluteString)")
+        #endif
+
+        let (data, response): (Data, URLResponse)
+        do {
+            (data, response) = try await session.data(from: url)
+        } catch {
+            #if DEBUG
+            print("🔴 FeverAPI: Network error - \(error.localizedDescription)")
+            #endif
+            throw FeverAPIError.networkError(error.localizedDescription)
+        }
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw FeverAPIError.invalidResponse
         }
+
+        #if DEBUG
+        print("✅ FeverAPI: Status \(httpResponse.statusCode)")
+        #endif
 
         guard httpResponse.statusCode == 200 else {
             throw FeverAPIError.httpError(statusCode: httpResponse.statusCode)
@@ -155,6 +171,7 @@ enum FeverAPIError: LocalizedError {
     case notConfigured
     case invalidURL
     case invalidResponse
+    case networkError(String)
     case httpError(statusCode: Int)
     case decodingError(Error)
 
@@ -166,6 +183,8 @@ enum FeverAPIError: LocalizedError {
             return "Invalid URL"
         case .invalidResponse:
             return "Invalid response from server"
+        case .networkError(let message):
+            return "Network error: \(message)"
         case .httpError(let statusCode):
             return "HTTP error: \(statusCode)"
         case .decodingError(let error):
