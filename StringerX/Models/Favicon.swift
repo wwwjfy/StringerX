@@ -1,7 +1,7 @@
 import Foundation
 import AppKit
 
-struct Favicon: Codable, Identifiable {
+struct Favicon: Codable, Identifiable, Sendable {
     let id: Int
     let data: String
 

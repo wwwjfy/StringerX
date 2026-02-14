@@ -46,7 +46,7 @@ struct HTMLFormatter {
                 try bodyWrapper.html(bodyHTML)
 
                 // Clear body and add our formatted content
-                try body.empty()
+                _ = body.empty()
                 try body.appendChild(styleElement)
                 try body.appendChild(titleDiv)
                 try body.appendChild(bodyWrapper)

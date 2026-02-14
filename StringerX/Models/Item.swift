@@ -1,6 +1,6 @@
 import Foundation
 
-struct Item: Codable, Identifiable {
+struct Item: Codable, Identifiable, Sendable {
     let id: Int
     let feedId: Int
     let createdOnTime: Int
@@ -27,7 +27,7 @@ struct Item: Codable, Identifiable {
     }
 
     // Custom decoder to handle Fever API's integer booleans (0/1)
-    init(from decoder: Decoder) throws {
+    nonisolated init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         id = try container.decode(Int.self, forKey: .id)
@@ -49,7 +49,7 @@ struct Item: Codable, Identifiable {
     }
 
     // Custom encoder to convert back to integer booleans
-    func encode(to encoder: Encoder) throws {
+    nonisolated func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
         try container.encode(id, forKey: .id)
