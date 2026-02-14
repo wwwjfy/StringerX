@@ -43,6 +43,11 @@ struct ArticleWebView: NSViewRepresentable {
             context.coordinator.currentHTML = htmlContent
             webView.loadHTMLString(htmlContent, baseURL: nil)
         }
+
+        // Make webview first responder so Space/Shift+Space work for scrolling
+        DispatchQueue.main.async {
+            webView.window?.makeFirstResponder(webView)
+        }
     }
 
     func makeCoordinator() -> Coordinator {

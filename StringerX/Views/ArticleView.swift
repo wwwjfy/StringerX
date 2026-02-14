@@ -12,6 +12,7 @@ struct ArticleView: View {
                 htmlContent: formattedHTML,
                 hoveredURL: $hoveredURL
             )
+            .focusable()  // Make the webview focusable
 
             // URL hover bar at bottom-left
             if let url = hoveredURL {
