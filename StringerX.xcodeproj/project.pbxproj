@@ -3,368 +3,155 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C71936CBD1E96EE0538FE9DC /* libPods-StringerX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3ED9B311E885963BCEDB93F /* libPods-StringerX.a */; };
-		EA1B8C7F2169B57400037C49 /* ThemedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1B8C7E2169B57400037C49 /* ThemedView.m */; };
-		EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2A4953178B0F5700220F35 /* TheTableCellView.m */; };
-		EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B40301786BA31002A785D /* WebKit.framework */; };
-		EA349E861E6A68160050115D /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA349E851E6A68150050115D /* AppUtils.m */; };
-		EA5645C017808697001EDBA4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645BF17808697001EDBA4 /* Cocoa.framework */; };
-		EA5645CA17808698001EDBA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5645C817808698001EDBA4 /* InfoPlist.strings */; };
-		EA5645CC17808698001EDBA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5645CB17808698001EDBA4 /* main.m */; };
-		EA5645D017808698001EDBA4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EA5645CE17808698001EDBA4 /* Credits.rtf */; };
-		EA5645D317808698001EDBA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5645D217808698001EDBA4 /* AppDelegate.m */; };
-		EA5645D617808698001EDBA4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5645D417808698001EDBA4 /* MainMenu.xib */; };
-		EA5645D817808698001EDBA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5645D717808698001EDBA4 /* Images.xcassets */; };
-		EA5645F41781CF03001EDBA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */; };
-		EA63348D17BA167400963F9F /* AccountPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA63348B17BA167400963F9F /* AccountPreferencesViewController.m */; };
-		EA63348E17BA167400963F9F /* AccountPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA63348C17BA167400963F9F /* AccountPreferencesViewController.xib */; };
-		EA63356617BBD31400963F9F /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA63356517BBD31400963F9F /* URLHelper.m */; };
-		EA6335E917BF478D00963F9F /* ServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6335E817BF478D00963F9F /* ServiceHelper.m */; };
-		EA8292421E53519A0095555F /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8292411E53519A0095555F /* Models.m */; };
-		EA878A9321A9CB74003ADE78 /* SWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA878A9221A9CB74003ADE78 /* SWebView.m */; };
+		EA87A8DE2F404E2400F69610 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = EA87A8DD2F404E2400F69610 /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AFC55BD1FFE03EEA42B1CB25 /* Pods-StringerX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.debug.xcconfig"; path = "Target Support Files/Pods-StringerX/Pods-StringerX.debug.xcconfig"; sourceTree = "<group>"; };
-		D3ED9B311E885963BCEDB93F /* libPods-StringerX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StringerX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA1B8C7D2169B57400037C49 /* ThemedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemedView.h; sourceTree = "<group>"; };
-		EA1B8C7E2169B57400037C49 /* ThemedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemedView.m; sourceTree = "<group>"; };
-		EA2A4952178B0F5700220F35 /* TheTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheTableCellView.h; sourceTree = "<group>"; };
-		EA2A4953178B0F5700220F35 /* TheTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheTableCellView.m; sourceTree = "<group>"; };
-		EA2B40301786BA31002A785D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		EA349E841E6A68150050115D /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
-		EA349E851E6A68150050115D /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
-		EA5645BC17808697001EDBA4 /* StringerX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StringerX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA5645BF17808697001EDBA4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		EA5645C217808697001EDBA4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		EA5645C317808697001EDBA4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		EA5645C417808697001EDBA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EA5645C717808698001EDBA4 /* StringerX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StringerX-Info.plist"; sourceTree = "<group>"; };
-		EA5645C917808698001EDBA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EA5645CB17808698001EDBA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EA5645CD17808698001EDBA4 /* StringerX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StringerX-Prefix.pch"; sourceTree = "<group>"; };
-		EA5645CF17808698001EDBA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		EA5645D117808698001EDBA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EA5645D217808698001EDBA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EA5645D517808698001EDBA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		EA5645D717808698001EDBA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EA5645DE17808698001EDBA4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		EA63348A17BA167400963F9F /* AccountPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountPreferencesViewController.h; sourceTree = "<group>"; };
-		EA63348B17BA167400963F9F /* AccountPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountPreferencesViewController.m; sourceTree = "<group>"; };
-		EA63348C17BA167400963F9F /* AccountPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountPreferencesViewController.xib; sourceTree = "<group>"; };
-		EA63356417BBD31400963F9F /* URLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHelper.h; sourceTree = "<group>"; };
-		EA63356517BBD31400963F9F /* URLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHelper.m; sourceTree = "<group>"; };
-		EA6335E717BF478D00963F9F /* ServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceHelper.h; sourceTree = "<group>"; };
-		EA6335E817BF478D00963F9F /* ServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceHelper.m; sourceTree = "<group>"; };
-		EA6335EA17BF503200963F9F /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
-		EA82923E1E533F670095555F /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
-		EA8292411E53519A0095555F /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
-		EA878A9121A9CB74003ADE78 /* SWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWebView.h; sourceTree = "<group>"; };
-		EA878A9221A9CB74003ADE78 /* SWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWebView.m; sourceTree = "<group>"; };
-		ED0B8FB69B6E930B005FF8E9 /* Pods-StringerX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StringerX.release.xcconfig"; path = "Target Support Files/Pods-StringerX/Pods-StringerX.release.xcconfig"; sourceTree = "<group>"; };
+		EA87A8762F404C7E00F69610 /* StringerX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StringerX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EA87A8782F404C7E00F69610 /* StringerX */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = StringerX;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		EA5645B917808697001EDBA4 /* Frameworks */ = {
+		EA87A8732F404C7E00F69610 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2B40311786BA31002A785D /* WebKit.framework in Frameworks */,
-				EA5645F41781CF03001EDBA4 /* SystemConfiguration.framework in Frameworks */,
-				EA5645C017808697001EDBA4 /* Cocoa.framework in Frameworks */,
-				C71936CBD1E96EE0538FE9DC /* libPods-StringerX.a in Frameworks */,
+				EA87A8DE2F404E2400F69610 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ACB7BB8327EEE20921230581 /* Pods */ = {
+		EA87A86D2F404C7E00F69610 = {
 			isa = PBXGroup;
 			children = (
-				AFC55BD1FFE03EEA42B1CB25 /* Pods-StringerX.debug.xcconfig */,
-				ED0B8FB69B6E930B005FF8E9 /* Pods-StringerX.release.xcconfig */,
+				EA87A8782F404C7E00F69610 /* StringerX */,
+				EA87A8772F404C7E00F69610 /* Products */,
 			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
-		EA349E831E6A671D0050115D /* Utils */ = {
+		EA87A8772F404C7E00F69610 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EA349E841E6A68150050115D /* AppUtils.h */,
-				EA349E851E6A68150050115D /* AppUtils.m */,
-				EA6335E717BF478D00963F9F /* ServiceHelper.h */,
-				EA6335E817BF478D00963F9F /* ServiceHelper.m */,
-				EA63356417BBD31400963F9F /* URLHelper.h */,
-				EA63356517BBD31400963F9F /* URLHelper.m */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		EA5645B317808697001EDBA4 = {
-			isa = PBXGroup;
-			children = (
-				EA5645C517808698001EDBA4 /* StringerX */,
-				EA5645BE17808697001EDBA4 /* Frameworks */,
-				EA5645BD17808697001EDBA4 /* Products */,
-				ACB7BB8327EEE20921230581 /* Pods */,
-			);
-			indentWidth = 2;
-			sourceTree = "<group>";
-			tabWidth = 2;
-		};
-		EA5645BD17808697001EDBA4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EA5645BC17808697001EDBA4 /* StringerX.app */,
+				EA87A8762F404C7E00F69610 /* StringerX.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EA5645BE17808697001EDBA4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B40301786BA31002A785D /* WebKit.framework */,
-				EA5645F31781CF03001EDBA4 /* SystemConfiguration.framework */,
-				EA5645BF17808697001EDBA4 /* Cocoa.framework */,
-				EA5645DE17808698001EDBA4 /* XCTest.framework */,
-				EA5645C117808697001EDBA4 /* Other Frameworks */,
-				D3ED9B311E885963BCEDB93F /* libPods-StringerX.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EA5645C117808697001EDBA4 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EA5645C217808697001EDBA4 /* AppKit.framework */,
-				EA5645C317808697001EDBA4 /* CoreData.framework */,
-				EA5645C417808697001EDBA4 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		EA5645C517808698001EDBA4 /* StringerX */ = {
-			isa = PBXGroup;
-			children = (
-				EA5645C617808698001EDBA4 /* Supporting Files */,
-				EA349E831E6A671D0050115D /* Utils */,
-				EA63348A17BA167400963F9F /* AccountPreferencesViewController.h */,
-				EA63348B17BA167400963F9F /* AccountPreferencesViewController.m */,
-				EA63348C17BA167400963F9F /* AccountPreferencesViewController.xib */,
-				EA5645D117808698001EDBA4 /* AppDelegate.h */,
-				EA5645D217808698001EDBA4 /* AppDelegate.m */,
-				EA5645D717808698001EDBA4 /* Images.xcassets */,
-				EA5645D417808698001EDBA4 /* MainMenu.xib */,
-				EA82923E1E533F670095555F /* Models.h */,
-				EA8292411E53519A0095555F /* Models.m */,
-				EA6335EA17BF503200963F9F /* Notifications.h */,
-				EA2A4952178B0F5700220F35 /* TheTableCellView.h */,
-				EA2A4953178B0F5700220F35 /* TheTableCellView.m */,
-				EA1B8C7D2169B57400037C49 /* ThemedView.h */,
-				EA1B8C7E2169B57400037C49 /* ThemedView.m */,
-				EA878A9121A9CB74003ADE78 /* SWebView.h */,
-				EA878A9221A9CB74003ADE78 /* SWebView.m */,
-			);
-			path = StringerX;
-			sourceTree = "<group>";
-		};
-		EA5645C617808698001EDBA4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EA5645CE17808698001EDBA4 /* Credits.rtf */,
-				EA5645C817808698001EDBA4 /* InfoPlist.strings */,
-				EA5645C717808698001EDBA4 /* StringerX-Info.plist */,
-				EA5645CD17808698001EDBA4 /* StringerX-Prefix.pch */,
-				EA5645CB17808698001EDBA4 /* main.m */,
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EA5645BB17808697001EDBA4 /* StringerX */ = {
+		EA87A8752F404C7E00F69610 /* StringerX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA5645ED17808698001EDBA4 /* Build configuration list for PBXNativeTarget "StringerX" */;
+			buildConfigurationList = EA87A8812F404C7E00F69610 /* Build configuration list for PBXNativeTarget "StringerX" */;
 			buildPhases = (
-				21F96247EE2676EE2EC22319 /* [CP] Check Pods Manifest.lock */,
-				EA5645B817808697001EDBA4 /* Sources */,
-				EA5645B917808697001EDBA4 /* Frameworks */,
-				EA5645BA17808697001EDBA4 /* Resources */,
-				006DFCF82C9CD70D876273B7 /* [CP] Copy Pods Resources */,
+				EA87A8722F404C7E00F69610 /* Sources */,
+				EA87A8732F404C7E00F69610 /* Frameworks */,
+				EA87A8742F404C7E00F69610 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				EA87A8782F404C7E00F69610 /* StringerX */,
+			);
 			name = StringerX;
+			packageProductDependencies = (
+				EA87A8DD2F404E2400F69610 /* SwiftSoup */,
+			);
 			productName = StringerX;
-			productReference = EA5645BC17808697001EDBA4 /* StringerX.app */;
+			productReference = EA87A8762F404C7E00F69610 /* StringerX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EA5645B417808697001EDBA4 /* Project object */ = {
+		EA87A86E2F404C7E00F69610 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
-				ORGANIZATIONNAME = "Tony Wang";
 				TargetAttributes = {
-					EA5645BB17808697001EDBA4 = {
-						LastSwiftMigration = 0820;
+					EA87A8752F404C7E00F69610 = {
+						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = EA5645B717808697001EDBA4 /* Build configuration list for PBXProject "StringerX" */;
-			compatibilityVersion = "Xcode 8.0";
+			buildConfigurationList = EA87A8712F404C7E00F69610 /* Build configuration list for PBXProject "StringerX" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = EA5645B317808697001EDBA4;
-			productRefGroup = EA5645BD17808697001EDBA4 /* Products */;
+			mainGroup = EA87A86D2F404C7E00F69610;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EA87A8DC2F404E2400F69610 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EA87A8772F404C7E00F69610 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EA5645BB17808697001EDBA4 /* StringerX */,
+				EA87A8752F404C7E00F69610 /* StringerX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EA5645BA17808697001EDBA4 /* Resources */ = {
+		EA87A8742F404C7E00F69610 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5645CA17808698001EDBA4 /* InfoPlist.strings in Resources */,
-				EA5645D817808698001EDBA4 /* Images.xcassets in Resources */,
-				EA5645D017808698001EDBA4 /* Credits.rtf in Resources */,
-				EA5645D617808698001EDBA4 /* MainMenu.xib in Resources */,
-				EA63348E17BA167400963F9F /* AccountPreferencesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		006DFCF82C9CD70D876273B7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StringerX/Pods-StringerX-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MASPreferences/MASPreferences.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MASPreferences.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH \"${PODS_ROOT}/Target Support Files/Pods-StringerX/Pods-StringerX-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		21F96247EE2676EE2EC22319 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StringerX-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		EA5645B817808697001EDBA4 /* Sources */ = {
+		EA87A8722F404C7E00F69610 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA63356617BBD31400963F9F /* URLHelper.m in Sources */,
-				EA6335E917BF478D00963F9F /* ServiceHelper.m in Sources */,
-				EA8292421E53519A0095555F /* Models.m in Sources */,
-				EA5645D317808698001EDBA4 /* AppDelegate.m in Sources */,
-				EA1B8C7F2169B57400037C49 /* ThemedView.m in Sources */,
-				EA2A4954178B0F5700220F35 /* TheTableCellView.m in Sources */,
-				EA5645CC17808698001EDBA4 /* main.m in Sources */,
-				EA878A9321A9CB74003ADE78 /* SWebView.m in Sources */,
-				EA63348D17BA167400963F9F /* AccountPreferencesViewController.m in Sources */,
-				EA349E861E6A68160050115D /* AppUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		EA5645C817808698001EDBA4 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA5645C917808698001EDBA4 /* en */,
-			);
-			name = InfoPlist.strings;
-			path = .;
-			sourceTree = "<group>";
-		};
-		EA5645CE17808698001EDBA4 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA5645CF17808698001EDBA4 /* en */,
-			);
-			name = Credits.rtf;
-			path = .;
-			sourceTree = "<group>";
-		};
-		EA5645D417808698001EDBA4 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA5645D517808698001EDBA4 /* Base */,
-			);
-			name = MainMenu.xib;
-			path = .;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		EA5645EB17808698001EDBA4 /* Debug */ = {
+		EA87A87F2F404C7E00F69610 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
-				CLANG_CXX_LIBRARY = "libc++";
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -377,52 +164,58 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 93RF9AKSH8;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		EA5645EC17808698001EDBA4 /* Release */ = {
+		EA87A8802F404C7E00F69610 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
-				CLANG_CXX_LIBRARY = "libc++";
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -435,117 +228,135 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				DEAD_CODE_STRIPPING = YES;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 93RF9AKSH8;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
-		EA5645EE17808698001EDBA4 /* Debug */ = {
+		EA87A8822F404C7E00F69610 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFC55BD1FFE03EEA42B1CB25 /* Pods-StringerX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93RF9AKSH8;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "StringerX/Supporting Files/StringerX-Prefix.pch";
-				GCC_WARN_SHADOW = YES;
-				INFOPLIST_FILE = "StringerX/Supporting Files/StringerX-Info.plist";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = StringerX;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				WRAPPER_EXTENSION = app;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.wwwjfy.StringerX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		EA5645EF17808698001EDBA4 /* Release */ = {
+		EA87A8832F404C7E00F69610 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED0B8FB69B6E930B005FF8E9 /* Pods-StringerX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93RF9AKSH8;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "StringerX/Supporting Files/StringerX-Prefix.pch";
-				GCC_WARN_SHADOW = YES;
-				INFOPLIST_FILE = "StringerX/Supporting Files/StringerX-Info.plist";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.wwwjfy.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = StringerX;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				WRAPPER_EXTENSION = app;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.wwwjfy.StringerX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EA5645B717808697001EDBA4 /* Build configuration list for PBXProject "StringerX" */ = {
+		EA87A8712F404C7E00F69610 /* Build configuration list for PBXProject "StringerX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EA5645EB17808698001EDBA4 /* Debug */,
-				EA5645EC17808698001EDBA4 /* Release */,
+				EA87A87F2F404C7E00F69610 /* Debug */,
+				EA87A8802F404C7E00F69610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA5645ED17808698001EDBA4 /* Build configuration list for PBXNativeTarget "StringerX" */ = {
+		EA87A8812F404C7E00F69610 /* Build configuration list for PBXNativeTarget "StringerX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EA5645EE17808698001EDBA4 /* Debug */,
-				EA5645EF17808698001EDBA4 /* Release */,
+				EA87A8822F404C7E00F69610 /* Debug */,
+				EA87A8832F404C7E00F69610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA87A8DC2F404E2400F69610 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.11.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA87A8DD2F404E2400F69610 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA87A8DC2F404E2400F69610 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = EA5645B417808697001EDBA4 /* Project object */;
+	rootObject = EA87A86E2F404C7E00F69610 /* Project object */;
 }
