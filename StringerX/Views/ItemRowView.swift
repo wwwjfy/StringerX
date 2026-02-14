@@ -7,52 +7,56 @@ struct ItemRowView: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            // Favicon (20x20)
-            if let faviconImage = faviconImage {
-                Image(nsImage: faviconImage)
-                    .resizable()
-                    .frame(width: 20, height: 20)
-            } else {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(width: 20, height: 20)
+            // Favicon with saved indicator below
+            VStack(spacing: 2) {
+                if let faviconImage = faviconImage {
+                    Image(nsImage: faviconImage)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                } else {
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.3))
+                        .frame(width: 20, height: 20)
+                }
+
+                // Saved indicator (red dot) below icon
+                if item.isSaved {
+                    Circle()
+                        .fill(Color.red)
+                        .frame(width: 8, height: 8)
+                } else {
+                    // Invisible spacer to maintain consistent height
+                    Circle()
+                        .fill(Color.clear)
+                        .frame(width: 8, height: 8)
+                }
             }
 
             // Content
             VStack(alignment: .leading, spacing: 4) {
-                // Title
+                // Title - 1 line
                 Text(item.title)
-                    .font(.headline)
-                    .lineLimit(2)
+                    .font(.title3)
+                    .lineLimit(1)
                     .foregroundColor(item.localRead ? .secondary : .primary)
                     .foregroundStyle(item.localRead ? .secondary : .primary)
 
-                // Source and preview
-                HStack(spacing: 8) {
-                    Text(feedName)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                // Feed name - 1 line
+                Text(feedName)
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
 
-                    if let preview = extractPreview(from: item.html) {
-                        Text("·")
-                            .foregroundColor(.secondary)
-                        Text(preview)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .lineLimit(1)
-                    }
+                // Preview - 2 lines
+                if let preview = extractPreview(from: item.html) {
+                    Text(preview)
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                        .lineLimit(2)
                 }
             }
 
             Spacer()
-
-            // Saved indicator (red circle)
-            if item.isSaved {
-                Circle()
-                    .fill(Color.red)
-                    .frame(width: 8, height: 8)
-                    .padding(.top, 4)
-            }
         }
         .padding(.vertical, 4)
     }
