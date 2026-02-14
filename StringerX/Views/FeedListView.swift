@@ -18,5 +18,33 @@ struct FeedListView: View {
         }
         .listStyle(.inset)
         .alternatingRowBackgrounds()
+        .onKeyPress("o", action: {
+            feedService.toggleArticle()
+            return .handled
+        })
+        .onKeyPress("g", action: {
+            feedService.goToTop()
+            return .handled
+        })
+        .onKeyPress("j", action: {
+            feedService.selectNext()
+            return .handled
+        })
+        .onKeyPress("k", action: {
+            feedService.selectPrevious()
+            return .handled
+        })
+        .onKeyPress("v", action: {
+            feedService.openInBrowser()
+            return .handled
+        })
+        .onKeyPress("s", action: {
+            feedService.toggleSaved()
+            return .handled
+        })
+        .onKeyPress("A", action: {  // Shift+A (capital A)
+            feedService.markAllAsRead()
+            return .handled
+        })
     }
 }

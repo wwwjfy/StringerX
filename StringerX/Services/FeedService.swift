@@ -68,17 +68,36 @@ class FeedService {
             let response = try await apiClient.fetchFavicons()
             var faviconMap: [Int: NSImage] = [:]
 
+            #if DEBUG
+            print("📦 Fetched \(response.favicons.count) favicons")
+            #endif
+
             for favicon in response.favicons {
                 if let image = favicon.image {
                     faviconMap[favicon.id] = image
+                    #if DEBUG
+                    print("✅ Favicon ID \(favicon.id): \(image.size.width)x\(image.size.height)")
+                    #endif
+                } else {
+                    #if DEBUG
+                    print("⚠️ Failed to decode favicon ID \(favicon.id)")
+                    #endif
                 }
             }
 
             // Update feeds with favicon images
+            var updatedCount = 0
             for (feedId, var feed) in feeds {
-                feed.faviconImage = faviconMap[feed.faviconId]
-                feeds[feedId] = feed
+                if let image = faviconMap[feed.faviconId] {
+                    feed.faviconImage = image
+                    feeds[feedId] = feed
+                    updatedCount += 1
+                }
             }
+
+            #if DEBUG
+            print("🎨 Updated \(updatedCount) feeds with favicon images")
+            #endif
         } catch {
             print("Failed to fetch favicons: \(error.localizedDescription)")
         }
@@ -234,11 +253,14 @@ class FeedService {
             return
         }
 
-        // Open in Safari without switching focus
+        // Open in Safari in background without switching focus
+        let configuration = NSWorkspace.OpenConfiguration()
+        configuration.activates = false  // Don't bring Safari to front
+
         NSWorkspace.shared.open(
             [url],
             withApplicationAt: URL(fileURLWithPath: "/Applications/Safari.app"),
-            configuration: NSWorkspace.OpenConfiguration()
+            configuration: configuration
         )
     }
 

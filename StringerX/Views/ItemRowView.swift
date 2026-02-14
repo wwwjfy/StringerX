@@ -25,6 +25,7 @@ struct ItemRowView: View {
                     .font(.headline)
                     .lineLimit(2)
                     .foregroundColor(item.localRead ? .secondary : .primary)
+                    .foregroundStyle(item.localRead ? .secondary : .primary)
 
                 // Source and preview
                 HStack(spacing: 8) {

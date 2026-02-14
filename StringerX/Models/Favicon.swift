@@ -7,19 +7,29 @@ struct Favicon: Codable, Identifiable {
 
     // Computed property to convert data URI to NSImage
     var image: NSImage? {
-        // Favicon data comes as data URI: "data:image/png;base64,..."
-        guard data.hasPrefix("data:") else {
-            return nil
-        }
+        // Fever API returns favicon data WITHOUT "data:" prefix
+        // Format: "image/png;base64,iVBORw0KGgo..."
+        // We need to prepend "data:" to make it a valid data URI
+
+        let dataURI = data.hasPrefix("data:") ? data : "data:\(data)"
 
         // Extract the base64 part after the comma
-        let components = data.components(separatedBy: ",")
+        let components = dataURI.components(separatedBy: ",")
         guard components.count == 2,
               let imageData = Data(base64Encoded: components[1]) else {
+            #if DEBUG
+            print("🔴 Failed to decode favicon - data format: \(String(data.prefix(50)))...")
+            #endif
             return nil
         }
 
-        return NSImage(data: imageData)
+        let image = NSImage(data: imageData)
+        #if DEBUG
+        if image == nil {
+            print("🔴 Failed to create NSImage from favicon data")
+        }
+        #endif
+        return image
     }
 
     enum CodingKeys: String, CodingKey {
