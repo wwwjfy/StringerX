@@ -65,7 +65,6 @@ class AccountService {
                 loginStatus = .loggedOut
             }
         } catch {
-            print("Auto-login failed: \(error.localizedDescription)")
             loginStatus = .loggedOut
         }
     }

@@ -54,7 +54,6 @@ struct HTMLFormatter {
 
             return try document.html()
         } catch {
-            print("HTML formatting error: \(error)")
             // Fallback to simple HTML if parsing fails
             return """
             <html>

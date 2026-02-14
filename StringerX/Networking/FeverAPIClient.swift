@@ -59,27 +59,16 @@ actor FeverAPIClient {
         }
 
         // Make request
-        #if DEBUG
-        print("🌐 FeverAPI: Fetching \(url.absoluteString)")
-        #endif
-
         let (data, response): (Data, URLResponse)
         do {
             (data, response) = try await session.data(from: url)
         } catch {
-            #if DEBUG
-            print("🔴 FeverAPI: Network error - \(error.localizedDescription)")
-            #endif
             throw FeverAPIError.networkError(error.localizedDescription)
         }
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw FeverAPIError.invalidResponse
         }
-
-        #if DEBUG
-        print("✅ FeverAPI: Status \(httpResponse.statusCode)")
-        #endif
 
         guard httpResponse.statusCode == 200 else {
             throw FeverAPIError.httpError(statusCode: httpResponse.statusCode)
