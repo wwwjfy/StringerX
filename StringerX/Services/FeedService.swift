@@ -10,6 +10,7 @@ class FeedService {
     var feeds: [Int: Feed] = [:]
     var selectedItemId: Int?
     var isArticleOpen: Bool = false
+    var hasNewPosts: Bool = false
 
     private var apiClient: FeverAPIClient?
     private var syncTimer: Timer?
@@ -127,6 +128,7 @@ class FeedService {
 
     private func updateItems(_ newItems: [Item]) {
         let oldItems = items
+        let oldItemIds = Set(itemIds)
         let currentId = selectedItemId
 
         // Clear current items
@@ -142,6 +144,16 @@ class FeedService {
             }
             items[item.id] = item
             itemIds.append(item.id)
+        }
+
+        // Detect new posts (items that weren't in the old list)
+        let newItemIds = Set(itemIds)
+        if !oldItemIds.isEmpty && newItemIds.count > oldItemIds.count {
+            // Check if there are genuinely new item IDs
+            let addedIds = newItemIds.subtracting(oldItemIds)
+            if !addedIds.isEmpty {
+                hasNewPosts = true
+            }
         }
 
         // Update last item timestamp for mark all read
