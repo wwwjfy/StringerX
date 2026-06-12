@@ -167,6 +167,7 @@ class FeedService {
         } else if selectedItemId != nil {
             // Current selection is gone, clear it
             selectedItemId = nil
+            isArticleOpen = false
         }
 
         updateDockBadge()
@@ -307,6 +308,7 @@ class FeedService {
                     selectedItemId = currentId
                 } else {
                     selectedItemId = nil
+                    isArticleOpen = false
                 }
             } catch {
                 // Silently fail
