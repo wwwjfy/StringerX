@@ -21,44 +21,36 @@ struct StringerXApp: App {
                 // Remove default "New" menu item
             }
 
-            // Custom keyboard shortcuts
             CommandMenu("Navigate") {
                 Button("Next Item") {
                     feedService.selectNext()
                 }
-                .keyboardShortcut("j", modifiers: [])
 
                 Button("Previous Item") {
                     feedService.selectPrevious()
                 }
-                .keyboardShortcut("k", modifiers: [])
 
                 Button("Toggle Article") {
                     feedService.toggleArticle()
                 }
-                .keyboardShortcut("o", modifiers: [])
 
                 Button("Go to Top") {
                     feedService.goToTop()
                 }
-                .keyboardShortcut("g", modifiers: [])
             }
 
             CommandMenu("Actions") {
                 Button("Open in Browser") {
                     feedService.openInBrowser()
                 }
-                .keyboardShortcut("v", modifiers: [])
 
                 Button("Toggle Saved") {
                     feedService.toggleSaved()
                 }
-                .keyboardShortcut("s", modifiers: [])
 
                 Button("Mark All as Read") {
                     feedService.markAllAsRead()
                 }
-                .keyboardShortcut("a", modifiers: [.shift])
             }
         }
 
