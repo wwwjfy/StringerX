@@ -1,9 +1,41 @@
 import SwiftUI
 import WebKit
 
+final class KeyForwardingWebView: WKWebView {
+    var onShortcut: ((Character) -> Void)?
+    var onEscape: (() -> Void)?
+
+    override func keyDown(with event: NSEvent) {
+        // Escape (keyCode 53) closes the article overlay
+        if event.keyCode == 53 {
+            onEscape?()
+            return
+        }
+
+        let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+        // Only intercept letter shortcuts when no command/option/control held (shift OK for capital A)
+        if modifiers.subtracting(.shift).isEmpty,
+           let chars = event.charactersIgnoringModifiers,
+           chars.count == 1 {
+            let c = Character(chars)
+            switch c {
+            case "j", "k", "o", "g", "v", "s", "A":
+                onShortcut?(c)
+                return
+            default:
+                break
+            }
+        }
+
+        super.keyDown(with: event)
+    }
+}
+
 struct ArticleWebView: NSViewRepresentable {
     let htmlContent: String
     @Binding var hoveredURL: String?
+    let onShortcut: (Character) -> Void
+    let onEscape: () -> Void
 
     func makeNSView(context: Context) -> WKWebView {
         let configuration = WKWebViewConfiguration()
@@ -30,14 +62,21 @@ struct ArticleWebView: NSViewRepresentable {
         configuration.userContentController.addUserScript(mouseoverScript)
         configuration.userContentController.add(context.coordinator, name: "mouseover")
 
-        let webView = WKWebView(frame: .zero, configuration: configuration)
+        let webView = KeyForwardingWebView(frame: .zero, configuration: configuration)
         webView.navigationDelegate = context.coordinator
         webView.uiDelegate = context.coordinator
+        webView.onShortcut = onShortcut
+        webView.onEscape = onEscape
 
         return webView
     }
 
     func updateNSView(_ webView: WKWebView, context: Context) {
+        if let kfWebView = webView as? KeyForwardingWebView {
+            kfWebView.onShortcut = onShortcut
+            kfWebView.onEscape = onEscape
+        }
+
         // Only reload if content actually changed
         if context.coordinator.currentHTML != htmlContent {
             context.coordinator.currentHTML = htmlContent

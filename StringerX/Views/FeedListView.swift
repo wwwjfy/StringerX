@@ -2,6 +2,7 @@ import SwiftUI
 
 struct FeedListView: View {
     @Environment(FeedService.self) private var feedService
+    @FocusState private var listFocused: Bool
 
     var body: some View {
         @Bindable var feedServiceBindable = feedService
@@ -19,6 +20,16 @@ struct FeedListView: View {
             }
             .listStyle(.inset)
             .alternatingRowBackgrounds()
+            .focusable()
+            .focused($listFocused)
+            .onAppear { listFocused = true }
+            .onChange(of: feedService.isArticleOpen) { _, open in
+                if !open {
+                    DispatchQueue.main.async {
+                        listFocused = true
+                    }
+                }
+            }
             .onKeyPress("o", action: {
                 feedService.toggleArticle()
                 return .handled

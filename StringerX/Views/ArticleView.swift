@@ -3,6 +3,7 @@ import SwiftUI
 struct ArticleView: View {
     let item: Item
     @Environment(\.colorScheme) var colorScheme
+    @Environment(FeedService.self) private var feedService
     @State private var hoveredURL: String?
 
     var body: some View {
@@ -10,7 +11,9 @@ struct ArticleView: View {
             // Article WebView
             ArticleWebView(
                 htmlContent: formattedHTML,
-                hoveredURL: $hoveredURL
+                hoveredURL: $hoveredURL,
+                onShortcut: handleShortcut,
+                onEscape: { feedService.closeArticle() }
             )
             .focusable()  // Make the webview focusable
 
@@ -29,5 +32,18 @@ struct ArticleView: View {
 
     private var formattedHTML: String {
         HTMLFormatter.formatArticle(item: item, isDarkMode: colorScheme == .dark)
+    }
+
+    private func handleShortcut(_ c: Character) {
+        switch c {
+        case "j": feedService.selectNext()
+        case "k": feedService.selectPrevious()
+        case "o": feedService.toggleArticle()
+        case "g": feedService.goToTop()
+        case "v": feedService.openInBrowser()
+        case "s": feedService.toggleSaved()
+        case "A": feedService.markAllAsRead()
+        default: break
+        }
     }
 }
