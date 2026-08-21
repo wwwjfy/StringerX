@@ -11,6 +11,7 @@ struct ArticleView: View {
             // Article WebView
             ArticleWebView(
                 htmlContent: formattedHTML,
+                baseURL: articleOrigin,
                 hoveredURL: $hoveredURL,
                 onShortcut: handleShortcut,
                 onEscape: { feedService.closeArticle() }
@@ -32,6 +33,15 @@ struct ArticleView: View {
 
     private var formattedHTML: String {
         HTMLFormatter.formatArticle(item: item, isDarkMode: colorScheme == .dark)
+    }
+
+    private var articleOrigin: URL? {
+        guard let url = URL(string: item.url),
+              let scheme = url.scheme,
+              let host = url.host else {
+            return nil
+        }
+        return URL(string: "\(scheme)://\(host)/")
     }
 
     private func handleShortcut(_ c: Character) {

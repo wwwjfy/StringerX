@@ -33,6 +33,7 @@ final class KeyForwardingWebView: WKWebView {
 
 struct ArticleWebView: NSViewRepresentable {
     let htmlContent: String
+    let baseURL: URL?
     @Binding var hoveredURL: String?
     let onShortcut: (Character) -> Void
     let onEscape: () -> Void
@@ -86,7 +87,7 @@ struct ArticleWebView: NSViewRepresentable {
         // Only reload if content actually changed
         if context.coordinator.currentHTML != htmlContent {
             context.coordinator.currentHTML = htmlContent
-            webView.loadHTMLString(htmlContent, baseURL: nil)
+            webView.loadHTMLString(htmlContent, baseURL: baseURL)
         }
 
         // Make webview first responder so Space/Shift+Space work for scrolling
