@@ -68,6 +68,12 @@ struct ArticleWebView: NSViewRepresentable {
         webView.onShortcut = onShortcut
         webView.onEscape = onEscape
 
+        #if DEBUG
+        if #available(macOS 13.3, *) {
+            webView.isInspectable = true
+        }
+        #endif
+
         return webView
     }
 
